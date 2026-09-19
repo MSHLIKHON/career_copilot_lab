@@ -1,0 +1,151 @@
+{
+  "sklearn_version": "1.8.0",
+  "python_version": "3.12.14",
+  "dataset_size": 240,
+  "family_count": 24,
+  "labels": [
+    "wrong_condition",
+    "loop_boundary",
+    "wrong_update",
+    "missing_edge_case"
+  ],
+  "split_counts": {
+    "train": 160,
+    "validation": 40,
+    "test": 40
+  },
+  "split_policy": "Disjoint source families: 16 train, 4 validation, 4 test. Renamed copies stay together.",
+  "warning": "Generated pilot data, no human-reviewed real student test set. Renamed variants are correlated. Scores do not establish real-world accuracy.",
+  "deployed_model": "logistic_regression",
+  "deployment_reason": "Fixed before evaluation; supports probability scores. Scores are not calibrated confidence.",
+  "models": {
+    "logistic_regression": {
+      "validation": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "macro_recall": 1.0,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.725,
+        "macro_f1": 0.6535087719298245,
+        "macro_recall": 0.725,
+        "confusion_matrix": [
+          [
+            9,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      }
+    },
+    "linear_svm": {
+      "validation": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "macro_recall": 1.0,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "macro_recall": 0.75,
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ],
+          [
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  }
+}

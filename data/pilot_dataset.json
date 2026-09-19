@@ -1,0 +1,8162 @@
+[
+  {
+    "id": "f00-v00",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(data0):\n    return data0 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v01",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(value1):\n    return value1 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v02",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(limit2):\n    return limit2 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v03",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(answer3):\n    return answer3 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v04",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(data4):\n    return data4 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v05",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(answer5):\n    return answer5 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v06",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(index6):\n    return index6 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v07",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(value7):\n    return value7 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v08",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(limit8):\n    return limit8 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f00-v09",
+    "family": "f00",
+    "split": "train",
+    "code": "def solve(items9):\n    return items9 < 0",
+    "label": "wrong_condition",
+    "args": [
+      4
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v00",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(data0):\n    return data0 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v01",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(value1):\n    return value1 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v02",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(limit2):\n    return limit2 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v03",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(answer3):\n    return answer3 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v04",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(data4):\n    return data4 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v05",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(answer5):\n    return answer5 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v06",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(index6):\n    return index6 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v07",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(value7):\n    return value7 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v08",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(limit8):\n    return limit8 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f01-v09",
+    "family": "f01",
+    "split": "train",
+    "code": "def solve(items9):\n    return items9 % 2 != 0",
+    "label": "wrong_condition",
+    "args": [
+      2
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v00",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(data0, second0):\n    if data0 <= second0:\n        return data0\n    return second0",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v01",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(value1, result1):\n    if value1 <= result1:\n        return value1\n    return result1",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v02",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(limit2, first2):\n    if limit2 <= first2:\n        return limit2\n    return first2",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v03",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(answer3, limit3):\n    if answer3 <= limit3:\n        return answer3\n    return limit3",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v04",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(data4, number4):\n    if data4 <= number4:\n        return data4\n    return number4",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v05",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(answer5, data5):\n    if answer5 <= data5:\n        return answer5\n    return data5",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v06",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(index6, value6):\n    if index6 <= value6:\n        return index6\n    return value6",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v07",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(value7, first7):\n    if value7 <= first7:\n        return value7\n    return first7",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v08",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(limit8, answer8):\n    if limit8 <= answer8:\n        return limit8\n    return answer8",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f02-v09",
+    "family": "f02",
+    "split": "train",
+    "code": "def solve(items9, value9):\n    if items9 <= value9:\n        return items9\n    return value9",
+    "label": "wrong_condition",
+    "args": [
+      8,
+      2
+    ],
+    "expected": 8,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            8,
+            2
+          ],
+          "expected": 8,
+          "note": "Mutation witness",
+          "actual": 2,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v00",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(data0):\n    return data0 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v01",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(value1):\n    return value1 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v02",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(limit2):\n    return limit2 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v03",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(answer3):\n    return answer3 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v04",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(data4):\n    return data4 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v05",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(answer5):\n    return answer5 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v06",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(index6):\n    return index6 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v07",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(value7):\n    return value7 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v08",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(limit8):\n    return limit8 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f03-v09",
+    "family": "f03",
+    "split": "train",
+    "code": "def solve(items9):\n    return items9 > 18",
+    "label": "wrong_condition",
+    "args": [
+      18
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            18
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v00",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(data0):\n    return data0 >= 0 or data0 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v01",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(value1):\n    return value1 >= 0 or value1 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v02",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(limit2):\n    return limit2 >= 0 or limit2 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v03",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(answer3):\n    return answer3 >= 0 or answer3 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v04",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(data4):\n    return data4 >= 0 or data4 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v05",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(answer5):\n    return answer5 >= 0 or answer5 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v06",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(index6):\n    return index6 >= 0 or index6 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v07",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(value7):\n    return value7 >= 0 or value7 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v08",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(limit8):\n    return limit8 >= 0 or limit8 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f04-v09",
+    "family": "f04",
+    "split": "validation",
+    "code": "def solve(items9):\n    return items9 >= 0 or items9 <= 10",
+    "label": "wrong_condition",
+    "args": [
+      50
+    ],
+    "expected": false,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            50
+          ],
+          "expected": false,
+          "note": "Mutation witness",
+          "actual": true,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v00",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(second0, data0):\n    return data0 not in second0",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v01",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(result1, value1):\n    return value1 not in result1",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v02",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(first2, limit2):\n    return limit2 not in first2",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v03",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(limit3, answer3):\n    return answer3 not in limit3",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v04",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(number4, data4):\n    return data4 not in number4",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v05",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(data5, answer5):\n    return answer5 not in data5",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v06",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(value6, index6):\n    return index6 not in value6",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v07",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(first7, value7):\n    return value7 not in first7",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v08",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(answer8, limit8):\n    return limit8 not in answer8",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f05-v09",
+    "family": "f05",
+    "split": "test",
+    "code": "def solve(value9, items9):\n    return items9 not in value9",
+    "label": "wrong_condition",
+    "args": [
+      [
+        1,
+        3
+      ],
+      3
+    ],
+    "expected": true,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3
+            ],
+            3
+          ],
+          "expected": true,
+          "note": "Mutation witness",
+          "actual": false,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v00",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in range(1, second0):\n        number0 += data0\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v01",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in range(1, result1):\n        number1 += value1\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v02",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in range(1, first2):\n        data2 += limit2\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v03",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in range(1, limit3):\n        index3 += answer3\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v04",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in range(1, number4):\n        first4 += data4\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v05",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in range(1, data5):\n        limit5 += answer5\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v06",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in range(1, value6):\n        result6 += index6\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v07",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in range(1, first7):\n        items7 += value7\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v08",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in range(1, answer8):\n        index8 += limit8\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f06-v09",
+    "family": "f06",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in range(1, value9):\n        answer9 += items9\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 10,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 10,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v00",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in range(len(second0) - 1):\n        number0 += second0[data0]\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v01",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in range(len(result1) - 1):\n        number1 += result1[value1]\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v02",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in range(len(first2) - 1):\n        data2 += first2[limit2]\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v03",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in range(len(limit3) - 1):\n        index3 += limit3[answer3]\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v04",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in range(len(number4) - 1):\n        first4 += number4[data4]\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v05",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in range(len(data5) - 1):\n        limit5 += data5[answer5]\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v06",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in range(len(value6) - 1):\n        result6 += value6[index6]\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v07",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in range(len(first7) - 1):\n        items7 += first7[value7]\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v08",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in range(len(answer8) - 1):\n        index8 += answer8[limit8]\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f07-v09",
+    "family": "f07",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in range(len(value9) - 1):\n        answer9 += value9[items9]\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "expected": 12,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": 12,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v00",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 1\n    for data0 in range(1, second0):\n        number0 *= data0\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v01",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 1\n    for value1 in range(1, result1):\n        number1 *= value1\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v02",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 1\n    for limit2 in range(1, first2):\n        data2 *= limit2\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v03",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 1\n    for answer3 in range(1, limit3):\n        index3 *= answer3\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v04",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 1\n    for data4 in range(1, number4):\n        first4 *= data4\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v05",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 1\n    for answer5 in range(1, data5):\n        limit5 *= answer5\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v06",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 1\n    for index6 in range(1, value6):\n        result6 *= index6\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v07",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 1\n    for value7 in range(1, first7):\n        items7 *= value7\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v08",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 1\n    for limit8 in range(1, answer8):\n        index8 *= limit8\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f08-v09",
+    "family": "f08",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 1\n    for items9 in range(1, value9):\n        answer9 *= items9\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v00",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(second0):\n    data0 = 1\n    number0 = 0\n    while data0 < second0:\n        number0 += data0\n        data0 += 1\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v01",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(result1):\n    value1 = 1\n    number1 = 0\n    while value1 < result1:\n        number1 += value1\n        value1 += 1\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v02",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(first2):\n    limit2 = 1\n    data2 = 0\n    while limit2 < first2:\n        data2 += limit2\n        limit2 += 1\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v03",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(limit3):\n    answer3 = 1\n    index3 = 0\n    while answer3 < limit3:\n        index3 += answer3\n        answer3 += 1\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v04",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(number4):\n    data4 = 1\n    first4 = 0\n    while data4 < number4:\n        first4 += data4\n        data4 += 1\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v05",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(data5):\n    answer5 = 1\n    limit5 = 0\n    while answer5 < data5:\n        limit5 += answer5\n        answer5 += 1\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v06",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(value6):\n    index6 = 1\n    result6 = 0\n    while index6 < value6:\n        result6 += index6\n        index6 += 1\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v07",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(first7):\n    value7 = 1\n    items7 = 0\n    while value7 < first7:\n        items7 += value7\n        value7 += 1\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v08",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(answer8):\n    limit8 = 1\n    index8 = 0\n    while limit8 < answer8:\n        index8 += limit8\n        limit8 += 1\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f09-v09",
+    "family": "f09",
+    "split": "train",
+    "code": "def solve(value9):\n    items9 = 1\n    answer9 = 0\n    while items9 < value9:\n        answer9 += items9\n        items9 += 1\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 3,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v00",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(second0):\n    number0 = []\n    for data0 in range(1, len(second0)):\n        number0 = number0 + [second0[data0]]\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v01",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(result1):\n    number1 = []\n    for value1 in range(1, len(result1)):\n        number1 = number1 + [result1[value1]]\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v02",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(first2):\n    data2 = []\n    for limit2 in range(1, len(first2)):\n        data2 = data2 + [first2[limit2]]\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v03",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(limit3):\n    index3 = []\n    for answer3 in range(1, len(limit3)):\n        index3 = index3 + [limit3[answer3]]\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v04",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(number4):\n    first4 = []\n    for data4 in range(1, len(number4)):\n        first4 = first4 + [number4[data4]]\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v05",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(data5):\n    limit5 = []\n    for answer5 in range(1, len(data5)):\n        limit5 = limit5 + [data5[answer5]]\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v06",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(value6):\n    result6 = []\n    for index6 in range(1, len(value6)):\n        result6 = result6 + [value6[index6]]\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v07",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(first7):\n    items7 = []\n    for value7 in range(1, len(first7)):\n        items7 = items7 + [first7[value7]]\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v08",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(answer8):\n    index8 = []\n    for limit8 in range(1, len(answer8)):\n        index8 = index8 + [answer8[limit8]]\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f10-v09",
+    "family": "f10",
+    "split": "validation",
+    "code": "def solve(value9):\n    answer9 = []\n    for items9 in range(1, len(value9)):\n        answer9 = answer9 + [value9[items9]]\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      [
+        4,
+        7
+      ]
+    ],
+    "expected": [
+      4,
+      7
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              4,
+              7
+            ]
+          ],
+          "expected": [
+            4,
+            7
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            7
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v00",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in range(second0, 1, -1):\n        number0 += data0\n    return number0",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v01",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in range(result1, 1, -1):\n        number1 += value1\n    return number1",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v02",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in range(first2, 1, -1):\n        data2 += limit2\n    return data2",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v03",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in range(limit3, 1, -1):\n        index3 += answer3\n    return index3",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v04",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in range(number4, 1, -1):\n        first4 += data4\n    return first4",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v05",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in range(data5, 1, -1):\n        limit5 += answer5\n    return limit5",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v06",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in range(value6, 1, -1):\n        result6 += index6\n    return result6",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v07",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in range(first7, 1, -1):\n        items7 += value7\n    return items7",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v08",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in range(answer8, 1, -1):\n        index8 += limit8\n    return index8",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f11-v09",
+    "family": "f11",
+    "split": "test",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in range(value9, 1, -1):\n        answer9 += items9\n    return answer9",
+    "label": "loop_boundary",
+    "args": [
+      3
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            3
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v00",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in second0:\n        number0 = data0\n    return number0",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v01",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in result1:\n        number1 = value1\n    return number1",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v02",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in first2:\n        data2 = limit2\n    return data2",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v03",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in limit3:\n        index3 = answer3\n    return index3",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v04",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in number4:\n        first4 = data4\n    return first4",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v05",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in data5:\n        limit5 = answer5\n    return limit5",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v06",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in value6:\n        result6 = index6\n    return result6",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v07",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in first7:\n        items7 = value7\n    return items7",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v08",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in answer8:\n        index8 = limit8\n    return index8",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f12-v09",
+    "family": "f12",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in value9:\n        answer9 = items9\n    return answer9",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "expected": 9,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 9,
+          "note": "Mutation witness",
+          "actual": 4,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v00",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 1\n    for data0 in range(1, second0 + 1):\n        number0 += data0\n    return number0",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v01",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 1\n    for value1 in range(1, result1 + 1):\n        number1 += value1\n    return number1",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v02",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 1\n    for limit2 in range(1, first2 + 1):\n        data2 += limit2\n    return data2",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v03",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 1\n    for answer3 in range(1, limit3 + 1):\n        index3 += answer3\n    return index3",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v04",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 1\n    for data4 in range(1, number4 + 1):\n        first4 += data4\n    return first4",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v05",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 1\n    for answer5 in range(1, data5 + 1):\n        limit5 += answer5\n    return limit5",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v06",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 1\n    for index6 in range(1, value6 + 1):\n        result6 += index6\n    return result6",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v07",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 1\n    for value7 in range(1, first7 + 1):\n        items7 += value7\n    return items7",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v08",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 1\n    for limit8 in range(1, answer8 + 1):\n        index8 += limit8\n    return index8",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f13-v09",
+    "family": "f13",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 1\n    for items9 in range(1, value9 + 1):\n        answer9 += items9\n    return answer9",
+    "label": "wrong_update",
+    "args": [
+      4
+    ],
+    "expected": 24,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            4
+          ],
+          "expected": 24,
+          "note": "Mutation witness",
+          "actual": 11,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v00",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in second0:\n        if data0 > 0:\n            number0 += data0\n    return number0",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v01",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in result1:\n        if value1 > 0:\n            number1 += value1\n    return number1",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v02",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in first2:\n        if limit2 > 0:\n            data2 += limit2\n    return data2",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v03",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in limit3:\n        if answer3 > 0:\n            index3 += answer3\n    return index3",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v04",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in number4:\n        if data4 > 0:\n            first4 += data4\n    return first4",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v05",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in data5:\n        if answer5 > 0:\n            limit5 += answer5\n    return limit5",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v06",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in value6:\n        if index6 > 0:\n            result6 += index6\n    return result6",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v07",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in first7:\n        if value7 > 0:\n            items7 += value7\n    return items7",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v08",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in answer8:\n        if limit8 > 0:\n            index8 += limit8\n    return index8",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f14-v09",
+    "family": "f14",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in value9:\n        if items9 > 0:\n            answer9 += items9\n    return answer9",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        4
+      ]
+    ],
+    "expected": 2,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": 2,
+          "note": "Mutation witness",
+          "actual": 6,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v00",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(second0):\n    number0 = 0\n    for data0 in second0:\n        number0 += data0\n    return number0",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v01",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(result1):\n    number1 = 0\n    for value1 in result1:\n        number1 += value1\n    return number1",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v02",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(first2):\n    data2 = 0\n    for limit2 in first2:\n        data2 += limit2\n    return data2",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v03",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(limit3):\n    index3 = 0\n    for answer3 in limit3:\n        index3 += answer3\n    return index3",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v04",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(number4):\n    first4 = 0\n    for data4 in number4:\n        first4 += data4\n    return first4",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v05",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(data5):\n    limit5 = 0\n    for answer5 in data5:\n        limit5 += answer5\n    return limit5",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v06",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(value6):\n    result6 = 0\n    for index6 in value6:\n        result6 += index6\n    return result6",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v07",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(first7):\n    items7 = 0\n    for value7 in first7:\n        items7 += value7\n    return items7",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v08",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(answer8):\n    index8 = 0\n    for limit8 in answer8:\n        index8 += limit8\n    return index8",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f15-v09",
+    "family": "f15",
+    "split": "train",
+    "code": "def solve(value9):\n    answer9 = 0\n    for items9 in value9:\n        answer9 += items9\n    return answer9",
+    "label": "wrong_update",
+    "args": [
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": 13,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": 13,
+          "note": "Mutation witness",
+          "actual": 5,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v00",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(second0):\n    number0 = []\n    for data0 in second0:\n        number0 = [data0]\n    return number0",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v01",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(result1):\n    number1 = []\n    for value1 in result1:\n        number1 = [value1]\n    return number1",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v02",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(first2):\n    data2 = []\n    for limit2 in first2:\n        data2 = [limit2]\n    return data2",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v03",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(limit3):\n    index3 = []\n    for answer3 in limit3:\n        index3 = [answer3]\n    return index3",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v04",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(number4):\n    first4 = []\n    for data4 in number4:\n        first4 = [data4]\n    return first4",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v05",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(data5):\n    limit5 = []\n    for answer5 in data5:\n        limit5 = [answer5]\n    return limit5",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v06",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(value6):\n    result6 = []\n    for index6 in value6:\n        result6 = [index6]\n    return result6",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v07",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(first7):\n    items7 = []\n    for value7 in first7:\n        items7 = [value7]\n    return items7",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v08",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(answer8):\n    index8 = []\n    for limit8 in answer8:\n        index8 = [limit8]\n    return index8",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f16-v09",
+    "family": "f16",
+    "split": "validation",
+    "code": "def solve(value9):\n    answer9 = []\n    for items9 in value9:\n        answer9 = [items9]\n    return answer9",
+    "label": "wrong_update",
+    "args": [
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": [
+      1,
+      2
+    ],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ],
+          "note": "Mutation witness",
+          "actual": [
+            2
+          ],
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v00",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(data0):\n    second0 = 0\n    while data0 > 0:\n        second0 = data0 % 10\n        data0 = data0 // 10\n    return second0",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v01",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(value1):\n    result1 = 0\n    while value1 > 0:\n        result1 = value1 % 10\n        value1 = value1 // 10\n    return result1",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v02",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(limit2):\n    first2 = 0\n    while limit2 > 0:\n        first2 = limit2 % 10\n        limit2 = limit2 // 10\n    return first2",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v03",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(answer3):\n    limit3 = 0\n    while answer3 > 0:\n        limit3 = answer3 % 10\n        answer3 = answer3 // 10\n    return limit3",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v04",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(data4):\n    number4 = 0\n    while data4 > 0:\n        number4 = data4 % 10\n        data4 = data4 // 10\n    return number4",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v05",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(answer5):\n    data5 = 0\n    while answer5 > 0:\n        data5 = answer5 % 10\n        answer5 = answer5 // 10\n    return data5",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v06",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(index6):\n    value6 = 0\n    while index6 > 0:\n        value6 = index6 % 10\n        index6 = index6 // 10\n    return value6",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v07",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(value7):\n    first7 = 0\n    while value7 > 0:\n        first7 = value7 % 10\n        value7 = value7 // 10\n    return first7",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v08",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(limit8):\n    answer8 = 0\n    while limit8 > 0:\n        answer8 = limit8 % 10\n        limit8 = limit8 // 10\n    return answer8",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f17-v09",
+    "family": "f17",
+    "split": "test",
+    "code": "def solve(items9):\n    value9 = 0\n    while items9 > 0:\n        value9 = items9 % 10\n        items9 = items9 // 10\n    return value9",
+    "label": "wrong_update",
+    "args": [
+      123
+    ],
+    "expected": 6,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            123
+          ],
+          "expected": 6,
+          "note": "Mutation witness",
+          "actual": 1,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v00",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(data0):\n    return max(data0)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v01",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(value1):\n    return max(value1)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v02",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(limit2):\n    return max(limit2)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v03",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(answer3):\n    return max(answer3)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v04",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(data4):\n    return max(data4)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v05",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(answer5):\n    return max(answer5)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v06",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(index6):\n    return max(index6)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v07",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(value7):\n    return max(value7)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v08",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(limit8):\n    return max(limit8)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f18-v09",
+    "family": "f18",
+    "split": "train",
+    "code": "def solve(items9):\n    return max(items9)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ValueError: max() iterable argument is empty"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v00",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(data0):\n    return sum(data0) / len(data0)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v01",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(value1):\n    return sum(value1) / len(value1)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v02",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(limit2):\n    return sum(limit2) / len(limit2)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v03",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(answer3):\n    return sum(answer3) / len(answer3)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v04",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(data4):\n    return sum(data4) / len(data4)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v05",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(answer5):\n    return sum(answer5) / len(answer5)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v06",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(index6):\n    return sum(index6) / len(index6)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v07",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(value7):\n    return sum(value7) / len(value7)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v08",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(limit8):\n    return sum(limit8) / len(limit8)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f19-v09",
+    "family": "f19",
+    "split": "train",
+    "code": "def solve(items9):\n    return sum(items9) / len(items9)",
+    "label": "missing_edge_case",
+    "args": [
+      []
+    ],
+    "expected": 0,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: division by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v00",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(data0):\n    return sorted(data0)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v01",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(value1):\n    return sorted(value1)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v02",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(limit2):\n    return sorted(limit2)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v03",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(answer3):\n    return sorted(answer3)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v04",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(data4):\n    return sorted(data4)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v05",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(answer5):\n    return sorted(answer5)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v06",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(index6):\n    return sorted(index6)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v07",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(value7):\n    return sorted(value7)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v08",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(limit8):\n    return sorted(limit8)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f20-v09",
+    "family": "f20",
+    "split": "train",
+    "code": "def solve(items9):\n    return sorted(items9)[-2]",
+    "label": "missing_edge_case",
+    "args": [
+      [
+        1
+      ]
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v00",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(data0):\n    second0 = 0\n    while data0 > 0:\n        second0 += data0 % 10\n        data0 = data0 // 10\n    return second0",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v01",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(value1):\n    result1 = 0\n    while value1 > 0:\n        result1 += value1 % 10\n        value1 = value1 // 10\n    return result1",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v02",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(limit2):\n    first2 = 0\n    while limit2 > 0:\n        first2 += limit2 % 10\n        limit2 = limit2 // 10\n    return first2",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v03",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(answer3):\n    limit3 = 0\n    while answer3 > 0:\n        limit3 += answer3 % 10\n        answer3 = answer3 // 10\n    return limit3",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v04",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(data4):\n    number4 = 0\n    while data4 > 0:\n        number4 += data4 % 10\n        data4 = data4 // 10\n    return number4",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v05",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(answer5):\n    data5 = 0\n    while answer5 > 0:\n        data5 += answer5 % 10\n        answer5 = answer5 // 10\n    return data5",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v06",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(index6):\n    value6 = 0\n    while index6 > 0:\n        value6 += index6 % 10\n        index6 = index6 // 10\n    return value6",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v07",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(value7):\n    first7 = 0\n    while value7 > 0:\n        first7 += value7 % 10\n        value7 = value7 // 10\n    return first7",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v08",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(limit8):\n    answer8 = 0\n    while limit8 > 0:\n        answer8 += limit8 % 10\n        limit8 = limit8 // 10\n    return answer8",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f21-v09",
+    "family": "f21",
+    "split": "train",
+    "code": "def solve(items9):\n    value9 = 0\n    while items9 > 0:\n        value9 += items9 % 10\n        items9 = items9 // 10\n    return value9",
+    "label": "missing_edge_case",
+    "args": [
+      -12
+    ],
+    "expected": 3,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            -12
+          ],
+          "expected": 3,
+          "note": "Mutation witness",
+          "actual": 0,
+          "passed": false,
+          "error": ""
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v00",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(second0, data0):\n    data0 = data0 % len(second0)\n    return second0[-data0:] + second0[:-data0]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v01",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(result1, value1):\n    value1 = value1 % len(result1)\n    return result1[-value1:] + result1[:-value1]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v02",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(first2, limit2):\n    limit2 = limit2 % len(first2)\n    return first2[-limit2:] + first2[:-limit2]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v03",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(limit3, answer3):\n    answer3 = answer3 % len(limit3)\n    return limit3[-answer3:] + limit3[:-answer3]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v04",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(number4, data4):\n    data4 = data4 % len(number4)\n    return number4[-data4:] + number4[:-data4]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v05",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(data5, answer5):\n    answer5 = answer5 % len(data5)\n    return data5[-answer5:] + data5[:-answer5]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v06",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(value6, index6):\n    index6 = index6 % len(value6)\n    return value6[-index6:] + value6[:-index6]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v07",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(first7, value7):\n    value7 = value7 % len(first7)\n    return first7[-value7:] + first7[:-value7]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v08",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(answer8, limit8):\n    limit8 = limit8 % len(answer8)\n    return answer8[-limit8:] + answer8[:-limit8]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f22-v09",
+    "family": "f22",
+    "split": "validation",
+    "code": "def solve(value9, items9):\n    items9 = items9 % len(value9)\n    return value9[-items9:] + value9[:-items9]",
+    "label": "missing_edge_case",
+    "args": [
+      [],
+      2
+    ],
+    "expected": [],
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            [],
+            2
+          ],
+          "expected": [],
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "ZeroDivisionError: integer modulo by zero"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v00",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(data0):\n    return data0[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v01",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(value1):\n    return value1[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v02",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(limit2):\n    return limit2[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v03",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(answer3):\n    return answer3[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v04",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(data4):\n    return data4[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v05",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(answer5):\n    return answer5[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v06",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(index6):\n    return index6[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v07",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(value7):\n    return value7[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v08",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(limit8):\n    return limit8[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  },
+  {
+    "id": "f23-v09",
+    "family": "f23",
+    "split": "test",
+    "code": "def solve(items9):\n    return items9[0]",
+    "label": "missing_edge_case",
+    "args": [
+      ""
+    ],
+    "expected": null,
+    "result": {
+      "status": "failed",
+      "message": "",
+      "passed": 0,
+      "total": 1,
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": null,
+          "note": "Mutation witness",
+          "actual": null,
+          "passed": false,
+          "error": "IndexError: string index out of range"
+        }
+      ]
+    },
+    "source": "original_generated_mutation",
+    "human_reviewed": false
+  }
+]
