@@ -45,6 +45,9 @@ def init_db():
             created REAL NOT NULL);
         CREATE TABLE IF NOT EXISTS login_limits (
             username TEXT PRIMARY KEY, failures INTEGER NOT NULL, locked_until REAL NOT NULL);
+        CREATE TABLE IF NOT EXISTS sessions (
+            token TEXT PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
+            created REAL NOT NULL);
         ''')
 
 
@@ -148,3 +151,35 @@ def export_user(user_id):
     with connect() as db:
         rows = db.execute("SELECT attempt_id,comment,created FROM feedback WHERE user_id=?", (user_id,)).fetchall()
     return {"profile": profile(user_id), "attempts": attempts(user_id), "feedback": [dict(r) for r in rows]}
+
+
+def create_session(user_id):
+    token = secrets.token_urlsafe(32)
+    with connect() as db:
+        db.execute("INSERT OR REPLACE INTO sessions(token, user_id, created) VALUES(?,?,?)",
+                   (token, user_id, time.time()))
+    return token
+
+
+def get_user_by_session(token):
+    if not token or not isinstance(token, str):
+        return None
+    with connect() as db:
+        row = db.execute(
+            "SELECT u.id, u.name, u.username, s.created FROM sessions s JOIN users u ON s.user_id = u.id WHERE s.token = ?",
+            (token,),
+        ).fetchone()
+        if row:
+            if time.time() - row["created"] > 30 * 86400:
+                db.execute("DELETE FROM sessions WHERE token = ?", (token,))
+                return None
+            return {"id": row["id"], "name": row["name"], "username": row["username"]}
+    return None
+
+
+def delete_session(token):
+    if not token or not isinstance(token, str):
+        return
+    with connect() as db:
+        db.execute("DELETE FROM sessions WHERE token = ?", (token,))
+

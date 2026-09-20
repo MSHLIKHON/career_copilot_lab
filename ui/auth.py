@@ -43,8 +43,11 @@ def render_auth_forms() -> None:
                 try:
                     user = storage.login(username, password)
                     if user:
+                        token = storage.create_session(user["id"])
+                        st.query_params["token"] = token
                         st.session_state.clear()
                         st.session_state.user = user
+                        st.session_state.session_token = token
                         st.session_state.last_active = time.time()
                         st.rerun()
                     st.error("Username or password is incorrect.")

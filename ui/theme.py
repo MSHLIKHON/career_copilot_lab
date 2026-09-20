@@ -1,6 +1,4 @@
-"""Shared Streamlit theme CSS (no gradients).
-
-Restrained palette derived from `.streamlit/config.toml`:
+"""Restrained palette derived from `.streamlit/config.toml`:
 - primary accent: #3B64F4
 - background:    #F7F9FC
 - surface:       #FFFFFF
@@ -16,13 +14,13 @@ def apply_theme() -> None:
     """Inject the global + landing-page CSS. Safe to call once per run."""
     st.markdown(
         """<style>
-/* Remove full-page artificial margins and make full screen */
+/* Full-width layout */
 .stApp {margin:0 !important;padding:0 !important}
 [data-testid="stAppViewContainer"] {padding:0 !important}
 .block-container {
     max-width:100% !important;
     width:100% !important;
-    padding-top:1.25rem !important;
+    padding-top:3.5rem !important;   /* leaves room for the sidebar toggle */
     padding-bottom:3rem !important;
     padding-left:3rem !important;
     padding-right:3rem !important;
@@ -35,19 +33,44 @@ h1,h2,h3 {letter-spacing:-.035em}
 .intro h2 {color:#fff;margin:0 0 8px}.intro p {margin:0;color:#d8e2fb}
 .eyebrow {font-size:12px;letter-spacing:.12em;color:#6684c6;font-weight:700}
 
-/* Hide Streamlit header & toolbar entirely */
+/* Header: transparent, but NEVER hide the toolbar container itself,
+   because the "open sidebar" button lives inside it. */
 header[data-testid="stHeader"],
-.stAppHeader,
-[data-testid="stToolbar"],
-.stAppToolbar,
+.stAppHeader {
+    background: transparent !important;
+    color: inherit !important;
+    z-index: 999990 !important;
+}
+
+/* Hide only the right-side extras (menu, deploy, status, footer) */
+[data-testid="stToolbarActions"],
+[data-testid="stMainMenu"],
+[data-testid="stAppDeployButton"],
 .stAppDeployButton,
+[data-testid="stStatusWidget"],
 #MainMenu,
 footer {
-    display:none !important;
-    height:0 !important;
-    min-height:0 !important;
-    padding:0 !important;
-    margin:0 !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Keep the toolbar container and sidebar open/close controls always usable
+   (covers both older and newer Streamlit test-ids) */
+[data-testid="stToolbar"],
+.stAppToolbar,
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stExpandSidebarButton"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarHeader"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stExpandSidebarButton"],
+[data-testid="stSidebarCollapseButton"] {
+    display: flex !important;
+    z-index: 999999 !important;
 }
 
 /* Landing page Top Navbar */
@@ -59,25 +82,10 @@ footer {
     border-bottom:1px solid #E5EAF4;
     margin-bottom:1.5rem;
 }
-.landing-nav-brand-box {
-    display:flex;
-    flex-direction:column;
-}
-.landing-nav-brand {
-    font-weight:800;
-    font-size:18px;
-    color:#17243D;
-    letter-spacing:-.02em;
-}
-.landing-nav-sub {
-    font-size:12.5px;
-    color:#5A6B8C;
-}
-.landing-nav-menu {
-    display:flex;
-    align-items:center;
-    gap:1.75rem;
-}
+.landing-nav-brand-box {display:flex;flex-direction:column}
+.landing-nav-brand {font-weight:800;font-size:18px;color:#17243D;letter-spacing:-.02em}
+.landing-nav-sub {font-size:12.5px;color:#5A6B8C}
+.landing-nav-menu {display:flex;align-items:center;gap:1.75rem}
 .landing-nav-item {
     font-size:15px;
     font-weight:600;
@@ -87,10 +95,7 @@ footer {
     cursor:pointer;
     transition:color 0.15s ease;
 }
-.landing-nav-item:hover {
-    text-decoration:underline !important;
-    color:#3B64F4;
-}
+.landing-nav-item:hover {text-decoration:underline !important;color:#3B64F4}
 
 /* Landing page content */
 .hero-eyebrow {font-size:12px;letter-spacing:.12em;color:#3B64F4;font-weight:700;margin:18px 0 10px}
