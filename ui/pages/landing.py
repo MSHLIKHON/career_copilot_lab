@@ -26,23 +26,32 @@ def _set_view(view: str) -> None:
 
 
 def render_nav() -> None:
-    brand, _, login_col, signup_col = st.columns([2.4, 2.3, 0.75, 0.9])
-    with brand:
-        st.markdown(
-            '<div class="landing-nav-brand">🎓 Career Copilot Lab</div>'
-            '<div class="landing-nav-sub">Python skill verification &amp; adaptive practice</div>',
-            unsafe_allow_html=True,
-        )
-    with login_col:
-        st.markdown(
-            '<a class="landing-nav-link" href="#sign-in-or-create-your-account">Login</a>',
-            unsafe_allow_html=True,
-        )
-    with signup_col:
-        st.markdown(
-            '<a class="landing-nav-link" href="#sign-in-or-create-your-account">Sign Up</a>',
-            unsafe_allow_html=True,
-        )
+    st.markdown(
+        """
+        <div class="landing-navbar">
+            <div class="landing-nav-brand-box">
+                <div class="landing-nav-brand">🎓 Career Copilot Lab</div>
+                <div class="landing-nav-sub">Python skill verification &amp; adaptive practice</div>
+            </div>
+            <div class="landing-nav-menu">
+                <a class="landing-nav-item" href="#login-section" onclick="switchAuthTab(0)">Login</a>
+                <a class="landing-nav-item" href="#signup-section" onclick="switchAuthTab(1)">Sign Up</a>
+            </div>
+        </div>
+        <script>
+        function switchAuthTab(index) {
+            try {
+                const doc = window.parent.document || document;
+                const tabs = doc.querySelectorAll('button[data-testid="stTab"]');
+                if (tabs && tabs[index]) {
+                    tabs[index].click();
+                }
+            } catch(e) {}
+        }
+        </script>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def render_hero() -> None:
@@ -115,7 +124,8 @@ def render_landing_page() -> None:
     render_context_section(view)
     st.divider()
     st.markdown(
-        '<div class="landing-section-title" id="sign-in-or-create-your-account">Sign in or create your account</div>'
+        '<div id="login-section"></div><div id="signup-section"></div>'
+        '<div class="landing-section-title">Sign in or create your account</div>'
         '<div class="landing-section-sub">Your progress stays on this computer. No default password exists.</div>',
         unsafe_allow_html=True,
     )
