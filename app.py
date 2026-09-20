@@ -12,72 +12,16 @@ from core.tasks import TASKS, TASK_BY_ID, TOPICS
 from core.runner import run_tests
 from core.model import load_model, predict, MODEL_DIR
 from core.adaptive import SKILLS, GOALS, extract_claims, summarize, recommend, roadmap
+from ui.theme import apply_theme
+from ui.pages.landing import render_landing_page
 
 st.set_page_config(page_title="Career Copilot Lab", page_icon="🎓", layout="wide")
-st.markdown('''<style>
-.block-container {max-width:1160px;padding-top:2rem;padding-bottom:3rem}
-h1,h2,h3 {letter-spacing:-.035em}
-[data-testid="stSidebar"] {border-right:1px solid #E5EAF4}
-[data-testid="stMetric"] {background:white;border:1px solid #E5EAF4;border-radius:14px;padding:18px}
-.intro {background:#182849;color:#fff;padding:28px 32px;border-radius:18px;margin-bottom:24px}
-.intro h2 {color:#fff;margin:0 0 8px}.intro p {margin:0;color:#d8e2fb}
-.eyebrow {font-size:12px;letter-spacing:.12em;color:#6684c6;font-weight:700}
-</style>''', unsafe_allow_html=True)
+apply_theme()
 storage.init_db()
 
 
-def authenticate():
-    st.markdown('<div class="eyebrow">TEAM NO AI · AI LAB PROTOTYPE</div>', unsafe_allow_html=True)
-    st.title("Career Copilot Lab")
-    st.write("Show what you can do. Learn from each attempt.")
-    left, right = st.columns([1.05, 1], gap="large")
-    with left:
-        st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Small Python challenges, real test evidence and hints that help you move forward.</p></div>', unsafe_allow_html=True)
-        st.write("**20 tasks** across Conditions, Loops, Functions and Lists.")
-        st.write("**Your own progress** saved locally, with assisted and independent attempts separated.")
-        st.write("**A trained pilot model** suggests mistake categories. Predictions can be wrong.")
-        st.info("Local classroom prototype. No GPT/Gemini key required. Create your own account; there is no default password.")
-    with right:
-        login_tab, register_tab = st.tabs(["Sign in", "Create account"])
-        with login_tab:
-            with st.form("login"):
-                username = st.text_input("Username", max_chars=24)
-                password = st.text_input("Password", type="password", max_chars=128)
-                submitted = st.form_submit_button("Sign in", type="primary", width="stretch")
-            if submitted:
-                try:
-                    user = storage.login(username, password)
-                    if user:
-                        st.session_state.clear()
-                        st.session_state.user = user
-                        st.session_state.last_active = time.time()
-                        st.rerun()
-                    st.error("Username or password is incorrect.")
-                except ValueError as error:
-                    st.error(str(error))
-        with register_tab:
-            with st.form("register"):
-                name = st.text_input("Your name", max_chars=80)
-                username = st.text_input("Choose username", help="3-24 letters, digits or underscores", max_chars=24)
-                password = st.text_input("Choose password", type="password", max_chars=128)
-                confirm = st.text_input("Confirm password", type="password", max_chars=128)
-                consent = st.checkbox("I understand my attempts and profile will be stored on this computer.")
-                submitted = st.form_submit_button("Create account", width="stretch")
-            if submitted:
-                if password != confirm:
-                    st.error("Passwords do not match.")
-                elif not consent:
-                    st.error("Please confirm local storage consent.")
-                else:
-                    try:
-                        storage.register(username, name, password)
-                        st.success("Account created. Open Sign in and use your new username and password.")
-                    except ValueError as error:
-                        st.error(str(error))
-
-
 if "user" not in st.session_state:
-    authenticate()
+    render_landing_page()
     st.stop()
 if time.time() - st.session_state.get("last_active", 0) > 1800:
     st.session_state.clear()
