@@ -21,10 +21,3 @@ def feature_card(title: str, body: str) -> None:
         unsafe_allow_html=True,
     )
 
-
-def prototype_notice() -> None:
-    st.markdown(
-        '<div class="prototype-note">Local classroom prototype — '
-        'your account and attempts are stored on this computer only.</div>',
-        unsafe_allow_html=True,
-    )

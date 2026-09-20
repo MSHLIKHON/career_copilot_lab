@@ -15,7 +15,7 @@ Valid `landing_view` values: "landing", "auth-login", "auth-signup",
 import streamlit as st
 
 from ui.auth import render_auth_forms
-from ui.components import eyebrow, feature_card, hero_headline, hero_sub, prototype_notice
+from ui.components import eyebrow, feature_card, hero_headline, hero_sub
 
 LANDING_VIEW_KEY = "landing_view"
 
@@ -26,7 +26,7 @@ def _set_view(view: str) -> None:
 
 
 def render_nav() -> None:
-    brand, _, login_col, signup_col, help_col = st.columns([2.4, 1.6, 0.75, 0.9, 0.7])
+    brand, _, login_col, signup_col = st.columns([2.4, 2.3, 0.75, 0.9])
     with brand:
         st.markdown(
             '<div class="landing-nav-brand">🎓 Career Copilot Lab</div>'
@@ -34,16 +34,15 @@ def render_nav() -> None:
             unsafe_allow_html=True,
         )
     with login_col:
-        # Task 2: route to the redesigned login view.
-        if st.button("Login", key="nav_login", width="stretch"):
-            _set_view("auth-login")
+        st.markdown(
+            '<a class="landing-nav-link" href="#sign-in-or-create-your-account">Login</a>',
+            unsafe_allow_html=True,
+        )
     with signup_col:
-        # Task 2: route to the redesigned signup view.
-        if st.button("Sign Up", key="nav_signup", type="primary", width="stretch"):
-            _set_view("auth-signup")
-    with help_col:
-        if st.button("Help", key="nav_help", width="stretch"):
-            _set_view("help")
+        st.markdown(
+            '<a class="landing-nav-link" href="#sign-in-or-create-your-account">Sign Up</a>',
+            unsafe_allow_html=True,
+        )
 
 
 def render_hero() -> None:
@@ -83,7 +82,7 @@ def render_features() -> None:
 
 
 def render_context_section(view: str) -> None:
-    """Render the How-it-works / Help panel selected via nav or hero CTAs."""
+    """Render the How-it-works panel selected via hero CTAs."""
     if view == "how-it-works":
         st.divider()
         st.subheader("How it works")
@@ -93,17 +92,6 @@ def render_context_section(view: str) -> None:
             "3. Use hints sparingly — assisted attempts are recorded separately.  "
             "4. Follow the recommended next task or your learning roadmap."
         )
-        prototype_notice()
-    elif view == "help":
-        st.divider()
-        st.subheader("Runner help (summary)")
-        st.write(
-            "Write a function named `solve` and return your answer — "
-            "no `input()` or `print()`. Only a restricted Python subset is supported "
-            "(no imports, no `.append()`, no files or network). "
-            "Sign in to open the full Runner help page with limits and privacy notes."
-        )
-        prototype_notice()
     elif view in ("auth-login", "auth-signup"):
         st.caption(
             "Continue below to sign in or create an account. "
@@ -124,11 +112,10 @@ def render_landing_page() -> None:
     st.divider()
     render_features()
     st.divider()
-    prototype_notice()
     render_context_section(view)
     st.divider()
     st.markdown(
-        '<div class="landing-section-title">Sign in or create your account</div>'
+        '<div class="landing-section-title" id="sign-in-or-create-your-account">Sign in or create your account</div>'
         '<div class="landing-section-sub">Your progress stays on this computer. No default password exists.</div>',
         unsafe_allow_html=True,
     )

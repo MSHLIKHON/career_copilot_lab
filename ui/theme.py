@@ -23,9 +23,14 @@ h1,h2,h3 {letter-spacing:-.035em}
 .intro {background:#182849;color:#fff;padding:28px 32px;border-radius:18px;margin-bottom:24px}
 .intro h2 {color:#fff;margin:0 0 8px}.intro p {margin:0;color:#d8e2fb}
 .eyebrow {font-size:12px;letter-spacing:.12em;color:#6684c6;font-weight:700}
+/* Hide Streamlit toolbar */
+[data-testid="stToolbar"],
+.stAppToolbar {display:none !important}
 /* Landing page */
 .landing-nav-brand {font-weight:800;font-size:17px;color:#17243D;letter-spacing:-.02em;padding-top:.55rem}
 .landing-nav-sub {font-size:12px;color:#5A6B8C;margin-top:-6px}
+.landing-nav-link {font-size:14px;font-weight:600;color:#3B64F4;text-decoration:none;padding:.55rem 0;display:inline-block}
+.landing-nav-link:hover {text-decoration:underline}
 .hero-eyebrow {font-size:12px;letter-spacing:.12em;color:#3B64F4;font-weight:700;margin:18px 0 10px}
 .hero-title {font-size:clamp(30px,4.5vw,46px);line-height:1.08;letter-spacing:-.04em;color:#17243D;margin:0 0 12px;font-weight:800}
 .hero-sub {font-size:16px;line-height:1.6;color:#3E4F6E;max-width:640px;margin:0 0 20px}
@@ -34,7 +39,6 @@ h1,h2,h3 {letter-spacing:-.035em}
 .feature-card p {margin:0;font-size:13.5px;line-height:1.55;color:#3E4F6E}
 .landing-section-title {font-size:20px;font-weight:750;color:#17243D;letter-spacing:-.02em;margin:6px 0 4px}
 .landing-section-sub {font-size:14px;color:#5A6B8C;margin:0 0 14px}
-.prototype-note {font-size:12.5px;color:#5A6B8C}
 .auth-panel {background:#FFFFFF;border:1px solid #E5EAF4;border-radius:16px;padding:8px 20px 16px}
 </style>""",
         unsafe_allow_html=True,

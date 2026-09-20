@@ -31,10 +31,6 @@ def render_auth_forms() -> None:
         st.write("**20 tasks** across Conditions, Loops, Functions and Lists.")
         st.write("**Your own progress** saved locally, with assisted and independent attempts separated.")
         st.write("**A trained pilot model** suggests mistake categories. Predictions can be wrong.")
-        st.info(
-            "Local classroom prototype. No GPT/Gemini key required. "
-            "Create your own account; there is no default password."
-        )
     with right:
         st.markdown('<div class="auth-panel">', unsafe_allow_html=True)
         login_tab, register_tab = st.tabs(["Sign in", "Create account"])
