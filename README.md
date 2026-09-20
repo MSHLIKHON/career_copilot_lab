@@ -2,11 +2,11 @@
 
 Team NO AI · AI Skill Verification & Adaptive Practice · Local classroom prototype
 
-Start with **START_HERE_BANGLA.md** for a Windows beginner guide.
+Start with **START_HERE_BANGLA.md** for a Windows beginner's guide.
 
 ## Quick start
 
-Windows: install Python 3.12, extract the archive, double-click `START_WINDOWS.bat`.
+Windows: install Python 3.12, extract the archive, and double-click `START_WINDOWS.bat`.
 
 macOS/Linux (Python 3.11-3.13):
 
@@ -74,7 +74,7 @@ python -m unittest discover -s tests -v
 Training is CPU-only and downloads no external model. The default experiment has
 24 authored mutation families with 10 variable-renamed examples per family.
 Families stay together: 16 train (160 rows), 4 validation (40), 4 test (40).
-The vectorizer is fit on train only. Deployed Logistic Regression is fixed before
+The vectorizer is fit on the train only. Deployed Logistic Regression is fixed before
 evaluation; SVM results are a comparison, not a basis to tune on the test set.
 
 Synthetic family separation does not eliminate all semantic similarity. Some
@@ -104,8 +104,8 @@ read or modify all local data.
 
 - MD Shyed Hasan Likhon — 0112330688
 - Rahat — 112330518
-- Name to be added — 112330546
-- Name to be added — 112330621
+- Naimur — 112330546
+- Srijon — 112330621
 - Name to be added — 112330396
 
 ## Technical references
@@ -115,4 +115,4 @@ read or modify all local data.
 - [Python AST reference](https://docs.python.org/3/library/ast.html)
 
 Use assistance according to your course rules. Review labels and understand the
-implementation before presenting results as your team's project.
+Implementation before presenting results as your team's project.
