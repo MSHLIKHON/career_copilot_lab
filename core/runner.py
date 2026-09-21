@@ -1,8 +1,4 @@
-"""A budgeted interpreter for a small Python AST subset. No eval/exec.
 
-Only built-in scalar/list/tuple values can exist. This is a teaching language,
-not a complete Python runtime or an audited public multi-tenant sandbox.
-"""
 import ast
 import copy
 import math
