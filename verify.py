@@ -1,4 +1,4 @@
-"""Run tests and save the genuine output for the delivery report."""
+
 import subprocess
 import sys
 from pathlib import Path
