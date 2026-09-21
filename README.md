@@ -106,7 +106,7 @@ read or modify all local data.
 - Rahat — 112330518
 - Naimur — 112330546
 - Srijon — 112330621
-- Name to be added — 112330396
+- Abir korashi — 112330396
 
 ## Technical references
 
