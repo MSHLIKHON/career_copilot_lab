@@ -1,5 +1,3 @@
-"""Twenty original teaching tasks. All solutions use the supported subset."""
-
 
 def task(key, title, topic, level, args, prompt, solution, examples, hints):
     signature = f"def solve({args}):"
