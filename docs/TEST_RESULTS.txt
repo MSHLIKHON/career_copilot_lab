@@ -1,0 +1,67 @@
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-14 14:49:41.819 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
+test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
+test_claim_boundaries (test_core.AdaptiveTests.test_claim_boundaries) ... ok
+test_claims (test_core.AdaptiveTests.test_claims) ... ok
+test_failed_task_goes_easier (test_core.AdaptiveTests.test_failed_task_goes_easier) ... ok
+test_goal_gap (test_core.AdaptiveTests.test_goal_gap) ... ok
+test_initial_recommendation (test_core.AdaptiveTests.test_initial_recommendation) ... ok
+test_passed_task_not_recommended_again (test_core.AdaptiveTests.test_passed_task_not_recommended_again) ... ok
+test_solution_seen_not_independent (test_core.AdaptiveTests.test_solution_seen_not_independent) ... ok
+test_dataset_families_do_not_leak (test_core.ModelTests.test_dataset_families_do_not_leak) ... ok
+test_pass_does_not_need_model (test_core.ModelTests.test_pass_does_not_need_model) ... ok
+test_saved_model_predicts (test_core.ModelTests.test_saved_model_predicts) ... ok
+test_attribute_blocked (test_core.RunnerTests.test_attribute_blocked) ... ok
+test_bool_is_not_string (test_core.RunnerTests.test_bool_is_not_string) ... ok
+test_break_continue (test_core.RunnerTests.test_break_continue) ... ok
+test_eval_blocked (test_core.RunnerTests.test_eval_blocked) ... ok
+test_file_access_blocked (test_core.RunnerTests.test_file_access_blocked) ... ok
+test_function_arguments (test_core.RunnerTests.test_function_arguments) ... ok
+test_helper_function (test_core.RunnerTests.test_helper_function) ... ok
+test_import_blocked (test_core.RunnerTests.test_import_blocked) ... ok
+test_infinite_loop (test_core.RunnerTests.test_infinite_loop) ... ok
+test_large_allocation (test_core.RunnerTests.test_large_allocation) ... ok
+test_large_range (test_core.RunnerTests.test_large_range) ... ok
+test_list_input_is_copied (test_core.RunnerTests.test_list_input_is_copied) ... ok
+test_missing_function (test_core.RunnerTests.test_missing_function) ... ok
+test_nested_allocation_budget (test_core.RunnerTests.test_nested_allocation_budget) ... ok
+test_off_by_one (test_core.RunnerTests.test_off_by_one) ... ok
+test_power_not_supported (test_core.RunnerTests.test_power_not_supported) ... ok
+test_recursive_limit (test_core.RunnerTests.test_recursive_limit) ... ok
+test_syntax_error (test_core.RunnerTests.test_syntax_error) ... ok
+test_attempt_isolation_and_feedback (test_core.StorageTests.test_attempt_isolation_and_feedback) ... ok
+test_duplicate_user (test_core.StorageTests.test_duplicate_user) ... ok
+test_hint_cannot_be_reset (test_core.StorageTests.test_hint_cannot_be_reset) ... ok
+test_invalid_user (test_core.StorageTests.test_invalid_user) ... ok
+test_login_lockout (test_core.StorageTests.test_login_lockout) ... ok
+test_password_not_plaintext (test_core.StorageTests.test_password_not_plaintext) ... ok
+test_profile_persistence (test_core.StorageTests.test_profile_persistence) ... ok
+test_register_login (test_core.StorageTests.test_register_login) ... ok
+test_weak_password (test_core.StorageTests.test_weak_password) ... ok
+test_reference_A1 (test_core.TaskTests.test_reference_A1) ... ok
+test_reference_A2 (test_core.TaskTests.test_reference_A2) ... ok
+test_reference_A3 (test_core.TaskTests.test_reference_A3) ... ok
+test_reference_A4 (test_core.TaskTests.test_reference_A4) ... ok
+test_reference_A5 (test_core.TaskTests.test_reference_A5) ... ok
+test_reference_C1 (test_core.TaskTests.test_reference_C1) ... ok
+test_reference_C2 (test_core.TaskTests.test_reference_C2) ... ok
+test_reference_C3 (test_core.TaskTests.test_reference_C3) ... ok
+test_reference_C4 (test_core.TaskTests.test_reference_C4) ... ok
+test_reference_C5 (test_core.TaskTests.test_reference_C5) ... ok
+test_reference_F1 (test_core.TaskTests.test_reference_F1) ... ok
+test_reference_F2 (test_core.TaskTests.test_reference_F2) ... ok
+test_reference_F3 (test_core.TaskTests.test_reference_F3) ... ok
+test_reference_F4 (test_core.TaskTests.test_reference_F4) ... ok
+test_reference_F5 (test_core.TaskTests.test_reference_F5) ... ok
+test_reference_L1 (test_core.TaskTests.test_reference_L1) ... ok
+test_reference_L2 (test_core.TaskTests.test_reference_L2) ... ok
+test_reference_L3 (test_core.TaskTests.test_reference_L3) ... ok
+test_reference_L4 (test_core.TaskTests.test_reference_L4) ... ok
+test_reference_L5 (test_core.TaskTests.test_reference_L5) ... ok
+test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
+
+----------------------------------------------------------------------
+Ran 61 tests in 4.791s
+
+OK
