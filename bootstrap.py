@@ -1,4 +1,3 @@
-"""Check local dependencies and train a compatible model before launching."""
 import importlib.metadata
 import json
 import subprocess
