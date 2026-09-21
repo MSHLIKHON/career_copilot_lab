@@ -1,8 +1,4 @@
-"""Reproducible generated pilot dataset and honest family-held-out evaluation.
 
-No external API, student data, or model download is used. Labels are authored
-mutation labels and need independent human review before academic claims.
-"""
 import ast
 import json
 from pathlib import Path
@@ -20,8 +16,6 @@ from core.runner import run_tests
 
 ROOT = Path(__file__).resolve().parent
 
-# label, correct code, exact replacement, test arguments, expected result.
-# Families, rather than renamed samples, are held out as a unit.
 FAMILIES = [
  ("wrong_condition", "def solve(n):\n    return n > 0", ("n > 0", "n < 0"), [4], True),
  ("wrong_condition", "def solve(n):\n    return n % 2 == 0", ("==", "!="), [2], True),
