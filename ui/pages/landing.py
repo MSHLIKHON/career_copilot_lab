@@ -1,17 +1,3 @@
-"""Public landing page (unauthenticated view).
-
-Structure (Task 2 hooks):
-- Top navigation: Login -> auth view, Sign Up -> auth view, Help -> help view.
-  Navigation writes `st.session_state["landing_view"]` so Task 2 can wire it
-  to redesigned auth/help views without touching `app.py` routing.
-- Hero + feature section + prototype notice (minimal, solid colors only).
-- Existing sign-in / create-account forms rendered unchanged via
-  `ui.auth.render_auth_forms` (Task 2 will redesign them).
-
-Valid `landing_view` values: "landing", "auth-login", "auth-signup",
-"how-it-works", "help".
-"""
-
 import streamlit as st
 
 from ui.auth import render_auth_forms
