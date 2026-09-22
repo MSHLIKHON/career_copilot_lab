@@ -81,6 +81,7 @@ def render_practice(user: dict, history: list, profile: dict, go_to_task_cb) -> 
     editor_key = f"editor_{task_id}"
     if editor_key not in st.session_state:
         st.session_state[editor_key] = task["starter"]
+    current_attempts = [a for a in history if a["task_id"] == task_id]
     left, right = st.columns([2.1, 1], gap="large")
     with left:
         if task_id == "L1" and st.button(
@@ -108,12 +109,23 @@ def render_practice(user: dict, history: list, profile: dict, go_to_task_cb) -> 
             help_used = storage.assistance(uid, task_id, hints=help_used["hints"] + 1)
         for index, hint in enumerate(task["hints"][: help_used["hints"]], 1):
             st.info(f"Hint {index}: {hint}")
-        if st.button("Reveal reference solution", width="stretch"):
-            help_used = storage.assistance(uid, task_id, solution=True)
+        has_attempted = bool(current_attempts)
+        can_reveal = has_attempted or bool(help_used["solution_seen"])
+        if not can_reveal:
+            st.caption("🔒 Run tests at least once to unlock the reference solution.")
+        if st.button(
+            "Reveal reference solution",
+            width="stretch",
+            disabled=not can_reveal,
+            help="Run tests on your code at least once to unlock the reference solution." if not can_reveal else None,
+        ):
+            if can_reveal:
+                help_used = storage.assistance(uid, task_id, solution=True)
+            else:
+                st.warning("You must run tests at least once before revealing the solution.")
         if help_used["solution_seen"]:
             st.code(task["solution"], language="python")
             st.caption("Copy it to practise, but use a new task for independent evidence.")
-    current_attempts = [a for a in history if a["task_id"] == task_id]
     if current_attempts:
         st.divider()
         st.subheader("Latest saved attempt for this task")
