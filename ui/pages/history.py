@@ -25,7 +25,6 @@ def render_history(user: dict, history: list) -> None:
                 "Passed tests": f"{a['result']['passed']}/{a['result']['total']}",
                 "Status": a["result"]["status"],
                 "Hint count": a["hints"],
-                "Solution viewed": bool(a["solution_seen"]),
             }
             for a in reversed(history)
         ]

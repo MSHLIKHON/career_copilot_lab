@@ -11,7 +11,6 @@ from ui.pages import (
     render_skills_cv,
     render_roadmap,
     render_history,
-    render_model_lab,
 )
 
 PAGES = [
@@ -20,7 +19,6 @@ PAGES = [
     "My skills & CV",
     "Learning roadmap",
     "History",
-    "Model lab",
 ]
 
 st.set_page_config(
@@ -107,5 +105,3 @@ elif page == "Learning roadmap":
     render_roadmap(user, history, profile, go_to_task)
 elif page == "History":
     render_history(user, history)
-elif page == "Model lab":
-    render_model_lab()

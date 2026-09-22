@@ -53,7 +53,7 @@ class AppTests(unittest.TestCase):
         self.assertEqual(history[-1]['result']['status'], 'passed')
         self.assertEqual(history[-1]['hints'], 1)
         self.assertEqual(history[-1]['solution_seen'], 1)
-        for page in ['Overview', 'My skills & CV', 'Learning roadmap', 'History', 'Model lab', 'Runner help']:
+        for page in ['Overview', 'My skills & CV', 'Learning roadmap', 'History', 'Runner help']:
             self.app.sidebar.radio[0].set_value(page).run()
             self.assertFalse(self.app.exception, page)
         self.app.sidebar.radio[0].set_value('My skills & CV').run()

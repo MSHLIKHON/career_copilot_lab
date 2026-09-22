@@ -68,4 +68,7 @@ def render_skills_cv(user: dict, history: list, profile: dict) -> None:
         st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
     else:
         st.info("Add at least one skill claim to see its assessment status.")
-    st.dataframe(pd.DataFrame(summarize(history)), hide_index=True, width="stretch")
+    summary_df = pd.DataFrame(summarize(history))
+    if "Highest evidenced level" in summary_df.columns:
+        summary_df = summary_df.drop(columns=["Highest evidenced level"])
+    st.dataframe(summary_df, hide_index=True, width="stretch")
