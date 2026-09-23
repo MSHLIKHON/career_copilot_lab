@@ -23,15 +23,7 @@ class AppTests(unittest.TestCase):
 
     def test_full_student_journey(self):
         self.assertFalse(self.app.exception)
-        # Exercise registration and sign-in through the actual widgets.
-        fields = {x.label: x for x in self.app.text_input}
-        fields['Your name'].set_value('Demo Learner')
-        fields['Choose username'].set_value('demostudent')
-        fields['Choose password'].set_value('demoPassword123')
-        fields['Confirm password'].set_value('demoPassword123')
-        self.app.checkbox[0].check()
-        self.button('Create account').click().run()
-        self.assertFalse(self.app.exception)
+        storage.register('demostudent', 'Demo Learner', 'demoPassword123')
         fields = {x.label: x for x in self.app.text_input}
         fields['Username'].set_value('demostudent')
         fields['Password'].set_value('demoPassword123')
@@ -63,6 +55,31 @@ class AppTests(unittest.TestCase):
         self.assertEqual(storage.profile(self.app.session_state.user['id'])['claims'], ['Python', 'SQL', 'React'])
         self.button('Sign out').click().run()
         self.assertFalse(self.app.exception)
+        self.assertEqual(self.app.title[0].value, 'Career Copilot Lab')
+
+    def test_create_account_starts_signed_in(self):
+        fields = {x.label: x for x in self.app.text_input}
+        fields['Your name'].set_value('Demo Learner')
+        fields['Choose username'].set_value('demostudent')
+        fields['Choose password'].set_value('demoPassword123')
+        fields['Confirm password'].set_value('demoPassword123')
+        self.app.checkbox[0].check()
+        self.button('Create account and start').click().run()
+        self.assertFalse(self.app.exception)
+        self.assertIn('Welcome', self.app.title[0].value)
+        self.assertEqual(self.app.session_state.user['username'], 'demostudent')
+
+    def test_create_account_explains_taken_username(self):
+        storage.register('demostudent', 'Existing Learner', 'demoPassword123')
+        fields = {x.label: x for x in self.app.text_input}
+        fields['Your name'].set_value('New Learner')
+        fields['Choose username'].set_value('demostudent')
+        fields['Choose password'].set_value('demoPassword123')
+        fields['Confirm password'].set_value('demoPassword123')
+        self.app.checkbox[0].check()
+        self.button('Create account and start').click().run()
+        self.assertFalse(self.app.exception)
+        self.assertTrue(any('already taken' in error.value for error in self.app.error))
         self.assertEqual(self.app.title[0].value, 'Career Copilot Lab')
 
 

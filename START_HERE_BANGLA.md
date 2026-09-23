@@ -11,8 +11,8 @@
 5. **START_WINDOWS.bat** double-click করো। প্রথমবার internet লাগবে; প্রয়োজনীয় packages install হবে।
 6. Black terminal window খোলা রাখো। প্রথম setup শেষ হতে কয়েক মিনিট লাগতে পারে।
 7. Browser না খুললে address bar-এ `http://localhost:8501` লিখে Enter দাও।
-8. **Create account** tab খোলো। Name, username, অন্তত ৮ অক্ষরের password এবং confirm password দাও। Storage consent tick করে account তৈরি করো।
-9. **Sign in** tab-এ গিয়ে নতুন username/password দিয়ে ঢোকো।
+8. **Create account** tab খোলো। Name, username, অন্তত ৮ অক্ষরের password এবং confirm password দাও। Storage consent tick করে **Create account and start** চাপো। Account তৈরি হলে সরাসরি নিজের workspace-এ যাবে।
+9. পরে app খুললে **Sign in** tab-এ username/password দিয়ে ঢোকো।
 10. বাম পাশের **Practice** থেকে task নির্বাচন করো। Code লিখে **Run tests & save attempt** চাপো।
 
 Python-এ শুধু ছোট হাতের `solve` নামের function লিখবে। `input()` বা `print()` নয়, **return** ব্যবহার করবে।

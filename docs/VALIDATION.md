@@ -10,7 +10,7 @@ source-family separation, password hashing, account isolation, lockout and new-u
 recovery, persistence validation, stored assistance, adaptive rules, and the actual
 Streamlit registration/login/task/hints/profile/history workflow.
 
-The final test run passed 67 tests. All 20 reference solutions passed all 88
+The final test run passed 69 tests. All 20 reference solutions passed all 88
 task-specific cases. The local Streamlit server started on a test port and its
 health endpoint returned `ok`. Python compile checks and shell syntax validation
 also passed. AppTest verifies widgets and flows, not pixel-perfect browser layout.

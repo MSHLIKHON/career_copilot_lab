@@ -24,7 +24,8 @@ python bootstrap.py
 python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
-Open `http://localhost:8501`. Create an account; there are no hard-coded credentials.
+Open `http://localhost:8501`. Create an account to enter your workspace immediately;
+use Sign in on later visits. There are no hard-coded credentials.
 First installation requires internet. Once installed, app and model run offline.
 
 ## Delivered features
