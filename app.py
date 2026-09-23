@@ -15,19 +15,22 @@ from core.adaptive import SKILLS, GOALS, extract_claims, summarize, recommend, r
 
 st.set_page_config(page_title="Career Copilot Lab", page_icon="🎓", layout="wide")
 st.markdown('''<style>
-.block-container {max-width:1160px;padding-top:2rem;padding-bottom:3rem}
+.block-container {max-width:1160px;padding-top:4.5rem;padding-bottom:3rem}
 h1,h2,h3 {letter-spacing:-.035em}
 [data-testid="stSidebar"] {border-right:1px solid #E5EAF4}
 [data-testid="stMetric"] {background:white;border:1px solid #E5EAF4;border-radius:14px;padding:18px}
 .intro {background:#182849;color:#fff;padding:28px 32px;border-radius:18px;margin-bottom:24px}
 .intro h2 {color:#fff;margin:0 0 8px}.intro p {margin:0;color:#d8e2fb}
-.eyebrow {font-size:12px;letter-spacing:.12em;color:#6684c6;font-weight:700}
+.eyebrow {display:inline-flex;align-items:center;margin-bottom:10px;padding:6px 11px;
+border:1px solid #C8D6F4;border-radius:999px;background:#EAF0FC;color:#274D9B;
+font-size:12px;line-height:1.2;letter-spacing:.09em;font-weight:750}
+@media (max-width:640px) {.block-container {padding-top:4rem}.eyebrow {font-size:11px}}
 </style>''', unsafe_allow_html=True)
 storage.init_db()
 
 
 def authenticate():
-    st.markdown('<div class="eyebrow">TEAM NO AI · AI LAB PROTOTYPE</div>', unsafe_allow_html=True)
+    st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
     st.write("Show what you can do. Learn from each attempt.")
     left, right = st.columns([1.05, 1], gap="large")
