@@ -10,7 +10,7 @@ from pypdf import PdfReader
 from core import storage
 from core.tasks import TASKS, TASK_BY_ID, TOPICS
 from core.runner import run_tests
-from core.model import load_model, predict, MODEL_DIR
+from core.model import load_metrics, load_model, predict, MODEL_DIR
 from core.adaptive import SKILLS, GOALS, extract_claims, summarize, recommend, roadmap
 
 st.set_page_config(page_title="Career Copilot Lab", page_icon="🎓", layout="wide")
@@ -189,7 +189,7 @@ elif page == "Practice":
             with st.spinner("Checking code and test evidence..."):
                 result = run_tests(code, task)
                 model, model_error = load_model()
-                prediction = predict(code, result, model)
+                prediction = predict(code, result, model, model_error)
                 storage.save_attempt(uid, task_id, code, result, prediction)
             st.rerun()
     with right:
@@ -303,10 +303,10 @@ elif page == "Model lab":
     st.caption("TRAINING AND EVALUATION")
     st.title("Our trained mistake classifier")
     path = MODEL_DIR / "metrics.json"
-    if not path.exists():
-        st.warning("No trained model found. Run python train.py in the project folder.")
+    metrics, metrics_error = load_metrics()
+    if metrics_error:
+        st.warning(metrics_error)
     else:
-        metrics = json.loads(path.read_text(encoding="utf-8"))
         st.warning(metrics["warning"])
         st.write("**Approach:** Character TF-IDF + Logistic Regression. Linear SVM is a comparison baseline.")
         st.write("**Training input:** Submitted code and runtime error types. **Output:** One of four likely logic-mistake categories.")
