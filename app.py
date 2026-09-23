@@ -10,24 +10,27 @@ from pypdf import PdfReader
 from core import storage
 from core.tasks import TASKS, TASK_BY_ID, TOPICS
 from core.runner import run_tests
-from core.model import load_model, predict, MODEL_DIR
+from core.model import load_metrics, load_model, predict, MODEL_DIR
 from core.adaptive import SKILLS, GOALS, extract_claims, summarize, recommend, roadmap
 
 st.set_page_config(page_title="Career Copilot Lab", page_icon="🎓", layout="wide")
 st.markdown('''<style>
-.block-container {max-width:1160px;padding-top:2rem;padding-bottom:3rem}
+.block-container {max-width:1160px;padding-top:4.5rem;padding-bottom:3rem}
 h1,h2,h3 {letter-spacing:-.035em}
 [data-testid="stSidebar"] {border-right:1px solid #E5EAF4}
 [data-testid="stMetric"] {background:white;border:1px solid #E5EAF4;border-radius:14px;padding:18px}
 .intro {background:#182849;color:#fff;padding:28px 32px;border-radius:18px;margin-bottom:24px}
 .intro h2 {color:#fff;margin:0 0 8px}.intro p {margin:0;color:#d8e2fb}
-.eyebrow {font-size:12px;letter-spacing:.12em;color:#6684c6;font-weight:700}
+.eyebrow {display:inline-flex;align-items:center;margin-bottom:10px;padding:6px 11px;
+border:1px solid #C8D6F4;border-radius:999px;background:#EAF0FC;color:#274D9B;
+font-size:12px;line-height:1.2;letter-spacing:.09em;font-weight:750}
+@media (max-width:640px) {.block-container {padding-top:4rem}.eyebrow {font-size:11px}}
 </style>''', unsafe_allow_html=True)
 storage.init_db()
 
 
 def authenticate():
-    st.markdown('<div class="eyebrow">TEAM NO AI · AI LAB PROTOTYPE</div>', unsafe_allow_html=True)
+    st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
     st.write("Show what you can do. Learn from each attempt.")
     left, right = st.columns([1.05, 1], gap="large")
@@ -189,7 +192,7 @@ elif page == "Practice":
             with st.spinner("Checking code and test evidence..."):
                 result = run_tests(code, task)
                 model, model_error = load_model()
-                prediction = predict(code, result, model)
+                prediction = predict(code, result, model, model_error)
                 storage.save_attempt(uid, task_id, code, result, prediction)
             st.rerun()
     with right:
@@ -303,10 +306,10 @@ elif page == "Model lab":
     st.caption("TRAINING AND EVALUATION")
     st.title("Our trained mistake classifier")
     path = MODEL_DIR / "metrics.json"
-    if not path.exists():
-        st.warning("No trained model found. Run python train.py in the project folder.")
+    metrics, metrics_error = load_metrics()
+    if metrics_error:
+        st.warning(metrics_error)
     else:
-        metrics = json.loads(path.read_text(encoding="utf-8"))
         st.warning(metrics["warning"])
         st.write("**Approach:** Character TF-IDF + Logistic Regression. Linear SVM is a comparison baseline.")
         st.write("**Training input:** Submitted code and runtime error types. **Output:** One of four likely logic-mistake categories.")

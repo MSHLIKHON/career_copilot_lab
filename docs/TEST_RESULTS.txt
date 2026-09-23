@@ -1,4 +1,4 @@
-test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-14 14:49:41.819 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-23 21:10:09.541 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
 test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
@@ -9,8 +9,10 @@ test_goal_gap (test_core.AdaptiveTests.test_goal_gap) ... ok
 test_initial_recommendation (test_core.AdaptiveTests.test_initial_recommendation) ... ok
 test_passed_task_not_recommended_again (test_core.AdaptiveTests.test_passed_task_not_recommended_again) ... ok
 test_solution_seen_not_independent (test_core.AdaptiveTests.test_solution_seen_not_independent) ... ok
+test_corrupt_model_files_are_reported_not_raised (test_core.ModelTests.test_corrupt_model_files_are_reported_not_raised) ... ok
 test_dataset_families_do_not_leak (test_core.ModelTests.test_dataset_families_do_not_leak) ... ok
 test_pass_does_not_need_model (test_core.ModelTests.test_pass_does_not_need_model) ... ok
+test_prediction_explains_model_setup_error (test_core.ModelTests.test_prediction_explains_model_setup_error) ... ok
 test_saved_model_predicts (test_core.ModelTests.test_saved_model_predicts) ... ok
 test_attribute_blocked (test_core.RunnerTests.test_attribute_blocked) ... ok
 test_bool_is_not_string (test_core.RunnerTests.test_bool_is_not_string) ... ok
@@ -31,13 +33,16 @@ test_power_not_supported (test_core.RunnerTests.test_power_not_supported) ... ok
 test_recursive_limit (test_core.RunnerTests.test_recursive_limit) ... ok
 test_syntax_error (test_core.RunnerTests.test_syntax_error) ... ok
 test_attempt_isolation_and_feedback (test_core.StorageTests.test_attempt_isolation_and_feedback) ... ok
+test_corrupt_profile_data_falls_back_safely (test_core.StorageTests.test_corrupt_profile_data_falls_back_safely) ... ok
 test_duplicate_user (test_core.StorageTests.test_duplicate_user) ... ok
 test_hint_cannot_be_reset (test_core.StorageTests.test_hint_cannot_be_reset) ... ok
 test_invalid_user (test_core.StorageTests.test_invalid_user) ... ok
 test_login_lockout (test_core.StorageTests.test_login_lockout) ... ok
 test_password_not_plaintext (test_core.StorageTests.test_password_not_plaintext) ... ok
 test_profile_persistence (test_core.StorageTests.test_profile_persistence) ... ok
+test_register_clears_preexisting_lockout (test_core.StorageTests.test_register_clears_preexisting_lockout) ... ok
 test_register_login (test_core.StorageTests.test_register_login) ... ok
+test_rejects_invalid_persistent_data (test_core.StorageTests.test_rejects_invalid_persistent_data) ... ok
 test_weak_password (test_core.StorageTests.test_weak_password) ... ok
 test_reference_A1 (test_core.TaskTests.test_reference_A1) ... ok
 test_reference_A2 (test_core.TaskTests.test_reference_A2) ... ok
@@ -59,9 +64,10 @@ test_reference_L2 (test_core.TaskTests.test_reference_L2) ... ok
 test_reference_L3 (test_core.TaskTests.test_reference_L3) ... ok
 test_reference_L4 (test_core.TaskTests.test_reference_L4) ... ok
 test_reference_L5 (test_core.TaskTests.test_reference_L5) ... ok
+test_local_config_avoids_first_run_prompt (test_server.ServerTests.test_local_config_avoids_first_run_prompt) ... ok
 test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
 
 ----------------------------------------------------------------------
-Ran 61 tests in 4.791s
+Ran 67 tests in 3.684s
 
 OK

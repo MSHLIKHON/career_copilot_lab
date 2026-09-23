@@ -1,5 +1,4 @@
 import importlib.metadata
-import json
 import subprocess
 import sys
 from pathlib import Path
@@ -23,15 +22,11 @@ def main():
     if install:
         print("Installing project packages. Internet is needed for this first setup.", flush=True)
         subprocess.run([sys.executable, "-m", "pip", "install", "-r", str(ROOT / "requirements.txt")], check=True)
-    import sklearn
-    metrics = ROOT / "models" / "metrics.json"
-    retrain = not (ROOT / "models" / "classifier.joblib").exists()
-    try:
-        retrain = retrain or json.loads(metrics.read_text())["sklearn_version"] != sklearn.__version__
-    except (OSError, ValueError, KeyError):
-        retrain = True
+    from core.model import load_model
+    model, model_error = load_model()
+    retrain = model is None
     if retrain:
-        print("Training the local pilot classifier...", flush=True)
+        print(f"Training the local pilot classifier... ({model_error})", flush=True)
         subprocess.run([sys.executable, str(ROOT / "train.py")], cwd=ROOT, check=True)
     print("Ready. Open http://localhost:8501 after the server starts.", flush=True)
 

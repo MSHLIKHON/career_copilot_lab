@@ -2,12 +2,21 @@ import socket
 import subprocess
 import sys
 import time
+import tomllib
 import unittest
 import urllib.request
 from pathlib import Path
 
 
 class ServerTests(unittest.TestCase):
+    def test_local_config_avoids_first_run_prompt(self):
+        root = Path(__file__).resolve().parents[1]
+        with (root / '.streamlit' / 'config.toml').open('rb') as config_file:
+            config = tomllib.load(config_file)
+        self.assertTrue(config['server']['headless'])
+        self.assertEqual(config['server']['address'], '127.0.0.1')
+        self.assertFalse(config['browser']['gatherUsageStats'])
+
     def test_local_server_health(self):
         root = Path(__file__).resolve().parents[1]
         with socket.socket() as sock:

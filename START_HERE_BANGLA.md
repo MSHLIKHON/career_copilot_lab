@@ -39,12 +39,12 @@ Python-এ শুধু ছোট হাতের `solve` নামের functi
 Project folder-এর address bar-এ `cmd` লিখে Enter দাও। একেকটি command একেকবার চালাও:
 
 ```bat
-py -3 -m venv .venv
+py -3.12 -m venv .venv
 .venv\Scripts\python.exe bootstrap.py
 .venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
-`py` পাওয়া না গেলে প্রথম command-এ `py -3`-এর বদলে `python` ব্যবহার করো।
+`py` পাওয়া না গেলে প্রথম command-এ `py -3.12`-এর বদলে `python` ব্যবহার করো।
 
 ## সাধারণ সমস্যা
 
