@@ -24,6 +24,8 @@ h1,h2,h3 {letter-spacing:-.035em}
 .eyebrow {display:inline-flex;align-items:center;margin-bottom:10px;padding:6px 11px;
 border:1px solid #C8D6F4;border-radius:999px;background:#EAF0FC;color:#274D9B;
 font-size:12px;line-height:1.2;letter-spacing:.09em;font-weight:750}
+.auth-heading {font-size:20px;font-weight:750;color:#17243D;line-height:1.25;margin:12px 0 4px}
+.auth-subheading {font-size:14px;color:#52627E;line-height:1.5;margin:0 0 18px}
 @media (max-width:640px) {.block-container {padding-top:4rem}.eyebrow {font-size:11px}}
 </style>''', unsafe_allow_html=True)
 storage.init_db()
@@ -33,16 +35,19 @@ def authenticate():
     st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
     st.write("Show what you can do. Learn from each attempt.")
-    left, right = st.columns([1.05, 1], gap="large")
-    with left:
-        st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Small Python challenges, real test evidence and hints that help you move forward.</p></div>', unsafe_allow_html=True)
-        st.write("**20 tasks** across Conditions, Loops, Functions and Lists.")
-        st.write("**Your own progress** saved locally, with assisted and independent attempts separated.")
-        st.write("**A trained pilot model** suggests mistake categories. Predictions can be wrong.")
-        st.info("Local classroom prototype. No GPT/Gemini key required. Create your own account; there is no default password.")
-    with right:
-        login_tab, register_tab = st.tabs(["Sign in", "Create account"])
-        with login_tab:
+    login_tab, register_tab = st.tabs(["Sign in", "Create account"])
+    with login_tab:
+        left, right = st.columns([1.05, 1], gap="large")
+        with left:
+            st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Small Python challenges, real test evidence and hints that help you move forward.</p></div>', unsafe_allow_html=True)
+            st.write("**20 tasks** across Conditions, Loops, Functions and Lists.")
+            st.write("**Your own progress** saved locally, with assisted and independent attempts separated.")
+            st.write("**A trained pilot model** suggests mistake categories. Predictions can be wrong.")
+            st.info("Local classroom prototype. No GPT/Gemini key required. Create your own account; there is no default password.")
+        with right:
+            st.markdown('<div class="auth-heading">Welcome back</div>'
+                        '<p class="auth-subheading">Sign in to continue your practice.</p>',
+                        unsafe_allow_html=True)
             with st.form("login"):
                 username = st.text_input("Username", max_chars=24)
                 password = st.text_input("Password", type="password", max_chars=128)
@@ -58,25 +63,39 @@ def authenticate():
                     st.error("Username or password is incorrect.")
                 except ValueError as error:
                     st.error(str(error))
-        with register_tab:
-            with st.form("register"):
-                name = st.text_input("Your name", max_chars=80)
-                username = st.text_input("Choose username", help="3-24 letters, digits or underscores", max_chars=24)
-                password = st.text_input("Choose password", type="password", max_chars=128)
-                confirm = st.text_input("Confirm password", type="password", max_chars=128)
-                consent = st.checkbox("I understand my attempts and profile will be stored on this computer.")
-                submitted = st.form_submit_button("Create account", width="stretch")
-            if submitted:
-                if password != confirm:
-                    st.error("Passwords do not match.")
-                elif not consent:
-                    st.error("Please confirm local storage consent.")
-                else:
-                    try:
-                        storage.register(username, name, password)
-                        st.success("Account created. Open Sign in and use your new username and password.")
-                    except ValueError as error:
-                        st.error(str(error))
+    with register_tab:
+        st.markdown('<div class="auth-heading">Create account</div>'
+                    '<p class="auth-subheading">Your progress is saved on this computer.</p>',
+                    unsafe_allow_html=True)
+        with st.form("register"):
+            details, security = st.columns(2, gap="large")
+            with details:
+                name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
+                username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
+            with security:
+                password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
+                confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
+            consent = st.checkbox("Save my progress on this computer")
+            form_message = st.empty()
+            submitted = st.form_submit_button("Create account and start", type="primary", width="stretch")
+        if submitted:
+            if password != confirm:
+                form_message.error("Passwords do not match. Re-enter the same password in both fields.")
+            elif not consent:
+                form_message.error("Please allow local storage to save your practice and profile.")
+            else:
+                try:
+                    storage.register(username, name, password)
+                    user = storage.login(username, password)
+                    st.session_state.clear()
+                    st.session_state.user = user
+                    st.session_state.last_active = time.time()
+                    st.rerun()
+                except ValueError as error:
+                    if "already taken" in str(error):
+                        form_message.error("This username is already taken. Try adding a few numbers or choose another name.")
+                    else:
+                        form_message.error(str(error))
 
 
 if "user" not in st.session_state:
