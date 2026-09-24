@@ -6,6 +6,7 @@ from ui.pages.practice import render_practice, show_result
 from ui.pages.skills_cv import render_skills_cv
 from ui.pages.roadmap import render_roadmap
 from ui.pages.history import render_history
+from ui.pages.job_analyzer import render_job_analyzer
 
 __all__ = [
     "render_landing_page",
@@ -15,4 +16,5 @@ __all__ = [
     "render_skills_cv",
     "render_roadmap",
     "render_history",
+    "render_job_analyzer",
 ]

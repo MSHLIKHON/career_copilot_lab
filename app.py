@@ -11,6 +11,7 @@ from ui.pages import (
     render_skills_cv,
     render_roadmap,
     render_history,
+    render_job_analyzer,
 )
 
 PAGES = [
@@ -18,6 +19,7 @@ PAGES = [
     "Practice",
     "My skills & CV",
     "Learning roadmap",
+    "Job Match Analyzer",
     "History",
 ]
 
@@ -103,5 +105,7 @@ elif page == "My skills & CV":
     render_skills_cv(user, history, profile)
 elif page == "Learning roadmap":
     render_roadmap(user, history, profile, go_to_task)
+elif page == "Job Match Analyzer":
+    render_job_analyzer(user, history, profile)
 elif page == "History":
     render_history(user, history)
