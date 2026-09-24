@@ -83,8 +83,8 @@ def register(username, name, password):
 def login(username, password):
     if not isinstance(username, str) or not isinstance(password, str):
         return None
-    username = username.strip().lower()[:24]
-    if len(password) > 128:
+    username = username.strip().lower()
+    if not re.fullmatch(r"[a-z0-9_]{3,24}", username) or len(password) > 128:
         return None
     with connect() as db:
         limit = db.execute("SELECT * FROM login_limits WHERE username=?", (username,)).fetchone()
