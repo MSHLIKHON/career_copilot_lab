@@ -71,7 +71,13 @@ if "pending_task" in st.session_state:
     st.session_state.task_select = st.session_state.pop("pending_task")
 
 # Guard against a stale page value (e.g. a removed menu item)
-if st.session_state.get("page") not in PAGES:
+if "page" not in st.session_state:
+    url_page = st.query_params.get("page")
+    if url_page and url_page in PAGES:
+        st.session_state.page = url_page
+    else:
+        st.session_state.page = PAGES[0]
+elif st.session_state.page not in PAGES:
     st.session_state.page = PAGES[0]
 
 with st.sidebar:
@@ -79,6 +85,7 @@ with st.sidebar:
     st.caption("Python skill verification & adaptive practice")
     st.divider()
     page = st.radio("Workspace", PAGES, key="page")
+    st.query_params["page"] = page
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")

@@ -48,6 +48,10 @@ def init_db():
         CREATE TABLE IF NOT EXISTS sessions (
             token TEXT PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
             created REAL NOT NULL);
+        CREATE TABLE IF NOT EXISTS saved_jobs (
+            id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
+            title TEXT NOT NULL, job_text TEXT NOT NULL, score REAL NOT NULL,
+            missing_skills TEXT NOT NULL, roadmaps TEXT NOT NULL, created REAL NOT NULL);
         ''')
 
 
@@ -182,4 +186,20 @@ def delete_session(token):
         return
     with connect() as db:
         db.execute("DELETE FROM sessions WHERE token = ?", (token,))
+
+
+def save_job_analysis(user_id, title, job_text, score, missing_skills, roadmaps):
+    with connect() as db:
+        db.execute("INSERT INTO saved_jobs(user_id, title, job_text, score, missing_skills, roadmaps, created) VALUES(?,?,?,?,?,?,?)",
+                   (user_id, title, job_text, score, json.dumps(missing_skills), json.dumps(roadmaps), time.time()))
+
+
+def get_saved_jobs(user_id):
+    with connect() as db:
+        return [dict(r) for r in db.execute("SELECT * FROM saved_jobs WHERE user_id=? ORDER BY created DESC", (user_id,))]
+
+
+def delete_saved_job(user_id, job_id):
+    with connect() as db:
+        db.execute("DELETE FROM saved_jobs WHERE id=? AND user_id=?", (job_id, user_id))
 
