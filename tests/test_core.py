@@ -114,6 +114,11 @@ class StorageTests(unittest.TestCase):
         self.assertEqual(storage.login('LEARNER', 'testing123')['id'], self.uid)
         self.assertIsNone(storage.login('learner', 'wrong'))
 
+    def test_login_rejects_username_suffix_instead_of_truncating(self):
+        username = 'a' * 24
+        storage.register(username, 'Long Username', 'testing123')
+        self.assertIsNone(storage.login(username + 'extra', 'testing123'))
+
     def test_password_not_plaintext(self):
         with storage.connect() as db:
             row = db.execute('SELECT * FROM users').fetchone()
