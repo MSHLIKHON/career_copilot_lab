@@ -8,6 +8,7 @@ from core.tasks import TASKS, TASK_BY_ID
 from core.runner import run_tests, Interpreter, RunnerError
 from core.adaptive import extract_claims, summarize, recommend, roadmap
 from core.model import load_model, predict, LABELS
+import core.model as model_module
 
 
 class TaskTests(unittest.TestCase):
@@ -113,6 +114,11 @@ class StorageTests(unittest.TestCase):
         self.assertEqual(storage.login('LEARNER', 'testing123')['id'], self.uid)
         self.assertIsNone(storage.login('learner', 'wrong'))
 
+    def test_login_rejects_username_suffix_instead_of_truncating(self):
+        username = 'a' * 24
+        storage.register(username, 'Long Username', 'testing123')
+        self.assertIsNone(storage.login(username + 'extra', 'testing123'))
+
     def test_password_not_plaintext(self):
         with storage.connect() as db:
             row = db.execute('SELECT * FROM users').fetchone()
@@ -158,6 +164,28 @@ class StorageTests(unittest.TestCase):
             self.assertIsNone(storage.login('learner', 'wrong'))
         with self.assertRaises(ValueError):
             storage.login('learner', 'testing123')
+
+    def test_register_clears_preexisting_lockout(self):
+        for _ in range(5):
+            self.assertIsNone(storage.login('futureuser', 'wrong'))
+        uid = storage.register('futureuser', 'Future User', 'testing123')
+        self.assertEqual(storage.login('futureuser', 'testing123')['id'], uid)
+
+    def test_rejects_invalid_persistent_data(self):
+        with self.assertRaises(ValueError):
+            storage.save_profile(self.uid, ['Python', 'Python'], 'Python foundations')
+        with self.assertRaises(ValueError):
+            storage.assistance(self.uid, 'missing-task')
+        with self.assertRaises(ValueError):
+            storage.save_attempt(self.uid, 'L1', 'x' * 12001, {}, {})
+        with self.assertRaises(ValueError):
+            storage.save_profile(self.uid, ['Python'], 'Unknown goal')
+
+    def test_corrupt_profile_data_falls_back_safely(self):
+        with storage.connect() as db:
+            db.execute("UPDATE profiles SET claims=?, target=? WHERE user_id=?",
+                       ('{broken', 'Unknown goal', self.uid))
+        self.assertEqual(storage.profile(self.uid), {'claims': [], 'target': 'Python foundations'})
 
 
 class AdaptiveTests(unittest.TestCase):
@@ -219,6 +247,25 @@ class ModelTests(unittest.TestCase):
         self.assertFalse(split_sets['test'] & split_sets['validation'])
         for split in split_sets:
             self.assertEqual({r['label'] for r in rows if r['split'] == split}, set(LABELS))
+
+    def test_corrupt_model_files_are_reported_not_raised(self):
+        with tempfile.TemporaryDirectory() as directory:
+            old = model_module.MODEL_DIR
+            model_module.MODEL_DIR = Path(directory)
+            try:
+                (Path(directory) / 'metrics.json').write_text('{broken', encoding='utf-8')
+                model, error = model_module.load_model()
+                self.assertIsNone(model)
+                self.assertIn('metadata', error.lower())
+            finally:
+                model_module.MODEL_DIR = old
+
+    def test_prediction_explains_model_setup_error(self):
+        source = 'def solve(n):\n return 0'
+        result = run_tests(source, TASK_BY_ID['L1'])
+        prediction = predict(source, result, None, 'Model files need rebuilding.')
+        self.assertEqual(prediction['label'], 'model_unavailable')
+        self.assertIn('need rebuilding', prediction['message'])
 
 
 if __name__ == '__main__':
