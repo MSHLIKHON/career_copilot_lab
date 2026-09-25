@@ -107,6 +107,8 @@ class StorageTests(unittest.TestCase):
 
     def tearDown(self):
         storage.DB_PATH = self.old
+        import gc
+        gc.collect()
         self.temp.cleanup()
 
     def test_register_login(self):
