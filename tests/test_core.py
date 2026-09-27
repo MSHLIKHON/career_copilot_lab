@@ -6,7 +6,7 @@ from pathlib import Path
 from core import storage
 from core.tasks import TASKS, TASK_BY_ID
 from core.runner import run_tests, Interpreter, RunnerError
-from core.adaptive import extract_claims, summarize, recommend, roadmap
+from core.adaptive import extract_claims, practice_progress, summarize, recommend, roadmap
 from core.model import load_model, predict, LABELS
 import core.model as model_module
 
@@ -224,6 +224,23 @@ class AdaptiveTests(unittest.TestCase):
     def test_all_completed(self):
         t, reason = recommend([self.attempt(t['id']) for t in TASKS])
         self.assertIn('All 20', reason)
+
+    def test_practice_help_requires_distinct_failed_approaches(self):
+        task = TASK_BY_ID['L1']
+        attempts = [
+            {**self.attempt('L1', 'failed'), 'code': 'attempt one', 'result': {'status': 'failed', 'passed': 1}},
+            {**self.attempt('L1', 'failed'), 'code': 'attempt one', 'result': {'status': 'failed', 'passed': 2}},
+            {**self.attempt('L1', 'failed'), 'code': 'attempt two', 'result': {'status': 'failed', 'passed': 2}},
+        ]
+        progress = practice_progress(attempts, task)
+        self.assertEqual(progress['distinct_failed'], 2)
+        self.assertEqual(progress['unlocked_hints'], 0)
+        attempts.append({**self.attempt('L1', 'failed'), 'code': 'attempt three',
+                         'result': {'status': 'failed', 'passed': 3}})
+        progress = practice_progress(attempts, task)
+        self.assertEqual(progress['unlocked_hints'], 1)
+        self.assertEqual(progress['best_passed'], 3)
+        self.assertFalse(progress['solution_unlocked'])
 
 
 class ModelTests(unittest.TestCase):

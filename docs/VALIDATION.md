@@ -7,10 +7,10 @@ joblib 1.6.0. An earlier validation run also passed on Linux.
 Tests cover all 20 reference task solutions, runner restrictions and limits,
 input copying, model loading/prediction and corrupt-model recovery, train/test
 source-family separation, password hashing, account isolation, lockout and new-user
-recovery, persistence validation, stored assistance, adaptive rules, and the actual
+recovery, persistence validation, distinct-attempt hint gating, stored assistance, adaptive rules, and the actual
 Streamlit registration/login/task/hints/profile/history workflow.
 
-The final test run passed 69 tests. All 20 reference solutions passed all 88
+The final test run passed 71 tests. All 20 reference solutions passed all 88
 task-specific cases. The local Streamlit server started on a test port and its
 health endpoint returned `ok`. Python compile checks and shell syntax validation
 also passed. AppTest verifies widgets and flows, not pixel-perfect browser layout.

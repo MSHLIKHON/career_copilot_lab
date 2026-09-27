@@ -3,9 +3,30 @@ from core.catalog import GOALS, SKILLS
 from core.tasks import TASKS, TASK_BY_ID, TOPICS
 
 
+HINT_UNLOCKS = (3, 5, 7)
+SOLUTION_UNLOCK = 9
+
+
 def extract_claims(text):
     text = text[:50000].lower()
     return [skill for skill in SKILLS if re.search(r"(?<![a-z])" + re.escape(skill.lower()) + r"(?![a-z])", text)]
+
+
+def practice_progress(attempts, task):
+    """Summarise deliberate-practice progress without rewarding duplicate submissions."""
+    task_attempts = [attempt for attempt in attempts if attempt["task_id"] == task["id"]]
+    failed = [attempt for attempt in task_attempts if attempt["result"]["status"] != "passed"]
+    distinct_failed = len({attempt["code"].strip() for attempt in failed})
+    best_passed = max((attempt["result"]["passed"] for attempt in task_attempts), default=0)
+    return {
+        "attempts": len(task_attempts),
+        "distinct_failed": distinct_failed,
+        "best_passed": best_passed,
+        "total_tests": len(task["tests"]),
+        "passed": any(attempt["result"]["status"] == "passed" for attempt in task_attempts),
+        "unlocked_hints": sum(distinct_failed >= threshold for threshold in HINT_UNLOCKS),
+        "solution_unlocked": distinct_failed >= SOLUTION_UNLOCK,
+    }
 
 
 def summarize(attempts):

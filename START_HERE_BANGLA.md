@@ -17,14 +17,14 @@
 
 Python-এ শুধু ছোট হাতের `solve` নামের function লিখবে। `input()` বা `print()` নয়, **return** ব্যবহার করবে।
 
-## প্রথম demo: ভুল থেকে সঠিক
+## প্রথম practice: ভুল থেকে সঠিক
 
 1. Practice → **L1 · Sum from 1 to n** নির্বাচন করো।
-2. **Load a buggy example** চাপো, তারপর **Run tests & save attempt**।
-3. Expected/Actual result দেখো। এই code শেষ সংখ্যাটি যোগ করে না।
-4. **Show next hint** চাপো। এটি hint usage save করে।
-5. Code-এর `range(1, n)` বদলে `range(1, n+1)` করো। আবার run করো।
-6. সব test pass হবে। Hint দেখেছ বলে attempt-টি assisted থাকবে; এটি সঠিক behaviour।
+2. Task contract, exact function signature এবং একটি public example পড়ো। নিজের code লিখে **Run tests & save attempt** চাপো।
+3. Expected/Actual evidence দেখে logic-এর একটি নির্দিষ্ট অংশ বদলে আবার চেষ্টা করো। একই code আবার submit করলে hint progress বাড়বে না।
+4. তিনটি আলাদা failed approach-এর আগে প্রথম hint পাওয়া যাবে না। Hint 2 ও 3 যথাক্রমে ৫ ও ৭টি distinct failure-এর পরে খুলবে।
+5. Reference solution ৯টি distinct failed approach-এর পরে খুলবে। Hint বা solution দেখলে পরের pass assisted evidence হিসেবে save হবে।
+6. সব test pass হলে recommended next task-এ গিয়ে hint ছাড়া চেষ্টা করো।
 7. **Overview** এবং **History** খোলো। Saved result দেখতে পাবে।
 8. **My skills & CV**-তে `Python, SQL, React` paste করো, **Extract skill keywords**, তারপর **Save skill profile** চাপো।
 9. Python task evidence দেখাবে। SQL/React এই version-এ **Not assessed** থাকবে।

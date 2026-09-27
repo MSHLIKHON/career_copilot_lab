@@ -1,8 +1,8 @@
-test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-24 12:23:28.142 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-27 20:10:29.191 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-24 12:23:28.512 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-27 20:10:29.575 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-24 12:23:28.707 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-27 20:10:29.777 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
 test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
@@ -12,6 +12,7 @@ test_failed_task_goes_easier (test_core.AdaptiveTests.test_failed_task_goes_easi
 test_goal_gap (test_core.AdaptiveTests.test_goal_gap) ... ok
 test_initial_recommendation (test_core.AdaptiveTests.test_initial_recommendation) ... ok
 test_passed_task_not_recommended_again (test_core.AdaptiveTests.test_passed_task_not_recommended_again) ... ok
+test_practice_help_requires_distinct_failed_approaches (test_core.AdaptiveTests.test_practice_help_requires_distinct_failed_approaches) ... ok
 test_solution_seen_not_independent (test_core.AdaptiveTests.test_solution_seen_not_independent) ... ok
 test_corrupt_model_files_are_reported_not_raised (test_core.ModelTests.test_corrupt_model_files_are_reported_not_raised) ... ok
 test_dataset_families_do_not_leak (test_core.ModelTests.test_dataset_families_do_not_leak) ... ok
@@ -73,6 +74,6 @@ test_local_config_avoids_first_run_prompt (test_server.ServerTests.test_local_co
 test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
 
 ----------------------------------------------------------------------
-Ran 70 tests in 4.041s
+Ran 71 tests in 4.538s
 
 OK

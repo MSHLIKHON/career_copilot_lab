@@ -32,18 +32,28 @@ class AppTests(unittest.TestCase):
         self.assertIn('Welcome', self.app.title[0].value)
         self.app.sidebar.radio[0].set_value('Practice').run()
         self.app.selectbox[0].set_value('L1').run()
-        self.button('Load a buggy example').click().run()
+        buggy = "def solve(n):\n    return n\n"
+        self.app.text_area(key='editor_L1').set_value(buggy)
         self.button('Run tests & save attempt').click().run()
         self.assertFalse(self.app.exception)
         self.assertEqual(len(storage.attempts(self.app.session_state.user['id'])), 1)
-        self.button('Show next hint').click().run()
+        self.assertTrue(self.button('Hint 1: 2 more approaches').disabled)
+        for attempt_number in range(2, 10):
+            self.app.text_area(key='editor_L1').set_value(buggy + f"# approach {attempt_number}\n")
+            self.button('Run tests & save attempt').click().run()
+            if attempt_number == 3:
+                self.button('Show hint 1').click().run()
+            elif attempt_number == 5:
+                self.button('Show hint 2').click().run()
+            elif attempt_number == 7:
+                self.button('Show hint 3').click().run()
         self.button('Reveal reference solution').click().run()
         from core.tasks import TASK_BY_ID
         self.app.text_area(key='editor_L1').set_value(TASK_BY_ID['L1']['solution'])
         self.button('Run tests & save attempt').click().run()
         history = storage.attempts(self.app.session_state.user['id'])
         self.assertEqual(history[-1]['result']['status'], 'passed')
-        self.assertEqual(history[-1]['hints'], 1)
+        self.assertEqual(history[-1]['hints'], 3)
         self.assertEqual(history[-1]['solution_seen'], 1)
         for page in ['Overview', 'My skills & CV', 'Learning roadmap', 'History', 'Model lab', 'Runner help']:
             self.app.sidebar.radio[0].set_value(page).run()

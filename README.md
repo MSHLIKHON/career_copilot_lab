@@ -39,8 +39,8 @@ First installation requires internet. Once installed, app and model run offline.
 | Own trained AI | Character TF-IDF + Logistic Regression; actual saved model and reproducible training code |
 | Algorithm comparison | Linear SVM comparison; held-out validation/test metrics and confusion matrix |
 | Mistake feedback | Four likely categories; explicit uncertainty below 0.45 model score; syntax/unsupported feedback is deterministic |
-| Hint ladder | Three task-specific hints plus reference solution; assistance permanently recorded per task |
-| Adaptive practice | Rules based on failure, task level, topic, completed work and learner goal |
+| Earned hint ladder | Hints unlock after 3/5/7 distinct failed approaches; the reference solution unlocks after 9; duplicate submissions do not advance access |
+| Adaptive practice | Explicit task contracts, best-test evidence, attempt quality feedback, and rules based on failure, level, topic, completed work and learner goal |
 | Progress memory | Per-user attempts, submitted code, test evidence, hints and predictions saved to SQLite |
 | Roadmap & gap view | Goal-level targets versus independent task evidence; no invented job matching percentage |
 | Practice projects | Three guided project briefs; explicitly not automatically graded |
