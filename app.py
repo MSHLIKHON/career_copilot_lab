@@ -74,7 +74,9 @@ def authenticate():
             with details:
                 name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
                 username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
+                email = st.text_input("Email address", placeholder="you@example.com", max_chars=254)
             with security:
+                phone = st.text_input("Phone number", placeholder="+880 1XXX-XXXXXX", max_chars=24)
                 password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
                 confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
             consent = st.checkbox("Save my progress on this computer")
@@ -87,7 +89,9 @@ def authenticate():
                 form_message.error("Please allow local storage to save your practice and profile.")
             else:
                 try:
-                    storage.register(username, name, password)
+                    if not email.strip() or not phone.strip():
+                        raise ValueError("Email address and phone number are required.")
+                    storage.register(username, name, password, email, phone)
                     user = storage.login(username, password)
                     st.session_state.clear()
                     st.session_state.user = user
@@ -121,7 +125,7 @@ with st.sidebar:
     st.markdown("### Career Copilot\n**LAB / TEAM NO AI**")
     st.caption("Python skill verification & adaptive practice")
     st.divider()
-    page = st.radio("Workspace", ["Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
+    page = st.radio("Workspace", ["Overview", "Practice", "My profile", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")
@@ -276,12 +280,57 @@ elif page == "Practice":
         if st.button("Open next practice task"):
             go_to_task(next_task["id"])
 
+elif page == "My profile":
+    st.caption("PRIVATE PROFILE AND ACTIVITY")
+    st.title(profile["name"])
+    contact, progress_col = st.columns([1.25, 1], gap="large")
+    with contact:
+        st.write(f"**Username:** @{profile['username']}")
+        st.write(f"**Email:** {profile['email'] or 'Not provided'}")
+        st.write(f"**Phone:** {profile['phone'] or 'Not provided'}")
+        st.write(f"**Member since:** {datetime.fromtimestamp(profile['joined']).strftime('%d %B %Y')}")
+    with progress_col:
+        passed = {a["task_id"] for a in history if a["result"]["status"] == "passed"}
+        st.metric("Practice attempts", len(history))
+        st.metric("Tasks passed", len(passed))
+
+    with st.form("profile_details"):
+        location = st.text_input("Location", value=profile["location"], max_chars=120)
+        education = st.text_area("Education", value=profile["education"], max_chars=500, height=90)
+        about = st.text_area("About me", value=profile["about"], max_chars=2000, height=120)
+        save_details = st.form_submit_button("Save profile details", type="primary")
+    if save_details:
+        storage.save_profile(uid, profile["claims"], profile["target"], location, education,
+                             about, profile["cv_text"])
+        st.success("Profile details saved.")
+        st.rerun()
+
+    st.subheader("Saved CV")
+    if profile["cv_text"]:
+        st.text_area("Saved CV text", value=profile["cv_text"], height=180, disabled=True)
+        st.caption("Update this CV from My skills & CV. The saved text is private to this local account.")
+    else:
+        st.info("No CV saved yet. Open My skills & CV to paste or upload one.")
+
+    st.subheader("Complete activity history")
+    activity_rows = storage.activity(uid)
+    if activity_rows:
+        activity_table = [{"When": datetime.fromtimestamp(row["created"]).strftime("%Y-%m-%d %H:%M:%S"),
+                           "Activity": row["event"].replace("_", " ").title(),
+                           "Details": row["details"]} for row in activity_rows]
+        st.dataframe(pd.DataFrame(activity_table), hide_index=True, width="stretch")
+    else:
+        st.info("No activity recorded yet.")
+
 elif page == "My skills & CV":
     st.caption("CLAIMS AND EVIDENCE")
     st.title("My skills & CV")
-    st.write("Paste CV text or upload a text-based PDF/TXT. Review the extracted keywords before saving.")
+    st.write("Paste CV text or upload a text-based PDF/TXT. Review the extracted keywords, then save the CV to your private profile.")
     st.caption("The parser recognises listed skill words, not proficiency, context or negation. SQL/React and other non-Python skills remain unassessed.")
-    cv_text = st.text_area("CV text (optional)", max_chars=50000, height=120)
+    if "cv_text_draft" not in st.session_state:
+        st.session_state.cv_text_draft = profile["cv_text"]
+    cv_text = st.text_area("CV text (optional)", max_chars=50000, height=160, key="cv_text_draft",
+                           on_change=lambda: st.session_state.pop("extracted_cv_text", None))
     uploaded = st.file_uploader("CV file (optional; maximum 2 MB)", type=["pdf", "txt"])
     if st.button("Extract skill keywords"):
         try:
@@ -307,6 +356,7 @@ elif page == "My skills & CV":
                 st.warning("Paste CV text or upload a CV file first.")
             else:
                 found = extract_claims(text)
+                st.session_state.extracted_cv_text = text[:50000]
                 st.session_state.claim_choices = found
                 if found:
                     st.success(f"{len(found)} keyword(s) extracted. Review the selected claims, then save.")
@@ -318,9 +368,12 @@ elif page == "My skills & CV":
         st.session_state.claim_choices = profile["claims"]
     claims = st.multiselect("Skills you claim (confirm manually)", SKILLS, key="claim_choices")
     target = st.selectbox("Learning goal", list(GOALS), index=list(GOALS).index(profile["target"]))
-    if st.button("Save skill profile", type="primary"):
-        storage.save_profile(uid, claims, target)
-        st.success("Profile saved. Raw CV text/file is not written to the database.")
+    save_cv = st.checkbox("Save this CV text in my private local profile", value=True)
+    if st.button("Save skills & CV", type="primary"):
+        stored_cv = st.session_state.get("extracted_cv_text", st.session_state.cv_text_draft) if save_cv else profile["cv_text"]
+        storage.save_profile(uid, claims, target, profile["location"], profile["education"],
+                             profile["about"], stored_cv)
+        st.success("Skills, learning goal and CV text saved to your private profile.")
     st.subheader("Claimed vs assessed")
     rows = []
     for skill in claims:
@@ -373,8 +426,8 @@ elif page == "Job Match Analyzer":
     analyze_tab, saved_tab = st.tabs(["New analysis", "Saved roadmaps"])
     with analyze_tab:
         job_text = st.text_area("Job description", height=220, max_chars=50000)
-        cv_text = st.text_area("CV text (optional)", height=140, max_chars=50000,
-                               help="If blank, the analyzer uses your saved skill claims.")
+        cv_text = st.text_area("CV text", value=profile["cv_text"], height=140, max_chars=50000,
+                               help="Your saved profile CV is loaded automatically. If empty, saved skill claims are used.")
         if st.button("Analyze job match", type="primary"):
             if not job_text.strip():
                 st.error("Paste a job description first.")

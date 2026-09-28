@@ -11,7 +11,7 @@
 5. **START_WINDOWS.bat** double-click করো। প্রথমবার internet লাগবে; প্রয়োজনীয় packages install হবে।
 6. Black terminal window খোলা রাখো। প্রথম setup শেষ হতে কয়েক মিনিট লাগতে পারে।
 7. Browser না খুললে address bar-এ `http://localhost:8501` লিখে Enter দাও।
-8. **Create account** tab খোলো। Name, username, অন্তত ৮ অক্ষরের password এবং confirm password দাও। Storage consent tick করে **Create account and start** চাপো। Account তৈরি হলে সরাসরি নিজের workspace-এ যাবে।
+8. **Create account** tab খোলো। Name, username, email, phone, অন্তত ৮ অক্ষরের password এবং confirm password দাও। Storage consent tick করে **Create account and start** চাপো। Account তৈরি হলে সরাসরি নিজের workspace-এ যাবে।
 9. পরে app খুললে **Sign in** tab-এ username/password দিয়ে ঢোকো।
 10. বাম পাশের **Practice** থেকে task নির্বাচন করো। Code লিখে **Run tests & save attempt** চাপো।
 
@@ -26,9 +26,10 @@ Python-এ শুধু ছোট হাতের `solve` নামের functi
 5. Reference solution ৯টি distinct failed approach-এর পরে খুলবে। Hint বা solution দেখলে পরের pass assisted evidence হিসেবে save হবে।
 6. সব test pass হলে recommended next task-এ গিয়ে hint ছাড়া চেষ্টা করো।
 7. **Overview** এবং **History** খোলো। Saved result দেখতে পাবে।
-8. **My skills & CV**-তে `Python, SQL, React` paste করো, **Extract skill keywords**, তারপর **Save skill profile** চাপো।
-9. Python task evidence দেখাবে। SQL/React এই version-এ **Not assessed** থাকবে।
-10. **Learning roadmap** এবং **Model lab** খুলে adaptive plan ও actual training metrics দেখাও।
+8. **My skills & CV**-তে `Python, SQL, React`-সহ CV text paste বা PDF/TXT upload করো, **Extract skill keywords**, তারপর **Save skills & CV** চাপো। CV text private local profile-এ save হবে।
+9. **My profile**-এ location, education ও about যোগ করো। একই page-এ saved CV, practice, sign-in, hint, feedback এবং job-analysis activity timeline দেখা যাবে।
+10. Python task evidence দেখাবে। SQL/React এই version-এ **Not assessed** থাকবে।
+11. **Learning roadmap** এবং **Model lab** খুলে adaptive plan ও actual training metrics দেখাও।
 
 ## Job Match Analyzer
 

@@ -32,7 +32,7 @@ First installation requires internet. Once installed, app and model run offline.
 
 | Requirement | Implementation |
 | --- | --- |
-| Sign-up/sign-in | Local SQLite accounts, salted PBKDF2-HMAC-SHA256, throttled failures, 30-minute inactivity sign-out |
+| Sign-up/sign-in | Name, email and phone profile fields; local SQLite accounts, salted PBKDF2-HMAC-SHA256, throttled failures, 30-minute inactivity sign-out |
 | CV skill claims | Paste text or upload text-based PDF/TXT; keyword extraction with user confirmation; Python evidence separate from claims |
 | Practical skill tests | 20 original Python tasks, 4 topics, 3 levels, 88 deterministic test cases |
 | Code execution | Budgeted custom AST interpreter, no native eval/exec, no file/network/attribute access |
@@ -44,7 +44,7 @@ First installation requires internet. Once installed, app and model run offline.
 | Progress memory | Per-user attempts, submitted code, test evidence, hints and predictions saved to SQLite |
 | Roadmap & gap view | Goal-level targets versus independent task evidence; no invented job matching percentage |
 | Job match analyzer | Local TF-IDF unigram/bigram text similarity, trained skill-vocabulary gap extraction, course-search links and per-user saved analyses |
-| CV robustness | Empty-input guidance, bounded PDF parsing, UTF-8 text support and a Latin-1 fallback; raw CV content is not stored |
+| Private profile & CV | Location, education and biography; bounded PDF/TXT extraction, saved CV text, and a user-isolated activity timeline |
 | Practice projects | Three guided project briefs; explicitly not automatically graded |
 | Review loop | Learner reports on predictions, stored for review and included in personal export |
 | Export | Full personal history JSON and model evaluation JSON download |

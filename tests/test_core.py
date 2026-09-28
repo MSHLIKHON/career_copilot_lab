@@ -139,8 +139,27 @@ class StorageTests(unittest.TestCase):
             storage.register('newuser', 'Another', 'short')
 
     def test_profile_persistence(self):
-        storage.save_profile(self.uid, ['Python', 'SQL'], 'Data analysis foundations')
-        self.assertEqual(storage.profile(self.uid)['claims'], ['Python', 'SQL'])
+        storage.save_profile(self.uid, ['Python', 'SQL'], 'Data analysis foundations',
+                             'Dhaka', 'BSc in CSE', 'Backend learner', 'Python developer CV')
+        saved = storage.profile(self.uid)
+        self.assertEqual(saved['claims'], ['Python', 'SQL'])
+        self.assertEqual(saved['location'], 'Dhaka')
+        self.assertEqual(saved['education'], 'BSc in CSE')
+        self.assertEqual(saved['about'], 'Backend learner')
+        self.assertEqual(saved['cv_text'], 'Python developer CV')
+
+    def test_contact_validation_and_activity_isolation(self):
+        contact_uid = storage.register('contactuser', 'Contact User', 'testing123',
+                                       'USER@example.com', '+880 1700-000000')
+        saved = storage.profile(contact_uid)
+        self.assertEqual(saved['email'], 'user@example.com')
+        self.assertEqual(saved['phone'], '+880 1700-000000')
+        self.assertTrue(any(row['event'] == 'account_created' for row in storage.activity(contact_uid)))
+        self.assertFalse(any(row['details'].endswith('Contact User') for row in storage.activity(self.uid)))
+        with self.assertRaises(ValueError):
+            storage.register('bademail', 'Bad Email', 'testing123', 'not-an-email', '+880 1700-000000')
+        with self.assertRaises(ValueError):
+            storage.register('badphone', 'Bad Phone', 'testing123', 'ok@example.com', 'phone')
 
     def test_hint_cannot_be_reset(self):
         storage.assistance(self.uid, 'L1', hints=3, solution=True)
@@ -186,7 +205,9 @@ class StorageTests(unittest.TestCase):
         with storage.connect() as db:
             db.execute("UPDATE profiles SET claims=?, target=? WHERE user_id=?",
                        ('{broken', 'Unknown goal', self.uid))
-        self.assertEqual(storage.profile(self.uid), {'claims': [], 'target': 'Python foundations'})
+        saved = storage.profile(self.uid)
+        self.assertEqual(saved['claims'], [])
+        self.assertEqual(saved['target'], 'Python foundations')
 
     def test_saved_job_validation_and_user_isolation(self):
         other = storage.register('jobowner', 'Job Owner', 'testing123')

@@ -55,14 +55,15 @@ class AppTests(unittest.TestCase):
         self.assertEqual(history[-1]['result']['status'], 'passed')
         self.assertEqual(history[-1]['hints'], 3)
         self.assertEqual(history[-1]['solution_seen'], 1)
-        for page in ['Overview', 'My skills & CV', 'Learning roadmap', 'Job Match Analyzer', 'History', 'Model lab', 'Runner help']:
+        for page in ['Overview', 'My profile', 'My skills & CV', 'Learning roadmap', 'Job Match Analyzer', 'History', 'Model lab', 'Runner help']:
             self.app.sidebar.radio[0].set_value(page).run()
             self.assertFalse(self.app.exception, page)
         self.app.sidebar.radio[0].set_value('My skills & CV').run()
         self.app.text_area[0].set_value('I use Python, SQL and React.')
         self.button('Extract skill keywords').click().run()
-        self.button('Save skill profile').click().run()
+        self.button('Save skills & CV').click().run()
         self.assertEqual(storage.profile(self.app.session_state.user['id'])['claims'], ['Python', 'SQL', 'React'])
+        self.assertIn('Python', storage.profile(self.app.session_state.user['id'])['cv_text'])
         self.button('Sign out').click().run()
         self.assertFalse(self.app.exception)
         self.assertEqual(self.app.title[0].value, 'Career Copilot Lab')
@@ -71,6 +72,8 @@ class AppTests(unittest.TestCase):
         fields = {x.label: x for x in self.app.text_input}
         fields['Your name'].set_value('Demo Learner')
         fields['Choose username'].set_value('demostudent')
+        fields['Email address'].set_value('demo@example.com')
+        fields['Phone number'].set_value('+880 1700-000000')
         fields['Choose password'].set_value('demoPassword123')
         fields['Confirm password'].set_value('demoPassword123')
         self.app.checkbox[0].check()
@@ -78,12 +81,15 @@ class AppTests(unittest.TestCase):
         self.assertFalse(self.app.exception)
         self.assertIn('Welcome', self.app.title[0].value)
         self.assertEqual(self.app.session_state.user['username'], 'demostudent')
+        self.assertEqual(storage.profile(self.app.session_state.user['id'])['email'], 'demo@example.com')
 
     def test_create_account_explains_taken_username(self):
         storage.register('demostudent', 'Existing Learner', 'demoPassword123')
         fields = {x.label: x for x in self.app.text_input}
         fields['Your name'].set_value('New Learner')
         fields['Choose username'].set_value('demostudent')
+        fields['Email address'].set_value('new@example.com')
+        fields['Phone number'].set_value('+880 1800-000000')
         fields['Choose password'].set_value('demoPassword123')
         fields['Confirm password'].set_value('demoPassword123')
         self.app.checkbox[0].check()

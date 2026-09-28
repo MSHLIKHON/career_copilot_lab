@@ -52,31 +52,64 @@ def init_db():
             id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
             title TEXT NOT NULL, job_text TEXT NOT NULL, score REAL NOT NULL,
             missing_skills TEXT NOT NULL, roadmaps TEXT NOT NULL, created REAL NOT NULL);
+        CREATE TABLE IF NOT EXISTS activity_log (
+            id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
+            event TEXT NOT NULL, details TEXT NOT NULL DEFAULT '', created REAL NOT NULL);
         ''')
+
+        # Additive migrations keep databases made by earlier project versions usable.
+        user_columns = {row["name"] for row in db.execute("PRAGMA table_info(users)")}
+        profile_columns = {row["name"] for row in db.execute("PRAGMA table_info(profiles)")}
+        for column, definition in {
+            "email": "TEXT NOT NULL DEFAULT ''",
+            "phone": "TEXT NOT NULL DEFAULT ''",
+        }.items():
+            if column not in user_columns:
+                db.execute(f"ALTER TABLE users ADD COLUMN {column} {definition}")
+        for column, definition in {
+            "location": "TEXT NOT NULL DEFAULT ''",
+            "education": "TEXT NOT NULL DEFAULT ''",
+            "about": "TEXT NOT NULL DEFAULT ''",
+            "cv_text": "TEXT NOT NULL DEFAULT ''",
+        }.items():
+            if column not in profile_columns:
+                db.execute(f"ALTER TABLE profiles ADD COLUMN {column} {definition}")
 
 
 def password_hash(password, salt):
     return hashlib.pbkdf2_hmac("sha256", password.encode(), bytes.fromhex(salt), 600000).hex()
 
 
-def register(username, name, password):
-    if not all(isinstance(value, str) for value in (username, name, password)):
-        raise ValueError("Username, name and password must be text.")
+def _log(db, user_id, event, details=""):
+    db.execute("INSERT INTO activity_log(user_id,event,details,created) VALUES(?,?,?,?)",
+               (user_id, event, details[:500], time.time()))
+
+
+def register(username, name, password, email="", phone=""):
+    if not all(isinstance(value, str) for value in (username, name, password, email, phone)):
+        raise ValueError("Account details must be text.")
     username = username.strip().lower()
     name = name.strip()
+    email = email.strip().lower()
+    phone = phone.strip()
     if not re.fullmatch(r"[a-z0-9_]{3,24}", username):
         raise ValueError("Username: 3-24 lowercase letters, digits or underscores.")
     if not 1 <= len(name) <= 80:
         raise ValueError("Enter a display name with 1-80 characters.")
     if not 8 <= len(password) <= 128:
         raise ValueError("Password must have 8-128 characters.")
+    if email and (len(email) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email)):
+        raise ValueError("Enter a valid email address.")
+    if phone and (len(phone) > 24 or not re.fullmatch(r"\+?[0-9][0-9 ()-]{6,22}[0-9]", phone)):
+        raise ValueError("Enter a valid phone number using digits and an optional country code.")
     salt = secrets.token_hex(16)
     digest = password_hash(password, salt)
     try:
         with connect() as db:
-            cursor = db.execute("INSERT INTO users(username,name,salt,password_hash,created) VALUES(?,?,?,?,?)",
-                                (username, name, salt, digest, time.time()))
+            cursor = db.execute("INSERT INTO users(username,name,email,phone,salt,password_hash,created) VALUES(?,?,?,?,?,?,?)",
+                                (username, name, email, phone, salt, digest, time.time()))
             db.execute("INSERT INTO profiles(user_id) VALUES(?)", (cursor.lastrowid,))
+            _log(db, cursor.lastrowid, "account_created", "Account and private profile created")
             # Failed sign-ins for a not-yet-created username must not lock a new account.
             db.execute("DELETE FROM login_limits WHERE username=?", (username,))
             return cursor.lastrowid
@@ -99,7 +132,9 @@ def login(username, password):
         digest = password_hash(password, salt)
         if row and hmac.compare_digest(row["password_hash"], digest):
             db.execute("DELETE FROM login_limits WHERE username=?", (username,))
-            return {"id": row["id"], "name": row["name"], "username": row["username"]}
+            _log(db, row["id"], "signed_in", "Successful sign in")
+            return {"id": row["id"], "name": row["name"], "username": row["username"],
+                    "email": row["email"], "phone": row["phone"]}
         failures = (limit["failures"] if limit else 0) + 1
         locked = time.time() + 300 if failures >= 5 else 0
         db.execute("INSERT OR REPLACE INTO login_limits VALUES(?,?,?)", (username, 0 if locked else failures, locked))
@@ -108,7 +143,9 @@ def login(username, password):
 
 def profile(user_id):
     with connect() as db:
-        row = db.execute("SELECT * FROM profiles WHERE user_id=?", (user_id,)).fetchone()
+        row = db.execute("SELECT p.*,u.name,u.username,u.email,u.phone,u.created AS joined "
+                         "FROM profiles p JOIN users u ON u.id=p.user_id WHERE p.user_id=?",
+                         (user_id,)).fetchone()
     if row is None:
         raise ValueError("Profile not found.")
     try:
@@ -119,18 +156,31 @@ def profile(user_id):
         claims = []
     claims = list(dict.fromkeys(claim for claim in claims if claim in SKILLS))
     target = row["target"] if row["target"] in GOALS else "Python foundations"
-    return {"claims": claims, "target": target}
+    return {"claims": claims, "target": target, "name": row["name"],
+            "username": row["username"], "email": row["email"], "phone": row["phone"],
+            "location": row["location"], "education": row["education"],
+            "about": row["about"], "cv_text": row["cv_text"], "joined": row["joined"]}
 
 
-def save_profile(user_id, claims, target):
+def save_profile(user_id, claims, target, location="", education="", about="", cv_text=""):
     if (not isinstance(claims, list) or len(claims) > len(SKILLS) or
             any(not isinstance(claim, str) or claim not in SKILLS for claim in claims) or
             len(set(claims)) != len(claims)):
         raise ValueError("Choose each skill at most once from the supported list.")
     if not isinstance(target, str) or target not in GOALS:
         raise ValueError("Choose a supported learning goal.")
+    fields = (location, education, about, cv_text)
+    if not all(isinstance(value, str) for value in fields):
+        raise ValueError("Profile details and CV must be text.")
+    location, education, about, cv_text = (value.strip() for value in fields)
+    if len(location) > 120 or len(education) > 500 or len(about) > 2000 or len(cv_text) > 50000:
+        raise ValueError("Profile details or CV exceed the allowed length.")
     with connect() as db:
-        db.execute("UPDATE profiles SET claims=?,target=? WHERE user_id=?", (json.dumps(claims), target, user_id))
+        cursor = db.execute("UPDATE profiles SET claims=?,target=?,location=?,education=?,about=?,cv_text=? WHERE user_id=?",
+                            (json.dumps(claims), target, location, education, about, cv_text, user_id))
+        if cursor.rowcount != 1:
+            raise ValueError("Profile not found.")
+        _log(db, user_id, "profile_updated", "Profile details, skills, goal and saved CV updated")
 
 
 def assistance(user_id, task_id, hints=None, solution=None):
@@ -142,8 +192,10 @@ def assistance(user_id, task_id, hints=None, solution=None):
         db.execute("INSERT OR IGNORE INTO assistance(user_id,task_id) VALUES(?,?)", (user_id, task_id))
         if hints is not None:
             db.execute("UPDATE assistance SET hints=MAX(hints,?) WHERE user_id=? AND task_id=?", (hints, user_id, task_id))
+            _log(db, user_id, "hint_viewed", f"{task_id}: hint {hints}")
         if solution:
             db.execute("UPDATE assistance SET solution_seen=1 WHERE user_id=? AND task_id=?", (user_id, task_id))
+            _log(db, user_id, "solution_viewed", f"{task_id}: reference solution")
         return dict(db.execute("SELECT * FROM assistance WHERE user_id=? AND task_id=?", (user_id, task_id)).fetchone())
 
 
@@ -164,6 +216,7 @@ def save_attempt(user_id, task_id, code, result, prediction):
         cur = db.execute("INSERT INTO attempts(user_id,task_id,code,result,prediction,hints,solution_seen,created) VALUES(?,?,?,?,?,?,?,?)",
                          (user_id, task_id, code, result_json, prediction_json,
                           help_used["hints"], help_used["solution_seen"], time.time()))
+        _log(db, user_id, "practice_attempt", f"{task_id}: {result.get('status', 'unknown')} ({result.get('passed', 0)}/{result.get('total', 0)} tests)")
         return cur.lastrowid
 
 
@@ -186,13 +239,27 @@ def report_prediction(user_id, attempt_id, comment):
         if not db.execute("SELECT id FROM attempts WHERE id=? AND user_id=?", (attempt_id, user_id)).fetchone():
             raise ValueError("Attempt not found.")
         db.execute("INSERT INTO feedback(user_id,attempt_id,comment,created) VALUES(?,?,?,?)", (user_id, attempt_id, comment.strip(), time.time()))
+        _log(db, user_id, "prediction_reported", f"Feedback saved for attempt {attempt_id}")
+
+
+def activity(user_id, limit=None):
+    if limit is not None and (not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= 500):
+        raise ValueError("Activity limit must be between 1 and 500.")
+    with connect() as db:
+        query = "SELECT id,event,details,created FROM activity_log WHERE user_id=? ORDER BY id DESC"
+        values = (user_id,)
+        if limit is not None:
+            query += " LIMIT ?"
+            values += (limit,)
+        return [dict(row) for row in db.execute(query, values)]
 
 
 def export_user(user_id):
     with connect() as db:
         rows = db.execute("SELECT attempt_id,comment,created FROM feedback WHERE user_id=?", (user_id,)).fetchall()
     return {"profile": profile(user_id), "attempts": attempts(user_id),
-            "feedback": [dict(r) for r in rows], "saved_jobs": get_saved_jobs(user_id)}
+            "feedback": [dict(r) for r in rows], "saved_jobs": get_saved_jobs(user_id),
+            "activity": activity(user_id)}
 
 
 def save_job_analysis(user_id, title, job_text, score, missing_skills, roadmaps):
@@ -215,6 +282,7 @@ def save_job_analysis(user_id, title, job_text, score, missing_skills, roadmaps)
     with connect() as db:
         db.execute("INSERT INTO saved_jobs(user_id, title, job_text, score, missing_skills, roadmaps, created) VALUES(?,?,?,?,?,?,?)",
                    (user_id, title.strip(), job_text.strip(), float(score), missing_json, roadmaps_json, time.time()))
+        _log(db, user_id, "job_analysis_saved", f"{title.strip()}: {float(score):.1f}% similarity")
 
 
 def get_saved_jobs(user_id):
@@ -229,3 +297,4 @@ def delete_saved_job(user_id, job_id):
         cursor = db.execute("DELETE FROM saved_jobs WHERE id=? AND user_id=?", (job_id, user_id))
         if cursor.rowcount != 1:
             raise ValueError("Saved analysis not found.")
+        _log(db, user_id, "job_analysis_deleted", f"Deleted saved analysis {job_id}")

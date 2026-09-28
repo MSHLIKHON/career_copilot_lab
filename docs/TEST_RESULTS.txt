@@ -1,8 +1,8 @@
-test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-28 13:30:57.928 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-28 15:04:25.277 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-28 13:30:58.338 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-28 15:04:25.707 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-28 13:30:58.587 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-28 15:04:25.968 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
 test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
@@ -41,6 +41,7 @@ test_power_not_supported (test_core.RunnerTests.test_power_not_supported) ... ok
 test_recursive_limit (test_core.RunnerTests.test_recursive_limit) ... ok
 test_syntax_error (test_core.RunnerTests.test_syntax_error) ... ok
 test_attempt_isolation_and_feedback (test_core.StorageTests.test_attempt_isolation_and_feedback) ... ok
+test_contact_validation_and_activity_isolation (test_core.StorageTests.test_contact_validation_and_activity_isolation) ... ok
 test_corrupt_profile_data_falls_back_safely (test_core.StorageTests.test_corrupt_profile_data_falls_back_safely) ... ok
 test_duplicate_user (test_core.StorageTests.test_duplicate_user) ... ok
 test_hint_cannot_be_reset (test_core.StorageTests.test_hint_cannot_be_reset) ... ok
@@ -78,6 +79,6 @@ test_local_config_avoids_first_run_prompt (test_server.ServerTests.test_local_co
 test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
 
 ----------------------------------------------------------------------
-Ran 75 tests in 5.072s
+Ran 76 tests in 5.928s
 
 OK
