@@ -108,6 +108,36 @@ def authenticate():
                     else:
                         form_message.error(str(error))
 
+    st.divider()
+    st.subheader("Technical information")
+    model_tab, runner_tab = st.tabs(["Model lab", "Runner help"])
+    with model_tab:
+        st.write("The local pilot classifier suggests one of four likely programming-mistake categories.")
+        metrics, metrics_error = load_metrics()
+        if metrics_error:
+            st.warning(metrics_error)
+        else:
+            st.warning(metrics["warning"])
+            st.write("**Approach:** Character TF-IDF + Logistic Regression; Linear SVM is a comparison baseline.")
+            summary = [{"Model": name, "Test accuracy": values["test"]["accuracy"],
+                        "Macro F1": values["test"]["macro_f1"]}
+                       for name, values in metrics["models"].items()]
+            st.dataframe(pd.DataFrame(summary), hide_index=True, width="stretch")
+            st.download_button("Download evaluation report", (MODEL_DIR / "metrics.json").read_bytes(),
+                               "evaluation_metrics.json", "application/json")
+    with runner_tab:
+        st.write("Submitted code runs in a restricted AST interpreter; the app never calls eval or exec on it.")
+        st.markdown("""
+**Supported:** positional functions, return, conditions, loops, assignment, basic
+arithmetic, comparisons, lists, tuples, strings, indexing and slicing.
+
+**Allowed functions:** len, range, sum, min, max, abs, sorted, reversed, list, int,
+str, bool, enumerate and round.
+
+**Not supported:** imports, attributes/methods, files, network, input, print, classes,
+dictionaries, sets, comprehensions, lambda, generators, decorators or top-level calls.
+""")
+
 
 if "user" not in st.session_state:
     authenticate()
@@ -130,7 +160,7 @@ with st.sidebar:
     st.markdown("### Career Copilot\n**LAB / TEAM NO AI**")
     st.caption("Python skill verification & adaptive practice")
     st.divider()
-    page = st.radio("Workspace", ["My profile", "Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
+    page = st.radio("Workspace", ["My profile", "Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History"], key="page")
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")
@@ -509,68 +539,3 @@ elif page == "History":
         show_result(history[selection])
     st.download_button("Download my full progress (JSON)", json.dumps(storage.export_user(uid), indent=2),
                        file_name="career_copilot_progress.json", mime="application/json")
-
-elif page == "Model lab":
-    st.caption("TRAINING AND EVALUATION")
-    st.title("Our trained mistake classifier")
-    path = MODEL_DIR / "metrics.json"
-    metrics, metrics_error = load_metrics()
-    if metrics_error:
-        st.warning(metrics_error)
-    else:
-        st.warning(metrics["warning"])
-        st.write("**Approach:** Character TF-IDF + Logistic Regression. Linear SVM is a comparison baseline.")
-        st.write("**Training input:** Submitted code and runtime error types. **Output:** One of four likely logic-mistake categories.")
-        st.write("**Syntax errors:** Deterministic parser feedback, not a trained AI category.")
-        st.write(metrics["split_policy"])
-        a, b, c = st.columns(3)
-        a.metric("Generated samples", metrics["dataset_size"])
-        b.metric("Source families", metrics["family_count"])
-        c.metric("Human-reviewed real samples", 0)
-        rows = [{"Model": name, "Partition": split, "Accuracy": data["accuracy"], "Macro F1": data["macro_f1"], "Macro recall": data["macro_recall"]}
-                for name, results in metrics["models"].items() for split, data in results.items()]
-        st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
-        st.subheader("Test confusion matrix: Logistic Regression")
-        st.caption("Rows = actual mutation label. Columns = predicted label.")
-        st.dataframe(pd.DataFrame(metrics["models"]["logistic_regression"]["test"]["confusion_matrix"], index=metrics["labels"], columns=metrics["labels"]), width="stretch")
-        st.write(metrics["deployment_reason"])
-        st.caption("Low model scores (<0.45) produce an uncertain result. Unseen/multiple mistakes may be misclassified. Independent human-reviewed data is required before claiming generalisation.")
-        st.download_button("Download evaluation report", path.read_bytes(), "evaluation_metrics.json", "application/json")
-    st.subheader("Reproduce training")
-    st.code("python train.py\npython -m unittest discover -s tests -v", language="bash")
-    st.write("Training writes data/pilot_dataset.json, models/classifier.joblib and models/metrics.json. Never load model files from unknown sources.")
-
-elif page == "Runner help":
-    st.title("Runner help & project limits")
-    st.write("This app interprets a restricted Python subset. It never calls eval or exec on submitted code.")
-    st.markdown("""
-**Supported:** function definitions with positional parameters; return; if/elif/else;
-for/while; break/continue; assignment; +=, -=, *=; integer and decimal arithmetic;
-comparison; and/or/not; lists, tuples, strings; indexing and slicing.
-
-**Allowed functions:** len, range, sum, min, max, abs, sorted, reversed, list, int,
-str, bool, enumerate and round. Your own helper functions are allowed.
-
-**Not supported:** imports, attributes/methods such as .append(), files, network,
-input(), print(), classes, dictionaries, sets, comprehensions, lambda, generators,
-power operator (**), decorators, keyword/default parameters or top-level calls.
-Use `result = result + [value]` instead of append.
-
-**Limits:** 12,000 source characters, 1,800 AST nodes, 15,000 interpreter steps per
-test, 1,500 items per collection, nesting depth 12, call depth 30, numeric magnitude 10^15.
-Each test uses a fresh interpreter and a copy of its input. Types matter: return
-True/False for boolean tasks, not strings such as "True".
-
-**Privacy:** salted PBKDF2 password hashes; no plaintext passwords. Profile and
-attempt data stay in data/career.db on this computer. Raw CV uploads are not saved
-to the database. Any person with access to this machine's files can read its data.
-
-**Scope:** local educational prototype only; Python foundations, generated pilot
-model, rule-based adaptation, keyword-based CV mapping. It is not a hiring tool,
-full Python execution service or audited internet-facing sandbox. Do not expose
-the server publicly. Chatbot integration, OCR, SQL/React execution, cloud sync,
-password reset by email and production deployment are not part of this build.
-
-**Team NO AI:** MD Shyed Hasan Likhon (0112330688), Rahat (112330518),
-112330546, 112330621, 112330396. Add the three missing names before submission.
-""")

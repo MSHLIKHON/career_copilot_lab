@@ -29,7 +29,7 @@ Python-এ শুধু ছোট হাতের `solve` নামের functi
 8. **My skills & CV**-তে `Python, SQL, React`-সহ CV text paste বা PDF/TXT upload করো, **Extract skill keywords**, তারপর **Save skills & CV** চাপো। CV text private local profile-এ save হবে।
 9. **My profile**-এ location, education ও about যোগ করো। একই page-এ saved CV, practice, sign-in, hint, feedback এবং job-analysis activity timeline দেখা যাবে।
 10. Python task evidence দেখাবে। SQL/React এই version-এ **Not assessed** থাকবে।
-11. **Learning roadmap** এবং **Model lab** খুলে adaptive plan ও actual training metrics দেখাও।
+11. **Learning roadmap** খুলে adaptive plan দেখাও। Model metrics ও runner rules account-এর আগের main interface-এর **Technical information** section-এ আছে।
 
 ## Job Match Analyzer
 
@@ -62,7 +62,7 @@ py -3.12 -m venv .venv
 - **Package install failed:** internet connection এবং error message check করো। Screenshot দাও; security setting বন্ধ করবে না।
 - **Port already in use:** আগের app-এর terminal বন্ধ করো, অথবা launch command-এর port `8502` করে `http://localhost:8502` খোলো।
 - **Model version changed:** `RETRAIN_WINDOWS.bat` চালাও; app refresh করো।
-- **Unsupported Python feature:** Runner help পড়ো। `.append()`-এর বদলে `result = result + [n]` ব্যবহার করো।
+- **Unsupported Python feature:** Main interface-এর **Runner help** পড়ো। `.append()`-এর বদলে `result = result + [n]` ব্যবহার করো।
 - **Step limit reached:** infinite loop অথবা অতিরিক্ত কাজ আছে। Loop-এর variable update হচ্ছে কি না দেখো।
 - **CV scan থেকে skill আসে না:** scanned PDF-এ OCR নেই; text paste করো অথবা manually skill select করো।
 - **Password ভুলে গেলে:** email recovery এই local prototype-এ নেই। নতুন username দিয়ে account খোলা যায়; পুরোনো account-এ প্রবেশ করা যাবে না।
@@ -71,7 +71,7 @@ py -3.12 -m venv .venv
 
 - **RUN_TESTS_WINDOWS.bat:** automated test suite চালাবে।
 - **RETRAIN_WINDOWS.bat:** included generated pilot dataset দিয়ে model আবার train করবে।
-- **Model lab:** Logistic Regression/SVM comparison, Accuracy, Macro-F1, Recall এবং confusion matrix দেখাবে।
+- **Model lab:** Account-এর আগের main interface-এ Logistic Regression/SVM test metrics ও evaluation download দেখাবে।
 
 ## Submission-এর আগে যা বুঝতে হবে
 
