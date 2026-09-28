@@ -29,7 +29,7 @@ class AppTests(unittest.TestCase):
         fields['Password'].set_value('demoPassword123')
         self.button('Sign in').click().run()
         self.assertFalse(self.app.exception)
-        self.assertIn('Welcome', self.app.title[0].value)
+        self.assertEqual(self.app.title[0].value, 'Demo Learner')
         self.app.sidebar.radio[0].set_value('Practice').run()
         self.app.selectbox[0].set_value('L1').run()
         buggy = "def solve(n):\n    return n\n"
@@ -79,7 +79,7 @@ class AppTests(unittest.TestCase):
         self.app.checkbox[0].check()
         self.button('Create account and start').click().run()
         self.assertFalse(self.app.exception)
-        self.assertIn('Welcome', self.app.title[0].value)
+        self.assertEqual(self.app.title[0].value, 'Demo Learner')
         self.assertEqual(self.app.session_state.user['username'], 'demostudent')
         self.assertEqual(storage.profile(self.app.session_state.user['id'])['email'], 'demo@example.com')
 

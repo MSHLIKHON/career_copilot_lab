@@ -130,7 +130,7 @@ with st.sidebar:
     st.markdown("### Career Copilot\n**LAB / TEAM NO AI**")
     st.caption("Python skill verification & adaptive practice")
     st.divider()
-    page = st.radio("Workspace", ["Overview", "Practice", "My profile", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
+    page = st.radio("Workspace", ["My profile", "Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")
