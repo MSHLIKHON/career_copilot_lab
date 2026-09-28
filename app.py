@@ -56,10 +56,13 @@ def authenticate():
     st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
     st.write("Show what you can do. Learn from each attempt.")
-    login_tab, register_tab = st.tabs(["Sign in", "Create account"])
-    with login_tab:
-        left, right = st.columns([1.05, 1], gap="large")
-        with left:
+    account_area, technical_area = st.columns([1.35, 1], gap="large")
+    with account_area:
+        st.markdown('<div class="auth-heading">Account access</div>'
+                    '<p class="auth-subheading">Sign in or create your private learning profile.</p>',
+                    unsafe_allow_html=True)
+        login_tab, register_tab = st.tabs(["Sign in", "Create account"])
+        with login_tab:
             st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Small Python challenges, real test evidence and hints that help you move forward.</p></div>', unsafe_allow_html=True)
             st.markdown('''<div class="feature-grid">
 <div class="feature-card"><b>20 focused tasks</b>Conditions, loops, functions and lists.</div>
@@ -67,7 +70,6 @@ def authenticate():
 <div class="feature-card"><b>Local feedback</b>A pilot model suggests likely mistake categories.</div>
 </div>''', unsafe_allow_html=True)
             st.info("Local classroom prototype. No GPT/Gemini key required. Create your own account; there is no default password.")
-        with right:
             st.markdown('<div class="auth-heading">Welcome back</div>'
                         '<p class="auth-subheading">Sign in to continue your practice.</p>',
                         unsafe_allow_html=True)
@@ -86,64 +88,67 @@ def authenticate():
                     st.error("Username or password is incorrect.")
                 except ValueError as error:
                     st.error(str(error))
-    with register_tab:
-        st.markdown('<div class="auth-heading">Create account</div>'
-                    '<p class="auth-subheading">Your progress is saved on this computer.</p>',
-                    unsafe_allow_html=True)
-        with st.form("register"):
-            details, security = st.columns(2, gap="large")
-            with details:
-                name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
-                username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
-                email = st.text_input("Email address", placeholder="you@example.com", max_chars=254)
-            with security:
-                phone = st.text_input("Phone number", placeholder="+880 1XXX-XXXXXX", max_chars=24)
-                password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
-                confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
-            consent = st.checkbox("Save my progress on this computer")
-            form_message = st.empty()
-            submitted = st.form_submit_button("Create account and start", type="primary", width="stretch")
-        if submitted:
-            if password != confirm:
-                form_message.error("Passwords do not match. Re-enter the same password in both fields.")
-            elif not consent:
-                form_message.error("Please allow local storage to save your practice and profile.")
-            else:
-                try:
-                    if not email.strip() or not phone.strip():
-                        raise ValueError("Email address and phone number are required.")
-                    storage.register(username, name, password, email, phone)
-                    user = storage.login(username, password)
-                    st.session_state.clear()
-                    st.session_state.user = user
-                    st.session_state.last_active = time.time()
-                    st.rerun()
-                except ValueError as error:
-                    if "already taken" in str(error):
-                        form_message.error("This username is already taken. Try adding a few numbers or choose another name.")
-                    else:
-                        form_message.error(str(error))
+        with register_tab:
+            st.markdown('<div class="auth-heading">Create account</div>'
+                        '<p class="auth-subheading">Your progress is saved on this computer.</p>',
+                        unsafe_allow_html=True)
+            with st.form("register"):
+                details, security = st.columns(2, gap="medium")
+                with details:
+                    name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
+                    username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
+                    email = st.text_input("Email address", placeholder="you@example.com", max_chars=254)
+                with security:
+                    phone = st.text_input("Phone number", placeholder="+880 1XXX-XXXXXX", max_chars=24)
+                    password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
+                    confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
+                consent = st.checkbox("Save my progress on this computer")
+                form_message = st.empty()
+                submitted = st.form_submit_button("Create account and start", type="primary", width="stretch")
+            if submitted:
+                if password != confirm:
+                    form_message.error("Passwords do not match. Re-enter the same password in both fields.")
+                elif not consent:
+                    form_message.error("Please allow local storage to save your practice and profile.")
+                else:
+                    try:
+                        if not email.strip() or not phone.strip():
+                            raise ValueError("Email address and phone number are required.")
+                        storage.register(username, name, password, email, phone)
+                        user = storage.login(username, password)
+                        st.session_state.clear()
+                        st.session_state.user = user
+                        st.session_state.last_active = time.time()
+                        st.rerun()
+                    except ValueError as error:
+                        if "already taken" in str(error):
+                            form_message.error("This username is already taken. Try adding a few numbers or choose another name.")
+                        else:
+                            form_message.error(str(error))
 
-    st.divider()
-    st.subheader("Technical information")
-    model_tab, runner_tab = st.tabs(["Model lab", "Runner help"])
-    with model_tab:
-        st.write("The local pilot classifier suggests one of four likely programming-mistake categories.")
-        metrics, metrics_error = load_metrics()
-        if metrics_error:
-            st.warning(metrics_error)
-        else:
-            st.warning(metrics["warning"])
-            st.write("**Approach:** Character TF-IDF + Logistic Regression; Linear SVM is a comparison baseline.")
-            summary = [{"Model": name, "Test accuracy": values["test"]["accuracy"],
-                        "Macro F1": values["test"]["macro_f1"]}
-                       for name, values in metrics["models"].items()]
-            st.dataframe(pd.DataFrame(summary), hide_index=True, width="stretch")
-            st.download_button("Download evaluation report", (MODEL_DIR / "metrics.json").read_bytes(),
-                               "evaluation_metrics.json", "application/json")
-    with runner_tab:
-        st.write("Submitted code runs in a restricted AST interpreter; the app never calls eval or exec on it.")
-        st.markdown("""
+    with technical_area:
+        st.markdown('<div class="auth-heading">Technical information</div>'
+                    '<p class="auth-subheading">Review the model evidence and safe-runner limits.</p>',
+                    unsafe_allow_html=True)
+        model_tab, runner_tab = st.tabs(["Model lab", "Runner help"])
+        with model_tab:
+            st.write("The local pilot classifier suggests one of four likely programming-mistake categories.")
+            metrics, metrics_error = load_metrics()
+            if metrics_error:
+                st.warning(metrics_error)
+            else:
+                st.warning(metrics["warning"])
+                st.write("**Approach:** Character TF-IDF + Logistic Regression; Linear SVM is a comparison baseline.")
+                for name, values in metrics["models"].items():
+                    test_metrics = values["test"]
+                    st.write(f"**{name.replace('_', ' ').title()}**  ·  "
+                             f"Accuracy {test_metrics['accuracy']:.1%}  ·  "
+                             f"Macro F1 {test_metrics['macro_f1']:.1%}")
+                st.download_button("Download evaluation report", (MODEL_DIR / "metrics.json").read_bytes(),
+                                   "evaluation_metrics.json", "application/json")
+        with runner_tab:
+            st.write("Submitted code runs in a restricted AST interpreter; the app never calls eval or exec on it.")
+            st.markdown("""
 **Supported:** positional functions, return, conditions, loops, assignment, basic
 arithmetic, comparisons, lists, tuples, strings, indexing and slicing.
 
