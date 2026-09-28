@@ -8,6 +8,7 @@ from core.tasks import TASKS, TASK_BY_ID
 from core.runner import run_tests, Interpreter, RunnerError
 from core.adaptive import extract_claims, practice_progress, summarize, recommend, roadmap
 from core.model import load_model, predict, LABELS
+from core.job_ml import analyze_job_match, generate_roadmap
 import core.model as model_module
 
 
@@ -187,6 +188,21 @@ class StorageTests(unittest.TestCase):
                        ('{broken', 'Unknown goal', self.uid))
         self.assertEqual(storage.profile(self.uid), {'claims': [], 'target': 'Python foundations'})
 
+    def test_saved_job_validation_and_user_isolation(self):
+        other = storage.register('jobowner', 'Job Owner', 'testing123')
+        roadmap_data = generate_roadmap(['Python'])
+        storage.save_job_analysis(self.uid, 'Backend role', 'Python API role', 42.5,
+                                  ['Python'], roadmap_data)
+        saved = storage.get_saved_jobs(self.uid)
+        self.assertEqual(len(saved), 1)
+        self.assertEqual(storage.get_saved_jobs(other), [])
+        with self.assertRaises(ValueError):
+            storage.delete_saved_job(other, saved[0]['id'])
+        with self.assertRaises(ValueError):
+            storage.save_job_analysis(self.uid, '', 'Description', 50, [], [])
+        storage.delete_saved_job(self.uid, saved[0]['id'])
+        self.assertEqual(storage.get_saved_jobs(self.uid), [])
+
 
 class AdaptiveTests(unittest.TestCase):
     def attempt(self, key, status='passed', hints=0, solution=0):
@@ -283,6 +299,21 @@ class ModelTests(unittest.TestCase):
         prediction = predict(source, result, None, 'Model files need rebuilding.')
         self.assertEqual(prediction['label'], 'model_unavailable')
         self.assertIn('need rebuilding', prediction['message'])
+
+
+class JobAnalyzerTests(unittest.TestCase):
+    def test_job_match_uses_claims_when_cv_is_blank(self):
+        score, missing = analyze_job_match('', 'Python SQL developer', ['Python'])
+        self.assertGreater(score, 0)
+        self.assertIsInstance(missing, list)
+
+    def test_job_match_rejects_invalid_input(self):
+        with self.assertRaises(ValueError):
+            analyze_job_match(None, 'Python role', [])
+
+    def test_course_search_links_are_encoded(self):
+        roadmap_data = generate_roadmap(['Machine Learning'])
+        self.assertIn('Machine+Learning', roadmap_data[0][1]['links']['Coursera'])
 
 
 if __name__ == '__main__':

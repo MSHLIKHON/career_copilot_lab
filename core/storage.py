@@ -48,6 +48,10 @@ def init_db():
             created REAL NOT NULL);
         CREATE TABLE IF NOT EXISTS login_limits (
             username TEXT PRIMARY KEY, failures INTEGER NOT NULL, locked_until REAL NOT NULL);
+        CREATE TABLE IF NOT EXISTS saved_jobs (
+            id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id),
+            title TEXT NOT NULL, job_text TEXT NOT NULL, score REAL NOT NULL,
+            missing_skills TEXT NOT NULL, roadmaps TEXT NOT NULL, created REAL NOT NULL);
         ''')
 
 
@@ -187,4 +191,41 @@ def report_prediction(user_id, attempt_id, comment):
 def export_user(user_id):
     with connect() as db:
         rows = db.execute("SELECT attempt_id,comment,created FROM feedback WHERE user_id=?", (user_id,)).fetchall()
-    return {"profile": profile(user_id), "attempts": attempts(user_id), "feedback": [dict(r) for r in rows]}
+    return {"profile": profile(user_id), "attempts": attempts(user_id),
+            "feedback": [dict(r) for r in rows], "saved_jobs": get_saved_jobs(user_id)}
+
+
+def save_job_analysis(user_id, title, job_text, score, missing_skills, roadmaps):
+    if not isinstance(title, str) or not 1 <= len(title.strip()) <= 120:
+        raise ValueError("Job title must have 1-120 characters.")
+    if not isinstance(job_text, str) or not 1 <= len(job_text.strip()) <= 50000:
+        raise ValueError("Job description must have 1-50,000 characters.")
+    if isinstance(score, bool) or not isinstance(score, (int, float)) or not 0 <= score <= 100:
+        raise ValueError("Match score must be between 0 and 100.")
+    if (not isinstance(missing_skills, list) or len(missing_skills) > 15 or
+            any(not isinstance(skill, str) or not 1 <= len(skill) <= 100 for skill in missing_skills)):
+        raise ValueError("Missing skills must be a valid list with at most 15 items.")
+    if not isinstance(roadmaps, list) or len(roadmaps) > 15:
+        raise ValueError("Roadmap data is invalid.")
+    try:
+        missing_json = json.dumps(missing_skills, allow_nan=False)
+        roadmaps_json = json.dumps(roadmaps, allow_nan=False)
+    except (TypeError, ValueError):
+        raise ValueError("Roadmap data is not valid JSON.") from None
+    with connect() as db:
+        db.execute("INSERT INTO saved_jobs(user_id, title, job_text, score, missing_skills, roadmaps, created) VALUES(?,?,?,?,?,?,?)",
+                   (user_id, title.strip(), job_text.strip(), float(score), missing_json, roadmaps_json, time.time()))
+
+
+def get_saved_jobs(user_id):
+    with connect() as db:
+        return [dict(r) for r in db.execute("SELECT * FROM saved_jobs WHERE user_id=? ORDER BY created DESC", (user_id,))]
+
+
+def delete_saved_job(user_id, job_id):
+    if not isinstance(job_id, int) or isinstance(job_id, bool):
+        raise ValueError("Saved analysis not found.")
+    with connect() as db:
+        cursor = db.execute("DELETE FROM saved_jobs WHERE id=? AND user_id=?", (job_id, user_id))
+        if cursor.rowcount != 1:
+            raise ValueError("Saved analysis not found.")

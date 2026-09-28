@@ -11,6 +11,7 @@ from core import storage
 from core.tasks import TASKS, TASK_BY_ID, TOPICS
 from core.runner import run_tests
 from core.model import load_metrics, load_model, predict, MODEL_DIR
+from core.job_ml import analyze_job_match, generate_roadmap
 from core.adaptive import (SKILLS, GOALS, HINT_UNLOCKS, SOLUTION_UNLOCK,
                            extract_claims, practice_progress, summarize, recommend, roadmap)
 
@@ -120,7 +121,7 @@ with st.sidebar:
     st.markdown("### Career Copilot\n**LAB / TEAM NO AI**")
     st.caption("Python skill verification & adaptive practice")
     st.divider()
-    page = st.radio("Workspace", ["Overview", "Practice", "My skills & CV", "Learning roadmap", "History", "Model lab", "Runner help"], key="page")
+    page = st.radio("Workspace", ["Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History", "Model lab", "Runner help"], key="page")
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")
@@ -284,7 +285,7 @@ elif page == "My skills & CV":
     uploaded = st.file_uploader("CV file (optional; maximum 2 MB)", type=["pdf", "txt"])
     if st.button("Extract skill keywords"):
         try:
-            text = cv_text
+            text = (cv_text or "").strip()
             if uploaded:
                 if uploaded.size > 2 * 1024 * 1024:
                     raise ValueError("File must be at most 2 MB.")
@@ -294,15 +295,23 @@ elif page == "My skills & CV":
                         raise ValueError("Use an unencrypted PDF.")
                     if len(reader.pages) > 10:
                         raise ValueError("Use a CV with at most 10 pages.")
-                    text += "\n" + "\n".join((p.extract_text() or "")[:10000] for p in reader.pages)
+                    extracted = "\n".join((p.extract_text() or "").strip()[:10000] for p in reader.pages)
+                    text = f"{text}\n{extracted}".strip()
                 else:
-                    text += "\n" + uploaded.getvalue().decode("utf-8")
-            found = extract_claims(text)
-            st.session_state.claim_choices = found
-            if found:
-                st.success("Keywords extracted. Review the selected claims, then save.")
+                    try:
+                        decoded = uploaded.getvalue().decode("utf-8")
+                    except UnicodeDecodeError:
+                        decoded = uploaded.getvalue().decode("latin-1", errors="replace")
+                    text = f"{text}\n{decoded}".strip()
+            if not text:
+                st.warning("Paste CV text or upload a CV file first.")
             else:
-                st.warning("No supported keywords found. Scanned PDFs need OCR; select skills manually below.")
+                found = extract_claims(text)
+                st.session_state.claim_choices = found
+                if found:
+                    st.success(f"{len(found)} keyword(s) extracted. Review the selected claims, then save.")
+                else:
+                    st.warning("No supported keywords found. Scanned PDFs need OCR; select skills manually below.")
         except Exception as error:
             st.error(f"Could not read CV: {error}")
     if "claim_choices" not in st.session_state:
@@ -335,12 +344,91 @@ elif page == "Learning roadmap":
         go_to_task(next_task["id"])
     st.subheader("Practice project suggestions")
     st.caption("Project briefs for extra learning. These are not automatically graded by the runner.")
-    for title, topics, brief in [
-        ("Student result calculator", "Conditions + Functions", "Create functions for total, average and grade. Test the exact grade boundaries and an empty mark list."),
-        ("Daily expense summary", "Loops + Lists", "Write functions to total expenses, find the largest amount and remove duplicates. Test empty and single-item inputs."),
-        ("Number practice toolkit", "Functions + Loops", "Combine prime checking, digit sum and GCD functions. Write your own test table and explain failed cases.")]:
+    projects_by_goal = {
+        "Python foundations": [
+            ("Student result calculator", "Conditions + Functions", "Create functions for total, average and grade. Test exact grade boundaries and an empty mark list."),
+            ("Daily expense summary", "Loops + Lists", "Total expenses, find the largest amount and remove duplicates. Test empty and single-item inputs."),
+            ("Number practice toolkit", "Functions + Loops", "Combine prime checking, digit sum and GCD functions. Write a test table and explain failures."),
+        ],
+        "Python backend preparation": [
+            ("Request validator", "Conditions + Functions", "Validate method, path and required fields for a small request dictionary."),
+            ("Account rules", "Loops + Conditions", "Check password rules and locate a matching username without exposing stored passwords."),
+            ("Batch input cleaner", "Lists + Functions", "Normalize a list of submitted values and reject invalid records before a mock insert."),
+        ],
+        "Data analysis foundations": [
+            ("Tabular data cleaner", "Lists + Loops", "Clean rows, handle missing values and convert numeric text while recording rejected rows."),
+            ("Summary statistics", "Functions + Lists", "Implement mean and median with explicit empty-input behaviour and boundary tests."),
+            ("Category frequency report", "Loops + Conditions", "Count categories from records and return a deterministic, sorted summary."),
+        ],
+    }
+    for title, topics, brief in projects_by_goal[profile["target"]]:
         with st.expander(title + " / " + topics):
             st.write(brief)
+
+elif page == "Job Match Analyzer":
+    st.caption("CAREER PREPARATION")
+    st.title("Job Match Analyzer")
+    st.write("Compare CV/profile text with a job description using local TF-IDF text similarity and a trained skill vocabulary.")
+    st.caption("This is a learning aid, not a hiring score. Similar wording can raise the score, and extracted skills can be incomplete.")
+    analyze_tab, saved_tab = st.tabs(["New analysis", "Saved roadmaps"])
+    with analyze_tab:
+        job_text = st.text_area("Job description", height=220, max_chars=50000)
+        cv_text = st.text_area("CV text (optional)", height=140, max_chars=50000,
+                               help="If blank, the analyzer uses your saved skill claims.")
+        if st.button("Analyze job match", type="primary"):
+            if not job_text.strip():
+                st.error("Paste a job description first.")
+            else:
+                score, missing_skills = analyze_job_match(cv_text, job_text, profile["claims"])
+                st.session_state.job_analysis = {
+                    "score": score, "missing_skills": missing_skills,
+                    "roadmaps": generate_roadmap(missing_skills), "job_text": job_text,
+                }
+        analysis = st.session_state.get("job_analysis")
+        if analysis:
+            st.subheader("Analysis result")
+            a, b = st.columns(2)
+            a.metric("Text similarity", f"{analysis['score']}%")
+            b.metric("Missing technical skills", len(analysis["missing_skills"]))
+            if analysis["missing_skills"]:
+                st.write("**Detected gaps:** " + ", ".join(analysis["missing_skills"]))
+                st.subheader("Learning searches")
+                for skill, resource in analysis["roadmaps"]:
+                    with st.expander(skill):
+                        st.write(resource["description"])
+                        cols = st.columns(len(resource["links"]))
+                        for col, (platform, url) in zip(cols, resource["links"].items()):
+                            col.link_button(platform, url, width="stretch")
+            else:
+                st.success("No missing skill from the available vocabulary was detected.")
+            with st.form("save_job_analysis"):
+                title = st.text_input("Job title for this saved roadmap", max_chars=120)
+                save_analysis = st.form_submit_button("Save analysis")
+            if save_analysis:
+                try:
+                    storage.save_job_analysis(uid, title, analysis["job_text"], analysis["score"],
+                                              analysis["missing_skills"], analysis["roadmaps"])
+                    st.success("Analysis saved.")
+                except ValueError as error:
+                    st.error(str(error))
+    with saved_tab:
+        saved_jobs = storage.get_saved_jobs(uid)
+        if not saved_jobs:
+            st.info("No saved job analyses yet.")
+        for saved in saved_jobs:
+            with st.expander(f"{saved['title']} · {saved['score']:.1f}%"):
+                try:
+                    missing = json.loads(saved["missing_skills"])
+                    roadmaps = json.loads(saved["roadmaps"])
+                except (TypeError, json.JSONDecodeError):
+                    st.error("This saved analysis is damaged and cannot be displayed.")
+                    continue
+                st.write("**Missing skills:** " + (", ".join(missing) if missing else "None detected"))
+                for skill, resource in roadmaps:
+                    st.write(f"**{skill}** — {resource['description']}")
+                if st.button("Delete saved analysis", key=f"delete_job_{saved['id']}"):
+                    storage.delete_saved_job(uid, saved["id"])
+                    st.rerun()
 
 elif page == "History":
     st.caption("YOUR SAVED EVIDENCE")
