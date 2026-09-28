@@ -229,7 +229,7 @@ elif page == "My skills & CV":
     uploaded = st.file_uploader("CV file (optional; maximum 2 MB)", type=["pdf", "txt"])
     if st.button("Extract skill keywords"):
         try:
-            text = cv_text
+            text = (cv_text or "").strip()
             if uploaded:
                 if uploaded.size > 2 * 1024 * 1024:
                     raise ValueError("File must be at most 2 MB.")
@@ -239,15 +239,23 @@ elif page == "My skills & CV":
                         raise ValueError("Use an unencrypted PDF.")
                     if len(reader.pages) > 10:
                         raise ValueError("Use a CV with at most 10 pages.")
-                    text += "\n" + "\n".join((p.extract_text() or "")[:10000] for p in reader.pages)
+                    extracted = "\n".join((p.extract_text() or "").strip() for p in reader.pages)
+                    text = f"{text}\n{extracted}".strip()
                 else:
-                    text += "\n" + uploaded.getvalue().decode("utf-8")
-            found = extract_claims(text)
-            st.session_state.claim_choices = found
-            if found:
-                st.success("Keywords extracted. Review the selected claims, then save.")
+                    try:
+                        decoded = uploaded.getvalue().decode("utf-8")
+                    except UnicodeDecodeError:
+                        decoded = uploaded.getvalue().decode("latin-1", errors="replace")
+                    text = f"{text}\n{decoded}".strip()
+            if not text:
+                st.warning("Please paste CV text or upload a CV file first.")
             else:
-                st.warning("No supported keywords found. Scanned PDFs need OCR; select skills manually below.")
+                found = extract_claims(text)
+                st.session_state.claim_choices = found
+                if found:
+                    st.success(f"{len(found)} keyword(s) extracted: {', '.join(found)}. Review the selected claims, then save.")
+                else:
+                    st.warning("No supported keywords found. Scanned PDFs need OCR; select skills manually below.")
         except Exception as error:
             st.error(f"Could not read CV: {error}")
     if "claim_choices" not in st.session_state:
