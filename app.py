@@ -56,20 +56,22 @@ def authenticate():
     st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
     st.write("Show what you can do. Learn from each attempt.")
-    account_area, technical_area = st.columns([1.35, 1], gap="large")
-    with account_area:
-        st.markdown('<div class="auth-heading">Account access</div>'
-                    '<p class="auth-subheading">Sign in or create your private learning profile.</p>',
+    story, account = st.columns([1.15, .85], gap="large")
+    with story:
+        st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Build Python evidence, understand each mistake and follow a roadmap shaped by your work.</p></div>', unsafe_allow_html=True)
+        st.markdown('''<div class="feature-grid">
+<div class="feature-card"><b>20 focused tasks</b>Conditions, loops, functions and lists.</div>
+<div class="feature-card"><b>Private progress</b>Assisted and independent evidence stays separate.</div>
+<div class="feature-card"><b>Career preparation</b>Saved CV, skill gaps and learning roadmaps.</div>
+</div>''', unsafe_allow_html=True)
+        st.info("Local classroom prototype · Private on this computer · No API key required")
+
+    with account:
+        st.markdown('<div class="auth-heading">Your learning workspace</div>'
+                    '<p class="auth-subheading">Sign in or create a private local account.</p>',
                     unsafe_allow_html=True)
         login_tab, register_tab = st.tabs(["Sign in", "Create account"])
         with login_tab:
-            st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Small Python challenges, real test evidence and hints that help you move forward.</p></div>', unsafe_allow_html=True)
-            st.markdown('''<div class="feature-grid">
-<div class="feature-card"><b>20 focused tasks</b>Conditions, loops, functions and lists.</div>
-<div class="feature-card"><b>Private progress</b>Assisted and independent evidence stays separate.</div>
-<div class="feature-card"><b>Local feedback</b>A pilot model suggests likely mistake categories.</div>
-</div>''', unsafe_allow_html=True)
-            st.info("Local classroom prototype. No GPT/Gemini key required. Create your own account; there is no default password.")
             st.markdown('<div class="auth-heading">Welcome back</div>'
                         '<p class="auth-subheading">Sign in to continue your practice.</p>',
                         unsafe_allow_html=True)
@@ -89,19 +91,13 @@ def authenticate():
                 except ValueError as error:
                     st.error(str(error))
         with register_tab:
-            st.markdown('<div class="auth-heading">Create account</div>'
-                        '<p class="auth-subheading">Your progress is saved on this computer.</p>',
-                        unsafe_allow_html=True)
             with st.form("register"):
-                details, security = st.columns(2, gap="medium")
-                with details:
-                    name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
-                    username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
-                    email = st.text_input("Email address", placeholder="you@example.com", max_chars=254)
-                with security:
-                    phone = st.text_input("Phone number", placeholder="+880 1XXX-XXXXXX", max_chars=24)
-                    password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
-                    confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
+                name = st.text_input("Your name", placeholder="Your display name", max_chars=80)
+                username = st.text_input("Choose username", placeholder="3–24 letters, numbers or _", max_chars=24)
+                email = st.text_input("Email address", placeholder="you@example.com", max_chars=254)
+                phone = st.text_input("Phone number", placeholder="+880 1XXX-XXXXXX", max_chars=24)
+                password = st.text_input("Choose password", type="password", placeholder="8–128 characters", max_chars=128)
+                confirm = st.text_input("Confirm password", type="password", placeholder="Repeat password", max_chars=128)
                 consent = st.checkbox("Save my progress on this computer")
                 form_message = st.empty()
                 submitted = st.form_submit_button("Create account and start", type="primary", width="stretch")
@@ -126,12 +122,11 @@ def authenticate():
                         else:
                             form_message.error(str(error))
 
-    with technical_area:
-        st.markdown('<div class="auth-heading">Technical information</div>'
-                    '<p class="auth-subheading">Review the model evidence and safe-runner limits.</p>',
-                    unsafe_allow_html=True)
-        model_tab, runner_tab = st.tabs(["Model lab", "Runner help"])
-        with model_tab:
+    st.divider()
+    st.caption("TECHNICAL NOTES · OPTIONAL READING")
+    model_col, runner_col = st.columns(2, gap="large")
+    with model_col:
+        with st.expander("Model evidence and limitations"):
             st.write("The local pilot classifier suggests one of four likely programming-mistake categories.")
             metrics, metrics_error = load_metrics()
             if metrics_error:
@@ -146,7 +141,8 @@ def authenticate():
                              f"Macro F1 {test_metrics['macro_f1']:.1%}")
                 st.download_button("Download evaluation report", (MODEL_DIR / "metrics.json").read_bytes(),
                                    "evaluation_metrics.json", "application/json")
-        with runner_tab:
+    with runner_col:
+        with st.expander("Safe runner rules and supported Python"):
             st.write("Submitted code runs in a restricted AST interpreter; the app never calls eval or exec on it.")
             st.markdown("""
 **Supported:** positional functions, return, conditions, loops, assignment, basic
