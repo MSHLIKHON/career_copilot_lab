@@ -1,4 +1,5 @@
 import io
+import html
 import json
 import time
 from datetime import datetime
@@ -28,6 +29,10 @@ border:1px solid #C8D6F4;border-radius:999px;background:#EAF0FC;color:#274D9B;
 font-size:12px;line-height:1.2;letter-spacing:.09em;font-weight:750}
 .auth-heading {font-size:20px;font-weight:750;color:#17243D;line-height:1.25;margin:12px 0 4px}
 .auth-subheading {font-size:14px;color:#52627E;line-height:1.5;margin:0 0 18px}
+.profile-strip {display:flex;justify-content:space-between;align-items:center;gap:18px;
+padding:13px 17px;margin:0 0 22px;border:1px solid #D7E1F0;border-radius:14px;
+background:#F7F9FD;color:#17243D}.profile-strip strong {font-size:16px}
+.profile-strip span {color:#60708A;font-size:13px;text-align:right}
 @media (max-width:640px) {.block-container {padding-top:4rem}.eyebrow {font-size:11px}}
 </style>''', unsafe_allow_html=True)
 storage.init_db()
@@ -132,6 +137,12 @@ with st.sidebar:
     if st.button("Sign out", width="stretch"):
         st.session_state.clear()
         st.rerun()
+
+st.markdown(
+    f'<div class="profile-strip"><strong>{html.escape(profile["name"])}</strong>'
+    f'<span>@{html.escape(profile["username"])} · {html.escape(profile["target"])}</span></div>',
+    unsafe_allow_html=True,
+)
 
 
 def go_to_task(task_id):
