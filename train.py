@@ -17,7 +17,7 @@ from core.runner import run_tests
 ROOT = Path(__file__).resolve().parent
 
 FAMILIES = [
- ("wrong_condition", "def solve(n):\n    return n > 0", ("n > 0", "n < 0"), [4], True),
+ ("wrong_condition", "def solve(n):\n     return n > 0", ("n > 0", "n < 0"), [4], True),
  ("wrong_condition", "def solve(n):\n    return n % 2 == 0", ("==", "!="), [2], True),
  ("wrong_condition", "def solve(a, b):\n    if a >= b:\n        return a\n    return b", (">=", "<="), [8, 2], 8),
  ("wrong_condition", "def solve(n):\n    return n >= 18", (">=", ">"), [18], True),
