@@ -8,9 +8,10 @@ Tests cover all 20 reference task solutions, runner restrictions and limits,
 input copying, model loading/prediction and corrupt-model recovery, train/test
 source-family separation, password hashing, account isolation, lockout and new-user
 recovery, persistence validation, distinct-attempt hint gating, stored assistance, adaptive rules, and the actual
-Streamlit registration/login/task/hints/profile/history workflow.
+Streamlit registration/login/task/hints/profile/job-analysis/history workflow. Job-analysis
+tests cover input validation, user isolation, course-link encoding and local similarity.
 
-The final test run passed 71 tests. All 20 reference solutions passed all 88
+The final test run passed 75 tests. All 20 reference solutions passed all 88
 task-specific cases. The local Streamlit server started on a test port and its
 health endpoint returned `ok`. Python compile checks and shell syntax validation
 also passed. AppTest verifies widgets and flows, not pixel-perfect browser layout.

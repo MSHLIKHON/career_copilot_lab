@@ -30,6 +30,14 @@ Python-এ শুধু ছোট হাতের `solve` নামের functi
 9. Python task evidence দেখাবে। SQL/React এই version-এ **Not assessed** থাকবে।
 10. **Learning roadmap** এবং **Model lab** খুলে adaptive plan ও actual training metrics দেখাও।
 
+## Job Match Analyzer
+
+বাম পাশের **Job Match Analyzer**-এ একটি job description paste করো। চাইলে CV text দাও;
+না দিলে saved skill claims ব্যবহার হবে। এটি local TF-IDF text similarity এবং trained
+skill vocabulary দিয়ে সম্ভাব্য gap দেখায়। ফলাফল hiring decision বা চাকরি পাওয়ার
+সম্ভাবনা নয়। দরকার হলে analysis একটি title দিয়ে save করা যায়; saved roadmap শুধু
+নিজের account-এ দেখা ও delete করা যাবে।
+
 ## পরে আবার চালাতে
 
 একই folder-এর `START_WINDOWS.bat` double-click করলেই হবে। Dependencies থাকলে internet লাগে না। আগের account, profile ও history `data/career.db`-তে থাকে। Folder সরালে পুরো folder একসঙ্গে সরাবে। Terminal বন্ধ করলে app বন্ধ হবে, data মুছবে না।

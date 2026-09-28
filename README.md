@@ -43,6 +43,8 @@ First installation requires internet. Once installed, app and model run offline.
 | Adaptive practice | Explicit task contracts, best-test evidence, attempt quality feedback, and rules based on failure, level, topic, completed work and learner goal |
 | Progress memory | Per-user attempts, submitted code, test evidence, hints and predictions saved to SQLite |
 | Roadmap & gap view | Goal-level targets versus independent task evidence; no invented job matching percentage |
+| Job match analyzer | Local TF-IDF unigram/bigram text similarity, trained skill-vocabulary gap extraction, course-search links and per-user saved analyses |
+| CV robustness | Empty-input guidance, bounded PDF parsing, UTF-8 text support and a Latin-1 fallback; raw CV content is not stored |
 | Practice projects | Three guided project briefs; explicitly not automatically graded |
 | Review loop | Learner reports on predictions, stored for review and included in personal export |
 | Export | Full personal history JSON and model evaluation JSON download |
@@ -55,9 +57,11 @@ First installation requires internet. Once installed, app and model run offline.
 - `core/runner.py`: restricted interpreter and deterministic evaluator.
 - `core/model.py`: trusted local model loading and prediction.
 - `core/adaptive.py`: progress, keyword claims and recommendation rules.
+- `core/job_ml.py`: local job-text similarity, technical-skill gap extraction and learning-search links.
 - `core/storage.py`: SQLite persistence, authentication and feedback ownership.
 - `train.py`: generated pilot data, TF-IDF pipeline, model fitting and evaluation.
 - `data/pilot_dataset.json`: 240 generated labeled examples; no personal information.
+- `data/all_job_post.json`: source job-post dataset used to derive the separate skill vocabulary; not read by the app at runtime.
 - `models/`: trained artifacts and metrics. Only load trusted locally generated artifacts.
 - `tests/`: unit tests and Streamlit AppTest end-to-end user journey.
 - `docs/`: technical limits and validation notes.
@@ -84,11 +88,12 @@ not estimates of general student-population performance. See `docs/MODEL_CARD.md
 
 ## Limits and honest claims
 
-This implements the scoped Python lab prototype, not every future idea in earlier
+This implements a local educational prototype, not every future idea in earlier
 brainstorming. No SQL/React runner, GPT/Gemini integration, OCR, fine-tuned transformer,
-learned adaptive-success predictor, real CV-job classifier, cloud sync or production
-hosting is included. CV mapping and adaptation are rule-based. The only learned
-component is the mistake classifier.
+learned adaptive-success predictor, cloud sync or production hosting is included.
+The job analyzer is text similarity plus vocabulary matching—not a validated hiring,
+suitability or interview-success model. Practice adaptation remains rule-based. The
+mistake classifier is the only component that predicts a learned category.
 
 Passing the included tests is evidence for those inputs only. It cannot prove
 expertise, authorship, independence from external help or suitability for hiring.
@@ -107,7 +112,7 @@ read or modify all local data.
 - Rahat — 112330518
 - Naimur — 112330546
 - Srijon — 112330621
-- Abir Korashi— 112330396
+- Abir Korashi — 112330396
 
 ## Technical references
 

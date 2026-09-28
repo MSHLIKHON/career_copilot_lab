@@ -1,8 +1,8 @@
-test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-27 20:10:29.191 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-28 13:30:57.928 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-27 20:10:29.575 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-28 13:30:58.338 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-27 20:10:29.777 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-28 13:30:58.587 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
 test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
@@ -14,6 +14,9 @@ test_initial_recommendation (test_core.AdaptiveTests.test_initial_recommendation
 test_passed_task_not_recommended_again (test_core.AdaptiveTests.test_passed_task_not_recommended_again) ... ok
 test_practice_help_requires_distinct_failed_approaches (test_core.AdaptiveTests.test_practice_help_requires_distinct_failed_approaches) ... ok
 test_solution_seen_not_independent (test_core.AdaptiveTests.test_solution_seen_not_independent) ... ok
+test_course_search_links_are_encoded (test_core.JobAnalyzerTests.test_course_search_links_are_encoded) ... ok
+test_job_match_rejects_invalid_input (test_core.JobAnalyzerTests.test_job_match_rejects_invalid_input) ... ok
+test_job_match_uses_claims_when_cv_is_blank (test_core.JobAnalyzerTests.test_job_match_uses_claims_when_cv_is_blank) ... ok
 test_corrupt_model_files_are_reported_not_raised (test_core.ModelTests.test_corrupt_model_files_are_reported_not_raised) ... ok
 test_dataset_families_do_not_leak (test_core.ModelTests.test_dataset_families_do_not_leak) ... ok
 test_pass_does_not_need_model (test_core.ModelTests.test_pass_does_not_need_model) ... ok
@@ -49,6 +52,7 @@ test_profile_persistence (test_core.StorageTests.test_profile_persistence) ... o
 test_register_clears_preexisting_lockout (test_core.StorageTests.test_register_clears_preexisting_lockout) ... ok
 test_register_login (test_core.StorageTests.test_register_login) ... ok
 test_rejects_invalid_persistent_data (test_core.StorageTests.test_rejects_invalid_persistent_data) ... ok
+test_saved_job_validation_and_user_isolation (test_core.StorageTests.test_saved_job_validation_and_user_isolation) ... ok
 test_weak_password (test_core.StorageTests.test_weak_password) ... ok
 test_reference_A1 (test_core.TaskTests.test_reference_A1) ... ok
 test_reference_A2 (test_core.TaskTests.test_reference_A2) ... ok
@@ -74,6 +78,6 @@ test_local_config_avoids_first_run_prompt (test_server.ServerTests.test_local_co
 test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
 
 ----------------------------------------------------------------------
-Ran 71 tests in 4.538s
+Ran 75 tests in 5.072s
 
 OK
