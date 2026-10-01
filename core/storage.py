@@ -183,6 +183,33 @@ def save_profile(user_id, claims, target, location="", education="", about="", c
         _log(db, user_id, "profile_updated", "Profile details, skills, goal and saved CV updated")
 
 
+def update_account_details(user_id, name, email="", phone="", new_password=None):
+    if not all(isinstance(value, str) for value in (name, email, phone)):
+        raise ValueError("Account details must be text.")
+    name = name.strip()
+    email = email.strip().lower()
+    phone = phone.strip()
+    if not 1 <= len(name) <= 80:
+        raise ValueError("Enter a display name with 1-80 characters.")
+    if email and (len(email) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email)):
+        raise ValueError("Enter a valid email address.")
+    if phone and (len(phone) > 24 or not re.fullmatch(r"\+?[0-9][0-9 ()-]{6,22}[0-9]", phone)):
+        raise ValueError("Enter a valid phone number using digits and an optional country code.")
+    if new_password is not None and not 8 <= len(new_password) <= 128:
+        raise ValueError("Password must have 8-128 characters.")
+    
+    with connect() as db:
+        if new_password:
+            salt = secrets.token_hex(16)
+            digest = password_hash(new_password, salt)
+            db.execute("UPDATE users SET name=?, email=?, phone=?, salt=?, password_hash=? WHERE id=?", 
+                       (name, email, phone, salt, digest, user_id))
+        else:
+            db.execute("UPDATE users SET name=?, email=?, phone=? WHERE id=?", 
+                       (name, email, phone, user_id))
+        _log(db, user_id, "account_updated", "Account details updated")
+
+
 def assistance(user_id, task_id, hints=None, solution=None):
     if not isinstance(task_id, str) or task_id not in TASK_BY_ID:
         raise ValueError("Unknown task.")
