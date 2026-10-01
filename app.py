@@ -45,11 +45,7 @@ with st.sidebar:
         st.session_state.clear()
         st.rerun()
 
-st.markdown(
-    f'<div class="profile-strip"><strong>{html.escape(profile["name"])}</strong>'
-    f'<span>@{html.escape(profile["username"])} · {html.escape(profile["target"])}</span></div>',
-    unsafe_allow_html=True,
-)
+
 
 if page == "Overview":
     render_overview(user, history, profile)
