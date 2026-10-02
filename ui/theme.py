@@ -2,6 +2,11 @@ import streamlit as st
 
 def apply_theme():
     st.markdown('''<style>
+#MainMenu {visibility: hidden !important;}
+footer {visibility: hidden !important;}
+.stAppDeployButton {display: none !important;}
+[data-testid="stHeaderActionElements"] {display: none !important;}
+header {background: transparent !important;}
 .stApp {background:linear-gradient(145deg,#F8FAFE 0%,#F3F6FC 50%,#F8FAFE 100%)}
 .block-container {max-width:1160px;padding-top:3.5rem;padding-bottom:4rem}
 h1,h2,h3 {letter-spacing:-.035em}
