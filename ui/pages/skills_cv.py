@@ -4,6 +4,7 @@ import streamlit as st
 from pypdf import PdfReader
 from core import storage
 from core.adaptive import SKILLS, GOALS, extract_claims, summarize
+from core.job_ml import KNOWN_SKILLS
 
 def render_skills_cv(uid, history, profile):
     st.caption("CLAIMS AND EVIDENCE")
@@ -49,7 +50,9 @@ def render_skills_cv(uid, history, profile):
             st.error(f"Could not read CV: {error}")
     if "claim_choices" not in st.session_state:
         st.session_state.claim_choices = profile["claims"]
-    claims = st.multiselect("Skills you claim (confirm manually)", SKILLS, key="claim_choices")
+        
+    all_options = sorted(list(set(SKILLS + [s.title() for s in KNOWN_SKILLS] + st.session_state.claim_choices)))
+    claims = st.multiselect("Skills you claim (confirm manually)", all_options, key="claim_choices")
     target = st.selectbox("Learning goal", list(GOALS), index=list(GOALS).index(profile["target"]))
     save_cv = st.checkbox("Save this CV text in my private local profile", value=True)
     if st.button("Save skills & CV", type="primary"):

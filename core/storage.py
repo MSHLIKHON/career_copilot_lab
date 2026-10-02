@@ -154,7 +154,7 @@ def profile(user_id):
         claims = []
     if not isinstance(claims, list):
         claims = []
-    claims = list(dict.fromkeys(claim for claim in claims if claim in SKILLS))
+    claims = list(dict.fromkeys(claim for claim in claims if isinstance(claim, str) and len(claim) <= 100))
     target = row["target"] if row["target"] in GOALS else "Python foundations"
     return {"claims": claims, "target": target, "name": row["name"],
             "username": row["username"], "email": row["email"], "phone": row["phone"],
@@ -163,10 +163,10 @@ def profile(user_id):
 
 
 def save_profile(user_id, claims, target, location="", education="", about="", cv_text=""):
-    if (not isinstance(claims, list) or len(claims) > len(SKILLS) or
-            any(not isinstance(claim, str) or claim not in SKILLS for claim in claims) or
+    if (not isinstance(claims, list) or len(claims) > 5000 or
+            any(not isinstance(claim, str) or len(claim) > 100 for claim in claims) or
             len(set(claims)) != len(claims)):
-        raise ValueError("Choose each skill at most once from the supported list.")
+        raise ValueError("Skills must be unique strings under 100 characters.")
     if not isinstance(target, str) or target not in GOALS:
         raise ValueError("Choose a supported learning goal.")
     fields = (location, education, about, cv_text)
