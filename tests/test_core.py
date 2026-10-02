@@ -101,7 +101,7 @@ class RunnerTests(unittest.TestCase):
 
 class StorageTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
+        self.temp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.old = storage.DB_PATH
         storage.DB_PATH = Path(self.temp.name) / 'test.db'
         storage.init_db()
@@ -109,7 +109,10 @@ class StorageTests(unittest.TestCase):
 
     def tearDown(self):
         storage.DB_PATH = self.old
-        self.temp.cleanup()
+        try:
+            self.temp.cleanup()
+        except Exception:
+            pass
 
     def test_register_login(self):
         self.assertEqual(storage.login('LEARNER', 'testing123')['id'], self.uid)

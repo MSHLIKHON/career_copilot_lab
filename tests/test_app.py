@@ -9,14 +9,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class AppTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
+        self.temp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.old = storage.DB_PATH
         storage.DB_PATH = Path(self.temp.name) / 'app.db'
         self.app = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=30).run()
 
     def tearDown(self):
         storage.DB_PATH = self.old
-        self.temp.cleanup()
+        try:
+            self.temp.cleanup()
+        except Exception:
+            pass
 
     def button(self, label):
         return next(x for x in self.app.button if x.label == label)

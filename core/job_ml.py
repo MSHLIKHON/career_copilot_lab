@@ -33,6 +33,41 @@ def _skill_pattern(skill):
     return r"(?<![a-z0-9])" + re.escape(skill) + r"(?![a-z0-9])"
 
 
+class MatchScore(float):
+    """A float match score that also carries ATS and ML score breakdown attributes and dict-like access."""
+    def __new__(cls, combined_score, ats_score, ml_score):
+        obj = super().__new__(cls, round(combined_score, 1))
+        obj.combined_score = round(combined_score, 1)
+        obj.ats_score = round(ats_score, 1)
+        obj.ml_score = round(ml_score, 1)
+        return obj
+
+    def __getitem__(self, key):
+        if key == "combined_score":
+            return self.combined_score
+        elif key == "ats_score":
+            return self.ats_score
+        elif key == "ml_score":
+            return self.ml_score
+        raise KeyError(key)
+
+    def get(self, key, default=None):
+        try:
+            return self[key]
+        except KeyError:
+            return default
+
+    def __contains__(self, key):
+        return key in ("combined_score", "ats_score", "ml_score")
+
+    def items(self):
+        return [
+            ("combined_score", self.combined_score),
+            ("ats_score", self.ats_score),
+            ("ml_score", self.ml_score),
+        ]
+
+
 def analyze_job_match(cv_text, job_text, user_claims):
     """Return a text-similarity score and job skills absent from the CV/profile."""
     if not isinstance(cv_text, str) or not isinstance(job_text, str):
@@ -45,7 +80,7 @@ def analyze_job_match(cv_text, job_text, user_claims):
         cv_text = " ".join(user_claims)
 
     if not job_text.strip() or not cv_text.strip():
-        return 0.0, []
+        return MatchScore(0.0, 0.0, 0.0), []
 
     try:
         vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2), max_features=10000)
@@ -86,12 +121,7 @@ def analyze_job_match(cv_text, job_text, user_claims):
 
     combined_score = (ml_score * 0.4) + (ats_score * 0.6) if valid_job_skills else ml_score
 
-    scores = {
-        "ml_score": round(ml_score, 1),
-        "ats_score": round(ats_score, 1),
-        "combined_score": round(combined_score, 1)
-    }
-
+    scores = MatchScore(combined_score, ats_score, ml_score)
     return scores, missing_skills[:15]
 
 
