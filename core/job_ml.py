@@ -67,14 +67,32 @@ def analyze_job_match(cv_text, job_text, user_claims):
     missing_skills = []
     user_claims_lower = {claim.lower() for claim in user_claims}
 
+    valid_job_skills = []
     for skill in job_skills:
         skill_lower = skill.lower()
         if skill_lower in GENERIC_SKILL_FILTER:
             continue
+        valid_job_skills.append(skill)
         if skill_lower not in user_claims_lower and not re.search(_skill_pattern(skill_lower), cv_text_lower):
             missing_skills.append(skill)
 
-    return round(match_score * 100, 1), missing_skills[:15]
+    ml_score = match_score * 100
+
+    if not valid_job_skills:
+        ats_score = 0.0
+    else:
+        matched_skills = len(valid_job_skills) - len(missing_skills)
+        ats_score = (matched_skills / len(valid_job_skills)) * 100.0
+
+    combined_score = (ml_score * 0.4) + (ats_score * 0.6) if valid_job_skills else ml_score
+
+    scores = {
+        "ml_score": round(ml_score, 1),
+        "ats_score": round(ats_score, 1),
+        "combined_score": round(combined_score, 1)
+    }
+
+    return scores, missing_skills[:15]
 
 
 def generate_roadmap(missing_skills):

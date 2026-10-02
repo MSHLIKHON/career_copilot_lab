@@ -17,17 +17,25 @@ def render_job_analyzer(uid, profile):
             if not job_text.strip():
                 st.error("Paste a job description first.")
             else:
-                score, missing_skills = analyze_job_match(cv_text, job_text, profile["claims"])
+                scores, missing_skills = analyze_job_match(cv_text, job_text, profile["claims"])
                 st.session_state.job_analysis = {
-                    "score": score, "missing_skills": missing_skills,
+                    "score": scores["combined_score"], "scores": scores, "missing_skills": missing_skills,
                     "roadmaps": generate_roadmap(missing_skills), "job_text": job_text,
                 }
         analysis = st.session_state.get("job_analysis")
         if analysis:
             st.subheader("Analysis result")
-            a, b = st.columns(2)
-            a.metric("Text similarity", f"{analysis['score']}%")
-            b.metric("Missing technical skills", len(analysis["missing_skills"]))
+            if "scores" in analysis:
+                scores = analysis["scores"]
+                a, b, c = st.columns(3)
+                a.metric("Match Score", f"{scores['combined_score']}%", help="Combined score giving more weight to direct skill matches")
+                b.metric("ATS Skill Match", f"{scores['ats_score']}%", help="Percentage of required skills found in your profile")
+                c.metric("Text Similarity", f"{scores['ml_score']}%", help="TF-IDF semantic similarity")
+                st.metric("Missing technical skills", len(analysis["missing_skills"]))
+            else:
+                a, b = st.columns(2)
+                a.metric("Text similarity", f"{analysis['score']}%")
+                b.metric("Missing technical skills", len(analysis["missing_skills"]))
             if analysis["missing_skills"]:
                 st.write("**Detected gaps:** " + ", ".join(analysis["missing_skills"]))
                 st.subheader("Learning searches")
