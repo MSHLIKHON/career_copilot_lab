@@ -4,28 +4,31 @@ from core import storage
 from core.model import load_metrics, MODEL_DIR
 
 def authenticate():
-    st.markdown('<div class="eyebrow">TEAM NO AI · CAREER SKILLS PRACTICE LAB</div>', unsafe_allow_html=True)
+    st.markdown('<div class="eyebrow">CAREER SKILLS PRACTICE LAB · LOCAL WORKSPACE</div>', unsafe_allow_html=True)
     st.title("Career Copilot Lab")
-    st.write("Show what you can do. Learn from each attempt.")
-    story, account = st.columns([1.15, .85], gap="large")
+    st.markdown('<p class="hero-subtitle">Demonstrate verified coding proficiency, track evidence-based learning, and align your skills with industry roles.</p>', unsafe_allow_html=True)
+    story, account = st.columns([1.12, 0.88], gap="large")
     with story:
-        st.markdown('<div class="intro"><h2>Practice with a next step.</h2><p>Build Python evidence, understand each mistake and follow a roadmap shaped by your work.</p></div>', unsafe_allow_html=True)
-        st.markdown('''<div class="feature-grid">
-<div class="feature-card"><b>20 focused tasks</b>Conditions, loops, functions and lists.</div>
-<div class="feature-card"><b>Private progress</b>Assisted and independent evidence stays separate.</div>
-<div class="feature-card"><b>Career preparation</b>Saved CV, skill gaps and learning roadmaps.</div>
+        st.markdown('''<div class="intro">
+<h2>Practice with verified evidence.</h2>
+<p>Build authentic Python code evidence, understand failure modes with automated classification, and match your skills against real-world tech roles.</p>
 </div>''', unsafe_allow_html=True)
-        st.info("Local classroom prototype · Private on this computer · No API key required")
+        st.markdown('''<div class="feature-grid">
+<div class="feature-card"><b>20 Verified Tasks</b>Curated Python challenges across conditions, loops, functions, and lists with automated AST safety verification.</div>
+<div class="feature-card"><b>Segregated Evidence</b>Assisted hint submissions and independent passes are strictly segregated to prove verified competency.</div>
+<div class="feature-card"><b>Job Match & CV Analytics</b>Extract candidate skills from your CV, benchmark against real roles, and follow an adaptive learning roadmap.</div>
+</div>''', unsafe_allow_html=True)
+        st.markdown('''<div class="privacy-badge">
+<span class="privacy-badge-dot"></span>
+<span>Local classroom prototype · Private on this computer · No API key required</span>
+</div>''', unsafe_allow_html=True)
 
     with account:
-        st.markdown('<div class="auth-heading">Your learning workspace</div>'
-                    '<p class="auth-subheading">Sign in or create a private local account.</p>',
+        st.markdown('<div class="auth-heading">Learning Workspace</div>'
+                    '<p class="auth-subheading">Sign in to your private workspace or create a local account.</p>',
                     unsafe_allow_html=True)
         login_tab, register_tab = st.tabs(["Sign in", "Create account"])
         with login_tab:
-            st.markdown('<div class="auth-heading">Welcome back</div>'
-                        '<p class="auth-subheading">Sign in to continue your practice.</p>',
-                        unsafe_allow_html=True)
             with st.form("login"):
                 username = st.text_input("Username", max_chars=24)
                 password = st.text_input("Password", type="password", max_chars=128)
@@ -73,8 +76,10 @@ def authenticate():
                         else:
                             form_message.error(str(error))
 
-    st.divider()
-    st.caption("TECHNICAL NOTES · OPTIONAL READING")
+    st.markdown('''<div class="specs-header">
+<span class="specs-tag">TECHNICAL ARCHITECTURE</span>
+<h4>System Constraints & Model Evaluation</h4>
+</div>''', unsafe_allow_html=True)
     model_col, runner_col = st.columns(2, gap="large")
     with model_col:
         with st.expander("Model evidence and limitations"):

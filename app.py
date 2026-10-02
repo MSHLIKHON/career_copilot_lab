@@ -12,7 +12,7 @@ from ui.pages.roadmap import render_roadmap
 from ui.pages.job_analyzer import render_job_analyzer
 from ui.pages.history import render_history
 
-st.set_page_config(page_title="Career Copilot Lab", page_icon="🎓", layout="wide")
+st.set_page_config(page_title="Career Copilot Lab", layout="wide")
 apply_theme()
 storage.init_db()
 
