@@ -1,4 +1,5 @@
 import json
+import html
 from datetime import datetime
 import streamlit as st
 from core import storage
@@ -148,15 +149,16 @@ def _render_skill_rows(roadmaps):
     html_items = []
     for skill, resource in roadmaps:
         links = resource.get("links", {})
-        coursera = links.get("Coursera", f"https://www.coursera.org/search?query={skill}")
-        udemy = links.get("Udemy", f"https://www.udemy.com/courses/search/?q={skill}")
-        youtube = links.get("YouTube", f"https://www.youtube.com/results?search_query={skill}+full+course")
+        safe_skill = html.escape(str(skill))
+        coursera = html.escape(str(links.get("Coursera", f"https://www.coursera.org/search?query={skill}")), quote=True)
+        udemy = html.escape(str(links.get("Udemy", f"https://www.udemy.com/courses/search/?q={skill}")), quote=True)
+        youtube = html.escape(str(links.get("YouTube", f"https://www.youtube.com/results?search_query={skill}+full+course")), quote=True)
 
         item_html = (
             '<div class="skill-row">'
             '<div class="skill-info">'
             '<span class="skill-bullet">&#9670;</span>'
-            f'<span class="skill-name">{skill}</span>'
+            f'<span class="skill-name">{safe_skill}</span>'
             '<span class="gap-tag">Skill Gap</span>'
             '</div>'
             '<div class="skill-links">'

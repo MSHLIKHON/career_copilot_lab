@@ -1,8 +1,8 @@
-test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-09-28 15:04:25.277 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_explains_taken_username (test_app.AppTests.test_create_account_explains_taken_username) ... 2026-10-03 15:56:26.249 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-09-28 15:04:25.707 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_create_account_starts_signed_in (test_app.AppTests.test_create_account_starts_signed_in) ... 2026-10-03 15:56:26.617 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-09-28 15:04:25.968 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_full_student_journey (test_app.AppTests.test_full_student_journey) ... 2026-10-03 15:56:26.790 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_all_completed (test_core.AdaptiveTests.test_all_completed) ... ok
 test_assisted_not_independent (test_core.AdaptiveTests.test_assisted_not_independent) ... ok
@@ -79,6 +79,6 @@ test_local_config_avoids_first_run_prompt (test_server.ServerTests.test_local_co
 test_local_server_health (test_server.ServerTests.test_local_server_health) ... ok
 
 ----------------------------------------------------------------------
-Ran 76 tests in 5.928s
+Ran 76 tests in 4.713s
 
 OK
