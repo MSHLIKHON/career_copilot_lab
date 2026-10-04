@@ -32,11 +32,21 @@ if "pending_page" in st.session_state:
 if "pending_task" in st.session_state:
     st.session_state.task_select = st.session_state.pop("pending_task")
 
+PAGES = {
+    "My profile": lambda: render_profile(uid, user, history, profile),
+    "Overview": lambda: render_overview(user, history, profile),
+    "Practice": lambda: render_practice(uid, history, profile),
+    "My skills & CV": lambda: render_skills_cv(uid, history, profile),
+    "Learning roadmap": lambda: render_roadmap(history, profile),
+    "Job Match Analyzer": lambda: render_job_analyzer(uid, profile),
+    "History": lambda: render_history(uid, history),
+}
+
 with st.sidebar:
     st.markdown("### Career Copilot\n**LAB / TEAM NO AI**")
     st.caption("Python skill verification & adaptive practice")
     st.divider()
-    page = st.radio("Workspace", ["My profile", "Overview", "Practice", "My skills & CV", "Learning roadmap", "Job Match Analyzer", "History"], key="page")
+    page = st.radio("Workspace", list(PAGES.keys()), key="page")
     st.divider()
     st.write(user["name"])
     st.caption("Private account history · stored on this device")
@@ -44,17 +54,6 @@ with st.sidebar:
         st.session_state.clear()
         st.rerun()
 
-if page == "Overview":
-    render_overview(user, history, profile)
-elif page == "Practice":
-    render_practice(uid, history, profile)
-elif page == "My profile":
-    render_profile(uid, user, history, profile)
-elif page == "My skills & CV":
-    render_skills_cv(uid, history, profile)
-elif page == "Learning roadmap":
-    render_roadmap(history, profile)
-elif page == "Job Match Analyzer":
-    render_job_analyzer(uid, profile)
-elif page == "History":
-    render_history(uid, history)
+render_page = PAGES.get(page)
+if render_page:
+    render_page()
