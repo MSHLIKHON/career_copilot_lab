@@ -24,7 +24,7 @@ FAMILIES = [
  ("wrong_condition", "def solve(n):\n    return n >= 0 and n <= 10", ("and", "or"), [50], False),
  ("wrong_condition", "def solve(nums, n):\n    return n in nums", ("n in nums", "n not in nums"), [[1, 3], 3], True),
  ("loop_boundary", "def solve(n):\n    total = 0\n    for i in range(1, n+1):\n        total += i\n    return total", ("n+1", "n"), [4], 10),
- ("loop_boundary", "def solve(nums):\n    total = 0\n    for i in range(len(nums)):\n        total += nums[i]\n    return total", ("range(len(nums))", "range(len(nums)-1)"), [[2, 4, 6]], 12),
+ ("loop_boundary", "def solve(nums):\n    total = 0\n    for i in range(len(nums)):\n       total += nums[i]\n    return total", ("range(len(nums))", "range(len(nums)-1)"), [[2, 4, 6]], 12),
  ("loop_boundary", "def solve(n):\n    total = 1\n    for i in range(1, n+1):\n        total *= i\n    return total", ("n+1", "n"), [4], 24),
  ("loop_boundary", "def solve(n):\n    i = 1\n    total = 0\n    while i <= n:\n        total += i\n        i += 1\n    return total", ("i <= n", "i < n"), [3], 6),
  ("loop_boundary", "def solve(nums):\n    total = []\n    for i in range(0, len(nums)):\n        total = total + [nums[i]]\n    return total", ("range(0, len(nums))", "range(1, len(nums))"), [[4, 7]], [4, 7]),
