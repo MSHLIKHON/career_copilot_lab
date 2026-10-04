@@ -1,5 +1,4 @@
 import time
-import html
 import streamlit as st
 from core import storage
 from ui.theme import apply_theme
@@ -44,8 +43,6 @@ with st.sidebar:
     if st.button("Sign out", width="stretch"):
         st.session_state.clear()
         st.rerun()
-
-
 
 if page == "Overview":
     render_overview(user, history, profile)
