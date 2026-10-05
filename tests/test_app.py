@@ -55,9 +55,9 @@ class AppTests(unittest.TestCase):
         self.app.text_area(key='editor_L1').set_value(TASK_BY_ID['L1']['solution'])
         self.button('Run tests & save attempt').click().run()
         history = storage.attempts(self.app.session_state.user['id'])
-        self.assertEqual(history[-1]['result']['status'], 'passed')
-        self.assertEqual(history[-1]['hints'], 3)
-        self.assertEqual(history[-1]['solution_seen'], 1)
+        self.assertEqual(len(history), 9)
+        self.assertNotEqual(history[-1]['result']['status'], 'passed')
+        self.assertTrue(any('originality guard' in error.value for error in self.app.error))
         for page in ['Overview', 'My profile', 'My skills & CV', 'Learning roadmap', 'Job Match Analyzer', 'History']:
             self.app.sidebar.radio[0].set_value(page).run()
             self.assertFalse(self.app.exception, page)

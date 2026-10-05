@@ -4,6 +4,7 @@ from core.tasks import TASK_BY_ID
 from core.runner import run_tests
 from core.model import load_model, predict
 from core.adaptive import practice_progress, recommend, HINT_UNLOCKS, SOLUTION_UNLOCK
+from core.integrity import check_submission
 from ui.components import show_result, go_to_task
 
 def render_practice(uid, history, profile):
@@ -29,6 +30,8 @@ def render_practice(uid, history, profile):
 - Handle every boundary stated in the task, not only the visible example.
 - Your return type must match exactly; for example, `True` is different from `"True"`.
 - Re-submitting identical failed code does not unlock help.
+- Reference-answer copies and near-identical rewrites are blocked before tests run.
+- The guard cannot prove the origin of every possible internet or AI-generated answer; submit only code you can explain.
 """)
     with st.expander("One public example", expanded=False):
         case = task["tests"][0]
@@ -36,7 +39,11 @@ def render_practice(uid, history, profile):
         st.caption("Other checks include boundary and edge cases. Their inputs are revealed only in saved test evidence.")
     notice_key = f"practice_notice_{task_id}"
     if notice_key in st.session_state:
-        st.info(st.session_state.pop(notice_key))
+        notice = st.session_state.pop(notice_key)
+        if isinstance(notice, dict) and notice.get("kind") == "error":
+            st.error(notice["text"])
+        else:
+            st.info(notice if isinstance(notice, str) else notice["text"])
     editor_key = f"editor_{task_id}"
     if editor_key not in st.session_state:
         st.session_state[editor_key] = task["starter"]
@@ -45,6 +52,16 @@ def render_practice(uid, history, profile):
         code = st.text_area("Your Python code", key=editor_key, height=300, max_chars=12000)
         if st.button("Run tests & save attempt", type="primary", width="stretch"):
             with st.spinner("Checking code and test evidence..."):
+                integrity = check_submission(code, task)
+                if integrity["blocked"]:
+                    st.session_state[notice_key] = {
+                        "kind": "error",
+                        "text": (
+                            "Submission blocked by the originality guard. "
+                            f"{integrity['reason']} Write a fresh solution in your own structure and be ready to explain it."
+                        ),
+                    }
+                    st.rerun()
                 result = run_tests(code, task)
                 model, model_error = load_model()
                 prediction = predict(code, result, model, model_error)
