@@ -9,6 +9,7 @@ from core.runner import run_tests, Interpreter, RunnerError
 from core.adaptive import extract_claims, practice_progress, summarize, recommend, roadmap
 from core.model import load_model, predict, LABELS
 from core.job_ml import analyze_job_match, generate_roadmap
+from core.integrity import check_submission
 import core.model as model_module
 
 
@@ -97,6 +98,28 @@ class RunnerTests(unittest.TestCase):
 
     def test_power_not_supported(self):
         self.assertEqual(self.run_code('def solve(n):\n return 10**10000000')['status'], 'unsupported')
+
+
+class IntegrityTests(unittest.TestCase):
+    def test_exact_reference_is_blocked(self):
+        task = TASK_BY_ID['L1']
+        self.assertTrue(check_submission(task['solution'], task)['blocked'])
+
+    def test_comments_and_formatting_do_not_hide_copy(self):
+        task = TASK_BY_ID['L1']
+        copied = task['solution'].replace('    total = 0', '    total=0  # copied')
+        decision = check_submission(copied, task)
+        self.assertTrue(decision['blocked'])
+        self.assertEqual(decision['kind'], 'reference_copy')
+
+    def test_independent_work_is_not_blocked(self):
+        task = TASK_BY_ID['L1']
+        source = 'def solve(n):\n    return n * (n + 1) // 2\n'
+        self.assertFalse(check_submission(source, task)['blocked'])
+
+    def test_invalid_code_is_left_for_runner_feedback(self):
+        task = TASK_BY_ID['L1']
+        self.assertFalse(check_submission('def solve(n)\n return n', task)['blocked'])
 
 
 class StorageTests(unittest.TestCase):
